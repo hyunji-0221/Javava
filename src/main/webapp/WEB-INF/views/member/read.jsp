@@ -188,18 +188,6 @@
 													<td><h5>전화번호</h5></td>
 													<td><h5>${ member.phoneNumber }</h5></td>
 												</tr>
-												<tr align="center">
-													<td><h5>우편번호</h5></td>
-													<td><h5>${ member.zipcode }</h5></td>
-												</tr>
-												<tr align="center">
-													<td><h5>주소</h5></td>
-													<td><h5>${ member.address1 }</h5></td>
-												</tr>
-												<tr align="center">
-													<td><h5>상세주소</h5></td>
-													<td><h5>${ member.address2 }</h5></td>
-												</tr>
 											</table>
 											<div class="mx-auto p-2" style="height:50px;"></div>
 												<button class="btn btn-warning" style="margin:0 auto; display:block;"

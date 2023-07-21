@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
       <div class="sidebar-brand d-none d-md-flex">
 			<a href="/"><img src="/resources/img/logo4.png" alt="image"></a>
@@ -10,33 +11,17 @@
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
             </svg> 관리자 메인</a></li>
         
-        
+        <c:if test="${member.admin == 'admin'}">
         <li class="nav-title">회원 관리</li>
         
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="colors.html">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-            </svg> 회원 조회</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-            </svg> 회원 정보 수정</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-            </svg> 회원 추가</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-            </svg> 회원 삭제</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
-            </svg> 사용자 그룹</a></li>
+            </svg>회원 목록</a></li>
           </ul>
         </li>
-        
+        </c:if>
         
         
         <li class="nav-title">상품 등록</li>
@@ -58,10 +43,6 @@
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
             </svg> 상품 삭제</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
-            </svg> 성수기/휴일 설정</a></li>
           </ul>
         </li>
         
@@ -76,10 +57,6 @@
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-alarm"></use>
             </svg> 주문 처리</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-alarm"></use>
-            </svg> 환불</a></li>
           </ul>
         </li>
         
@@ -91,24 +68,11 @@
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
             </svg> 리뷰 조회</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
-            </svg> 등록</a></li>
           </ul>
         </li>
         
         
-        <li class="nav-title">고객 문의</li>
-        
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-chat-bubble"></use>
-            </svg> 고객 문의 조회</a></li>
-          </ul>
-        </li>
-        
+        <c:if test="${member.admin == 'admin'}">
         <li class="nav-title">공지사항</li>
         
           <ul class="nav-group-items">
@@ -134,7 +98,7 @@
             </svg> FAQ</a></li>
           </ul>
         </li>
-        
+        </c:if>
         
         <!-- <li class="nav-title">Theme</li>
         <li class="nav-item"><a class="nav-link" href="colors.html">
