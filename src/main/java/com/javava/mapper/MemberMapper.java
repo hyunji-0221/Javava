@@ -15,7 +15,7 @@ public interface MemberMapper {
 	public int idCheck(String email);
 	
 	
-	@Insert("insert into members (email, name, password, phoneNumber, zipcode, address1, address2) values (#{email}, #{name}, #{password}, #{phoneNumber}, #{zipcode}, #{address1}, #{address2})")
+	@Insert("insert into members (email, name, password, phoneNumber) values (#{email}, #{name}, #{password}, #{phoneNumber})")
 	public int insert(MemberVO member);
 	
 	@Select("select * from members where email = #{email}")
@@ -24,6 +24,6 @@ public interface MemberMapper {
 	@Delete("delete from members where email = #{email}")
 	public int delete(String email);
 	
-	@Update("update members set name=#{name}, password=#{password}, phoneNumber=#{phoneNumber}, zipcode=#{zipcode}, address1=#{address1}, address2=#{address2} where email=#{email}")
+	@Update("update members set name=#{name}, password=#{password}, phoneNumber=#{phoneNumber} where email=#{email}")
 	public int update(MemberVO member);
 }

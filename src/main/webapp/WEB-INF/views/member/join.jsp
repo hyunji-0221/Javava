@@ -57,19 +57,6 @@
                                 <div class="col-12">
                                     <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" name="phoneNumber" id="phoneNumber" placeholder="전화번호">
                                 </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" id="zipcode" name="zipcode" placeholder="우편번호">
-                                </div>
-                                <div class="col-12" align="center">
-                                    <input type="button" onclick="execDaumPostcode()" class="rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0" value="우편번호 찾기">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" id="address1" name="address1" placeholder="주소">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" id="address2" name="address2" placeholder="상세주소">
-                                    <input type="hidden" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" id="sample6_extraAddress" placeholder="참고항목">
-                                </div>
                             </div>
                             <br>
                             <div class="col-12" align="center">
@@ -188,39 +175,6 @@
             });
         });
 
-        function execDaumPostcode() {
-            new daum.Postcode({
-                oncomplete: function(data) {
-                    var addr = ''; // 주소 변수
-                    var extraAddr = ''; // 참고항목 변수
-
-                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                        addr = data.roadAddress;
-                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                        addr = data.jibunAddress;
-                    }
-
-                    if(data.userSelectedType === 'R') {
-                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                            extraAddr += data.bname;
-                        }
-                        if(data.buildingName !== '' && data.apartment === 'Y'){
-                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                        }
-                        if(extraAddr !== ''){
-                            extraAddr = ' (' + extraAddr + ')';
-                        }
-                        document.getElementById("sample6_extraAddress").value = extraAddr;
-                    } else {
-                        document.getElementById("sample6_extraAddress").value = '';
-                    }
-
-                    document.getElementById('zipcode').value = data.zonecode;
-                    document.getElementById("address1").value = addr;
-                    document.getElementById("address2").focus();
-                }
-            }).open();
-        }
     </script>
 </body>
 </html>
