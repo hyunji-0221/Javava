@@ -284,17 +284,21 @@
 						<ul class="list list-lg-row menu-nav order-lg-1">
 							<c:choose>
        					 	<c:when test="${member.admin != null || seller != null }">
-							<li><button class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold"
-							style="margin-top:10px;" onclick="location.href='<%= request.getContextPath() %>/admin/index'">숙소등록</button>
-								<%-- <ul class="list menu-sub">
+       					 	<li class="menu-list"><a href="/admin/index"
+								class="link menu-link"> 사장님 페이지 </a>
+								
+							</li>
+							<%-- <li><button class="btn btn-info"
+							style="margin-top:15px;" onclick="location.href='<%= request.getContextPath() %>/admin/index'">사장님 페이지</button>
+								 <ul class="list menu-sub">
 									<c:if test="${member.admin == 'admin'}">
 									<li class="menu-sub-list"><a href="/admin/index"
 										class="link menu-sub-link"> 관리자 </a></li>
 									</c:if>
 										<li class="menu-sub-list"><a href="/product/add_product"
 										class="link menu-sub-link"> 숙소등록 </a></li>
-								</ul> --%>
-							</li>
+								</ul> 
+							</li> --%>
 							</c:when>
 							</c:choose>
 							<c:if test="${member.admin == null && seller == null}">
