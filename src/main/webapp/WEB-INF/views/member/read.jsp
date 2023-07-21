@@ -4,6 +4,15 @@
 <html>
 
 <head>
+<style>
+a {
+	text-decoration: none !important
+}
+
+a:hover {
+	text-decoration: none !important
+}
+</style>
 <%@ include file="/resources/in/meta.jsp"%>
 
 </head>
@@ -18,15 +27,13 @@
 					<div class="bg-primary-5p rounded-4 p-6 mb-6">
 						<div class="list-group faq-nav">
 							<a class="list-group-item faq-nav__link active"
-								data-bs-toggle="list" href="#my_reservation"> 주문예약내역(최근 1년) </a>
-							<a class="list-group-item faq-nav__link" data-bs-toggle="list"
-								href="#my_favourite"> 찜리스트 </a> <a
+								data-bs-toggle="list" href="#my_reservation"> 예약 내역 </a> <a
 								class="list-group-item faq-nav__link" data-bs-toggle="list"
-								href="#my_review"> 나의 리뷰 </a> <a
+								href="#my_favourite"> 찜 내역 </a> <a
 								class="list-group-item faq-nav__link" data-bs-toggle="list"
-								href="#my_inquiry"> 나의 문의 내역 </a> <a
+								href="#my_review"> 내가 쓴 리뷰 </a> <a
 								class="list-group-item faq-nav__link" data-bs-toggle="list"
-								href="#my_account"> 내 정보 수정 </a> <a
+								href="#my_account"> 회원 정보 수정 </a> <a
 								class="list-group-item faq-nav__link" data-bs-toggle="list"
 								href="#delete"> 회원탈퇴 </a>
 						</div>
@@ -37,34 +44,118 @@
 				<div class="col-lg-8">
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="my_reservation">
-							<div class="accordion accordion--separated accordion--secondary"
-								id="accordionExample">
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button" type="button"
-											data-bs-toggle="collapse" data-bs-target="#collapseOne"
-											aria-expanded="true" aria-controls="collapseOne">
-											12312312313</button>
-									</h2>
-									<div id="collapseOne" class="accordion-collapse collapse show"
-										data-bs-parent="#accordionExample">
-										<div class="accordion-body">3213213321</div>
+							<div class="p-6 bg-neutral-0 rounded-4 mb-10"
+								style="border: 1px solid black;">
+								<div
+									class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+									<div>
+										<img src="/resources/img/product_img1.jpg" alt="image" />
 									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-											aria-expanded="false" aria-controls="collapseTwo">
-											12321321321?</button>
-									</h2>
-									<div id="collapseTwo" class="accordion-collapse collapse"
-										data-bs-parent="#accordionExample">
-										<div class="accordion-body">321321321</div>
+									<div>
+										<span class="mt-4 mb-8"
+											style="font-size: 30px; font-weight: bold;">로이넷 호텔</span>
+										<div class="d-flex align-items-center gap-1">
+											<span
+												class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
+												star_rate </span>
+											<p class="mb-0">4.0(21)</p>
+										</div>
 									</div>
+									<ul class="list list-row gap-3 align-items-center">
+										<li><a href="#"
+											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
+												<span class="material-symbols-outlined mat-icon fs-20">
+													favorite </span>
+										</a></li>
+									</ul>
 								</div>
+
+								<br>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<li>
+										<div class="d-flex align-items-center gap-2">
+											<span
+												class="material-symbols-outlined mat-icon clr-secondary-400">
+												distance </span>
+											<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+										</div>
+									</li>
+								</ul>
+								<br>
+								<div class="d-flex align-items-center gap-1">
+									<button type="button" class="btn btn-primary">
+										<a href="/product/product_detail" style="color: black;">숙소
+											상세보기</a>
+									</button>
+								</div>
+
+
+
+								<div class="hr-dashed my-8"></div>
+							</div>
+							<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+								<div
+									class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+									<div class="py-3 px-6 bg-primary-50 rounded-pill">
+										<h5 class="clr-primary-300 d-inline-block mb-0">3성급</h5>
+									</div>
+									<ul class="list list-row gap-3 align-items-center">
+										<li><a href="#"
+											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
+												<span class="material-symbols-outlined mat-icon fs-20">
+													favorite </span>
+										</a></li>
+										<li><a href="#"
+											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
+												<span class="material-symbols-outlined mat-icon fs-20">
+													compare_arrows </span>
+										</a></li>
+										<li><a href="#"
+											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
+												<span class="material-symbols-outlined mat-icon fs-20">
+													Share </span>
+										</a></li>
+									</ul>
+								</div>
+								<h2 class="mt-4 mb-8">로이넷 호텔</h2>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<li>
+										<div class="d-flex align-items-center gap-2">
+											<span
+												class="material-symbols-outlined mat-icon clr-secondary-400">
+												distance </span>
+											<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+										</div>
+									</li>
+
+									<li>
+										<div class="d-flex align-items-center gap-1">
+											<span
+												class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
+												star_rate </span>
+											<p class="mb-0">4.0(21)</p>
+										</div>
+									</li>
+
+								</ul>
+								<div class="hr-dashed my-8"></div>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<li>
+										<div class="d-flex align-items-center gap-2">
+											<span class="material-symbols-outlined mat-icon">
+												home_work </span>
+											<p class="mb-0">총 객실 수 : 250</p>
+										</div>
+									</li>
+
+								</ul>
 							</div>
 						</div>
+
+
 						<div class="tab-pane fade show" id="my_favourite">
 							<div class="accordion accordion--separated accordion--secondary"
 								id="accordionExample">
@@ -87,7 +178,7 @@
 											aria-expanded="false" aria-controls="collapseTwo">
 											333?</button>
 									</h2>
-									
+
 									<div id="collapseTwo" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
 										<div class="accordion-body">33333</div>
@@ -116,39 +207,9 @@
 										<button class="accordion-button collapsed" type="button"
 											data-bs-toggle="collapse" data-bs-target="#collapseTwo"
 											aria-expanded="false" aria-controls="collapseTwo">1
-											</button>
+										</button>
 									</h2>
-									
-									<div id="collapseTwo" class="accordion-collapse collapse"
-										data-bs-parent="#accordionExample">
-										<div class="accordion-body">33333</div>
-									</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="tab-pane fade show" id="my_inquiry">
-							<div class="accordion accordion--separated accordion--secondary"
-								id="accordionExample">
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button" type="button"
-											data-bs-toggle="collapse" data-bs-target="#collapseOne"
-											aria-expanded="true" aria-controls="collapseOne">
-											333</button>
-									</h2>
-									<div id="collapseOne" class="accordion-collapse collapse show"
-										data-bs-parent="#accordionExample">
-										<div class="accordion-body">3333</div>
-									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-											aria-expanded="false" aria-controls="collapseTwo">
-											333?</button>
-									</h2>
 									<div id="collapseTwo" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
 										<div class="accordion-body">33333</div>
@@ -189,9 +250,11 @@
 													<td><h5>${ member.phoneNumber }</h5></td>
 												</tr>
 											</table>
-											<div class="mx-auto p-2" style="height:50px;"></div>
-												<button class="btn btn-warning" style="margin:0 auto; display:block;"
-												onclick="location.href='<%= request.getContextPath() %>/member/modify?email=${member.email }'">내 정보수정</button>
+											<div class="mx-auto p-2" style="height: 50px;"></div>
+											<button class="btn btn-warning"
+												style="margin: 0 auto; display: block;"
+												onclick="location.href='<%= request.getContextPath() %>/member/modify?email=${member.email }'">내
+												정보수정</button>
 										</div>
 									</div>
 								</div>
@@ -199,14 +262,18 @@
 						</div>
 
 						<div class="tab-pane fade show" id="delete">
-							<div class="d-grid gap-3">
+							<div class="d-grid gap-3" align="center">
 								<div class="p-2"></div>
-								<div class="p-2"><h3>비밀번호를 입력해주세요.</h3></div>
-								
+								<div class="p-2">
+									<h3>비밀번호를 입력해주세요.</h3>
+								</div>
+
 								<form action="/member/delete" onsubmit="return confirmSubmit();">
-									<div class="p-2"><input type="password" name="checkPwd" id="checkPwd">
-									<input type="hidden" value="${member.email}" name="email"> 
-									<input type="submit" value="회원탈퇴" class="btn btn-danger"></div>
+									<div class="p-2">
+										<input type="password" name="checkPwd" id="checkPwd">
+										<input type="hidden" value="${member.email}" name="email">
+										<input type="submit" value="회원탈퇴" class="btn btn-danger">
+									</div>
 								</form>
 							</div>
 
@@ -233,7 +300,7 @@
 	
 		
 	</script>
-	
+
 	<%@ include file="/resources/in/footer.jsp"%>
 
 </body>
