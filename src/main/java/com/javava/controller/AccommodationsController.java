@@ -12,22 +12,22 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/product/*")
+@RequestMapping("/accommodation/*")
 @AllArgsConstructor
 public class AccommodationsController {
 
 
-	@GetMapping("/product_list")
+	@GetMapping("/accommodation_list")
 	public void product_list() {
 		log.info("제품상세보기");
 	}
 	
-	@GetMapping("/product_detail")
+	@GetMapping("/accommodation_detail")
 	public void product_detail() {
 		log.info("제품리스트");
 	}
 	
-	@GetMapping("/add_product")
+	@GetMapping("/add_accommodation")
 	public void add_product() {
 		log.info("제품등록");
 	}

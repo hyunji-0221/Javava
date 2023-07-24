@@ -216,7 +216,7 @@ input.input1 {
 					</div>
 					<div class="col-md-3 col-lg-4 col-xl-5 col-xxl-6">
 						<div class="text-lg-end">
-							<a href="/product/product_list"
+							<a href="/accommodation/accommodation_list"
 								class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 								모든 호텔 보기 </a>
 						</div>
@@ -242,7 +242,7 @@ input.input1 {
 						</div>
 						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
-								<a href="/product/product_detail"
+								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
 									유탑 부티크호텔 & 레지던스 </a>
 								<div class="d-flex align-items-center flex-shrink-0">
@@ -322,7 +322,7 @@ input.input1 {
 									105,000원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 2 </span>
-								</span> <a href="/product/product_detail"
+								</span> <a href="/accommodation/accommodation_detail"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>
@@ -345,7 +345,7 @@ input.input1 {
 						</div>
 						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
-								<a href="/product/product_detail"
+								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
 									대구 라이온즈파크점 </a>
 								<div class="d-flex align-items-center flex-shrink-0">
@@ -425,7 +425,7 @@ input.input1 {
 									120,000원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 3 </span>
-								</span> <a href="/product/product_detail"
+								</span> <a href="/accommodation/accommodation_detail"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>
@@ -448,7 +448,7 @@ input.input1 {
 						</div>
 						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
-								<a href="/product/product_detail"
+								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
 									스탕달 호텔 </a>
 								<div class="d-flex align-items-center flex-shrink-0">
@@ -529,7 +529,7 @@ input.input1 {
 									176,000원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 4 </span>
-								</span> <a href="/product/product_detail"
+								</span> <a href="/accommodation/accommodation_detail"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>
@@ -552,7 +552,7 @@ input.input1 {
 						</div>
 						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
-								<a href="/product/product_detail"
+								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
 									오션 더포인트 호텔 </a>
 								<div class="d-flex align-items-center flex-shrink-0">
@@ -632,7 +632,7 @@ input.input1 {
 									57,000원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 7 </span>
-								</span> <a href="/product/product_detail"
+								</span> <a href="/accommodation/accommodation_detail"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>
@@ -655,7 +655,7 @@ input.input1 {
 						</div>
 						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
-								<a href="/product/product_detail"
+								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
 									스카이베이호텔 경포 </a>
 								<div class="d-flex align-items-center flex-shrink-0">
@@ -735,7 +735,7 @@ input.input1 {
 									209,000원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 1 </span>
-								</span> <a href="/product/product_detail"
+								</span> <a href="/accommodation/accommodation_detail"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>
