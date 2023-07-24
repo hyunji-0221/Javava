@@ -31,5 +31,4 @@ public class AccommodationsController {
 	public void add_product() {
 		log.info("제품등록");
 	}
-
 }

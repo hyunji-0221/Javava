@@ -52,6 +52,7 @@ public class MemberController {
 		if(result.equals(email)) {
 			MemberVO member = service.read(email);
 			session.setAttribute("member", member);
+			session.setMaxInactiveInterval(60);
 			return "redirect:/";
 		} else {
 			ra.addFlashAttribute("result", result);

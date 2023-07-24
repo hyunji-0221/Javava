@@ -240,7 +240,7 @@ input.input1 {
 									favorite </span>
 							</button>
 						</div>
-						<div class="property-card__body">
+						<!-- <div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
 								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
@@ -311,7 +311,7 @@ input.input1 {
 									</div>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 						<div class="property-card__body py-0">
 							<div class="hr-dashed"></div>
 						</div>
@@ -758,7 +758,7 @@ input.input1 {
 						</div>
 						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
-								<a href="/product/product_detail"
+								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
 									그랜드 하얏트 제주 </a>
 								<div class="d-flex align-items-center flex-shrink-0">
@@ -838,7 +838,7 @@ input.input1 {
 									266,000원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 2 </span>
-								</span> <a href="/product/product_detail"
+								</span> <a href="/accommodation/accommodation_detail"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>

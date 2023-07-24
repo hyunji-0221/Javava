@@ -52,6 +52,7 @@ public class SellerController { //-----김호주 담당
 			return "redirect:/seller/login";
 		} else {
 			session.setAttribute("seller", service.read(businessNumber) );
+			session.setMaxInactiveInterval(60);
 			return "redirect:/";
 		}
 		
