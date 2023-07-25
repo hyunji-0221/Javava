@@ -7,14 +7,17 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.javava.vo.AccommodationVO;
+import com.javava.vo.ForJoinVO;
 
 @Mapper
 public interface AccommodationMapper {
 	
-	@Insert("insert into accommodations (sellerID, accommodationName, zipcode, address1, address2, region, price, description, amenities) values (#{sellerID}, #{accommodationName},#{zipcode}, #{address1}, #{address2}, #{region}, #{price},#{description}, null)")
+	@Insert("insert into accommodations (sellerID, accommodationName, zipcode, address1, address2, region, price, description, amenities, room1_Name, room1_Price, room2_Name, room2_Price, room3_Name, room3_Price) values (#{sellerID}, #{accommodationName},#{zipcode}, #{address1}, #{address2}, #{region}, #{price},#{description},null, #{room1_Name}, #{room1_Price},#{room2_Name}, #{room2_Price}, #{room3_Name}, #{room3_Price})")
 	public int insert(AccommodationVO acmd);
 	
 	@Select("select * from accommodations where sellerID = #{sellerID}")
 	public List<AccommodationVO> getMyList(int sellerID);
-
+	
+	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID")
+	public List<ForJoinVO> getList();
 }

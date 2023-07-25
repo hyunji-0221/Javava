@@ -84,7 +84,158 @@
               </div>
             </div>
           </div>
-     
+          <div class="section-space--sm"></div>
+          <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+            <div class="accordion property-accordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true"> 객실정보 </button>
+                </h3>
+                <div id="addProperty" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <div class="pt-6">
+                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실1: </p>
+                      이름:<input type="text" class="form-control form-control-lg fs-16" placeholder="이름을 입력해주세요." name="room1_Name" id="room1_Name">
+                      가격:<input type="text" class="form-control form-control-lg fs-16" placeholder="가격을 입력해주세요." name="room1_Price" id="room1_Price" value="0">
+                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실2: </p>
+					  이름:<input type="text" class="form-control form-control-lg fs-16" id="room2_Name" name="room2_Name" placeholder="이름을 입력해주세요.">               
+					  가격:<input type="text" class="form-control form-control-lg fs-16" id="room2_Price" name="room2_Price" placeholder="가격을 입력해주세요." value="0">               
+                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실3: </p>
+					  이름:<input type="text" class="form-control form-control-lg fs-16" id="room3_Name" name="room3_Name" placeholder="이름을 입력해주세요.">               
+					  가격:<input type="text" class="form-control form-control-lg fs-16" id="room3_Price" name="room3_Price" placeholder="가격을 입력해주세요." value="0">               
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+     	<!-- <div class="section-space--sm">
+            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+              <div class="accordion property-accordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> 편의시설 </button>
+                  </h3>
+                  <div id="amenities-facility" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <div class="pt-6">
+                        <p class="mb-4 fs-20 fw-medium">  </p>
+                        <div class="row g-4">
+                          <div class="col-md-6 col-lg-3">
+                            <ul class="list gap-4">
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="air-condition" name="amenities" value="air-con">
+                                  <label class="clr-neutral-500" for="air-condition"> 에어컨 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="ballet-parking" name="amenities" value="ballet-parking">
+                                  <label class="clr-neutral-500" for="ballet-parking"> 발렛파킹 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="dryer-check" name="amenities" value="dryer">
+                                  <label class="clr-neutral-500" for="dryer-check"> 드라이기 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="gym-check" name="amenities" value="gym">
+                                  <label class="clr-neutral-500" for="gym-check"> 피트니스 </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                            <ul class="list gap-4">
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="no-smoking" name="amenities" value="nosmoke">
+                                  <label class="clr-neutral-500" for="no-smoking"> 금연 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="client" name="amenities" value="client">
+                                  <label class="clr-neutral-500" for="client"> 호텔서비스 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="chat" name="amenities" value="chat">
+                                  <label class="clr-neutral-500" for="chat"> 온라인 상담 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="refrigerator-check" name="amenities" value="refrige">
+                                  <label class="clr-neutral-500" for="refrigerator-check"> 냉장고 </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                            <ul class="list gap-4">
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="swimming-pool" name="amenities" value="pool">
+                                  <label class="clr-neutral-500" for="swimming-pool"> 수영장 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="car-parking" name="amenities" value="parking">
+                                  <label class="clr-neutral-500" for="car-parking"> 주차장 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="breakfast" name="amenities" value="breakfast">
+                                  <label class="clr-neutral-500" for="breakfast"> 조식 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="washer-check" name="amenities" value="washer">
+                                  <label class="clr-neutral-500" for="washer-check"> 객실샤워실 </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                            <ul class="list gap-4">
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="wifi-check" name="amenities" value="wifi">
+                                  <label class="clr-neutral-500" for="wifi-check"> 와이파이 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="sauna-check" name="amenities" value="sauna">
+                                  <label class="clr-neutral-500" for="sauna-check"> 사우나 </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="d-flex align-items-center gap-3">
+                                  <input class="custom-checkbox" type="checkbox" id="tv-cable" name="amenities" value="tv">
+                                  <label class="clr-neutral-500" for="tv-cable"> TV </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
    
           <div class="py-10">
             <ul class="list gap-4">

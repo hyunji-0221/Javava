@@ -5,7 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class AccommodationVO {
+public class ForJoinVO {
 
 	private int accommodationID;
 	private int sellerID;
@@ -24,5 +24,10 @@ public class AccommodationVO {
 	private int room1_Price;
 	private int room2_Price;
 	private int room3_Price;
+	private String main_img;
+	private String room1_img;
+	private String room2_img;
+	private String room3_img;
+	
 	
 }
