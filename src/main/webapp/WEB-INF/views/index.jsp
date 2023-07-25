@@ -226,11 +226,12 @@ input.input1 {
 		</div>
 		<div class="container">
 			<div class="row g-4">
+				<c:forEach var="acmd" items="${acList}">
 				<div class="col-md-6 col-xl-4">
 					<div class="property-card">
 						<div class="property-card__head">
 							<div class="property-card__img">
-								<img src="/resources/img/main_room_img1.jpg" alt="image"
+								<img src="/resources/img1/${acmd.main_img }" alt="image"
 									class="img-fluid w-100">
 							</div>
 							<button
@@ -240,11 +241,11 @@ input.input1 {
 									favorite </span>
 							</button>
 						</div>
-						<!-- <div class="property-card__body">
+						<div class="property-card__body">
 							<div class="d-flex justify-content-between mb-2">
 								<a href="/accommodation/accommodation_detail"
 									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
-									유탑 부티크호텔 & 레지던스 </a>
+									${acmd.accommodationName } </a>
 								<div class="d-flex align-items-center flex-shrink-0">
 									<span
 										class="material-symbols-outlined mat-icon solid clr-tertiary-300">
@@ -255,7 +256,7 @@ input.input1 {
 								<div class="d-flex align-items-center gap-1">
 									<span
 										class="material-symbols-outlined mat-icon clr-tertiary-400">
-										distance </span> <span class="d-inline-block"> 광주 </span>
+										distance </span> <span class="d-inline-block"> ${acmd.region } </span>
 								</div>
 								<span class="d-inline-block fw-medium clr-secondary-400">
 									20% 할인 </span>
@@ -311,7 +312,7 @@ input.input1 {
 									</div>
 								</li>
 							</ul>
-						</div> -->
+						</div>
 						<div class="property-card__body py-0">
 							<div class="hr-dashed"></div>
 						</div>
@@ -319,17 +320,18 @@ input.input1 {
 							<div
 								class="d-flex flex-wrap justify-content-between align-items-center">
 								<span class="d-block fs-20 fw-medium clr-primary-300">
-									105,000원 <span
+									 ${acmd.price }원 <span
 									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 										/ 남은 객실 수 : 2 </span>
-								</span> <a href="/accommodation/accommodation_detail"
+								</span> <a href="/accommodation/accommodation_detail?accommodationID=${acmd.accommodationID }"
 									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 									예약하기 </a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-xl-4">
+				</c:forEach>
+				<!-- <div class="col-md-6 col-xl-4">
 					<div class="property-card">
 						<div class="property-card__head">
 							<div class="property-card__img">
@@ -844,7 +846,7 @@ input.input1 {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

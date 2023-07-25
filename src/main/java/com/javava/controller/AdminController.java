@@ -86,7 +86,7 @@ public class AdminController {
 		System.out.println("용량크기(byte) : " + size);
 		//서버에 저장할 파일이름 fileextension으로 .jsp이런식의  확장자 명을 구함
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\test\\upload";
+		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
 		
 		
 		/*
@@ -136,7 +136,7 @@ public class AdminController {
 		System.out.println("파일명 : "  + fileRealName);
 		System.out.println("용량크기(byte) : " + size);
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\test\\upload";
+		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
 		
 		UUID uuid = UUID.randomUUID();
 		System.out.println(uuid.toString());
@@ -176,7 +176,7 @@ public class AdminController {
 		System.out.println("파일명 : "  + fileRealName);
 		System.out.println("용량크기(byte) : " + size);
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\test\\upload";
+		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
 		
 		UUID uuid = UUID.randomUUID();
 		System.out.println(uuid.toString());
@@ -216,7 +216,7 @@ public class AdminController {
 		System.out.println("파일명 : "  + fileRealName);
 		System.out.println("용량크기(byte) : " + size);
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\test\\upload";
+		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
 		
 		UUID uuid = UUID.randomUUID();
 		System.out.println(uuid.toString());
