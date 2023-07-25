@@ -90,11 +90,11 @@ input.input1 {
 							$(".CheckInOutDate").each(function(i, obj){
 								var jobj = $(obj);
 								console.dir(jobj);
-								str += `<input type = 'hidden' name='checkInDate' value = '\${start}'>
-								<input type = 'hidden' name='checkOutDate' value = '\${end}'>`;
+								str += `<input type = 'hidden' name='checkInDate' value = '\${start.format('YYYY-MM-DD')}'>
+								<input type = 'hidden' name='checkOutDate' value = '\${end.format('YYYY-MM-DD')}'>`;
 								console.log("날짜 히든 추가 됐니?");
 							});
-							//formObj.append(str)//.submit();
+							formObj.append(str)//.submit();
 						//submit button event
 					});
 			
