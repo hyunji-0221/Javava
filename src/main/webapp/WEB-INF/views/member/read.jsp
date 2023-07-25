@@ -48,18 +48,31 @@ a:hover {
 								style="border: 1px solid black;">
 								<div
 									class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+									<img src="/resources/img/jonghwantest.png" alt="image" />
+
 									<div>
-										<img src="/resources/img/product_img1.jpg" alt="image" />
-									</div>
-									<div>
+										<ul
+											class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+											<div class="d-flex align-items-center gap-2">
+												<span
+													class="material-symbols-outlined mat-icon clr-secondary-400">
+													distance </span>
+												<p class="mb-0">예약번호 : 062-154772-01-014</p>
+											</div>
+										</ul>
 										<span class="mt-4 mb-8"
 											style="font-size: 30px; font-weight: bold;">로이넷 호텔</span>
-										<div class="d-flex align-items-center gap-1">
-											<span
-												class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-												star_rate </span>
-											<p class="mb-0">4.0(21)</p>
-										</div>
+										<ul
+											class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+											<li>
+												<div class="d-flex align-items-center gap-2">
+													<span
+														class="material-symbols-outlined mat-icon clr-secondary-400">
+														distance </span>
+													<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+												</div>
+											</li>
+										</ul>
 									</div>
 									<ul class="list list-row gap-3 align-items-center">
 										<li><a href="#"
@@ -69,89 +82,165 @@ a:hover {
 										</a></li>
 									</ul>
 								</div>
-
 								<br>
 								<ul
 									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-									<li>
-										<div class="d-flex align-items-center gap-2">
-											<span
-												class="material-symbols-outlined mat-icon clr-secondary-400">
-												distance </span>
-											<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
-										</div>
-									</li>
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">예약자 : 박종환</p>
+									</div>
+								</ul>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">연락처 : 010-4827-0401</p>
+									</div>
 								</ul>
 								<br>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">체크인 : 2023.08.01 15:00</p>
+									</div>
+								</ul>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">체크아웃 : 2023.08.05 11:00</p>
+									</div>
+								</ul>
+								<br>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">결제 금액 : 284,500원</p>
+									</div>
+								</ul>
+								<div class="hr-dashed my-8"></div>
 								<div class="d-flex align-items-center gap-1">
-									<button type="button" class="btn btn-primary">
+									<button type="button" class="btn btn-outline-primary">
 										<a href="/product/product_detail" style="color: black;">숙소
 											상세보기</a>
+									</button>
+									<button type="button" class="btn btn-outline-danger">
+										<a href="/product/product_detail" style="color: black;">예약 취소하기</a>
+									</button>
+								</div>
+							</div>
+							
+							<div class="p-6 bg-neutral-0 rounded-4 mb-10"
+								style="border: 1px solid black;">
+								<div
+									class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+									<img src="/resources/img/jonghwantest.png" alt="image" />
+
+									<div>
+										<ul
+											class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+											<div class="d-flex align-items-center gap-2">
+												<span
+													class="material-symbols-outlined mat-icon clr-secondary-400">
+													distance </span>
+												<p class="mb-0">예약번호 : 062-154772-01-014</p>
+											</div>
+										</ul>
+										<span class="mt-4 mb-8"
+											style="font-size: 30px; font-weight: bold;">로이넷 호텔</span>
+										<ul
+											class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+											<li>
+												<div class="d-flex align-items-center gap-2">
+													<span
+														class="material-symbols-outlined mat-icon clr-secondary-400">
+														distance </span>
+													<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<ul class="list list-row gap-3 align-items-center">
+										<li><a href="#"
+											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
+												<span class="material-symbols-outlined mat-icon fs-20">
+													favorite </span>
+										</a></li>
+									</ul>
+								</div>
+								<br>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">예약자 : 박종환</p>
+									</div>
+								</ul>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">연락처 : 010-4827-0401</p>
+									</div>
+								</ul>
+								<br>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">체크인 : 2023.08.01 15:00</p>
+									</div>
+								</ul>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">체크아웃 : 2023.08.05 11:00</p>
+									</div>
+								</ul>
+								<br>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<div class="d-flex align-items-center gap-2">
+										<span
+											class="material-symbols-outlined mat-icon clr-secondary-400">
+											distance </span>
+										<p class="mb-0">결제 금액 : 284,500원</p>
+									</div>
+								</ul>
+								<div class="hr-dashed my-8"></div>
+								<div class="d-flex align-items-center gap-1">
+									<button type="button" class="btn btn-outline-primary">
+										<a href="/product/product_detail" style="color: black;">숙소
+											상세보기</a>
+									</button>
+									<button type="button" class="btn btn-outline-danger">
+										<a href="/product/product_detail" style="color: black;">예약 취소하기</a>
 									</button>
 								</div>
 
 
 
-								<div class="hr-dashed my-8"></div>
-							</div>
-							<div class="p-6 bg-neutral-0 rounded-4 mb-10">
-								<div
-									class="d-flex align-items-center justify-content-between flex-wrap gap-3">
-									<div class="py-3 px-6 bg-primary-50 rounded-pill">
-										<h5 class="clr-primary-300 d-inline-block mb-0">3성급</h5>
-									</div>
-									<ul class="list list-row gap-3 align-items-center">
-										<li><a href="#"
-											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-												<span class="material-symbols-outlined mat-icon fs-20">
-													favorite </span>
-										</a></li>
-										<li><a href="#"
-											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-												<span class="material-symbols-outlined mat-icon fs-20">
-													compare_arrows </span>
-										</a></li>
-										<li><a href="#"
-											class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-												<span class="material-symbols-outlined mat-icon fs-20">
-													Share </span>
-										</a></li>
-									</ul>
-								</div>
-								<h2 class="mt-4 mb-8">로이넷 호텔</h2>
-								<ul
-									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-									<li>
-										<div class="d-flex align-items-center gap-2">
-											<span
-												class="material-symbols-outlined mat-icon clr-secondary-400">
-												distance </span>
-											<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
-										</div>
-									</li>
-
-									<li>
-										<div class="d-flex align-items-center gap-1">
-											<span
-												class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-												star_rate </span>
-											<p class="mb-0">4.0(21)</p>
-										</div>
-									</li>
-
-								</ul>
-								<div class="hr-dashed my-8"></div>
-								<ul
-									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-									<li>
-										<div class="d-flex align-items-center gap-2">
-											<span class="material-symbols-outlined mat-icon">
-												home_work </span>
-											<p class="mb-0">총 객실 수 : 250</p>
-										</div>
-									</li>
-
-								</ul>
 							</div>
 						</div>
 
@@ -286,19 +375,17 @@ a:hover {
 
 	</div>
 	<script>
-	 let result = "${result}";
-	    if (result === 'failDelete') {
-	        alert('비밀번호가 틀렸습니다!');
-	    }
-	    if (result === 'update') {
-	        alert('회원정보가 정상적으로 수정되었습니다.');
-	    }
-	function confirmSubmit() {
-		  var confirmResult = confirm('정말로 회원탈퇴하시겠습니까?');
-		  return confirmResult; // '예'를 선택하면 true, '아니요'를 선택하면 false를 반환
+		let result = "${result}";
+		if (result === 'failDelete') {
+			alert('비밀번호가 틀렸습니다!');
 		}
-	
-		
+		if (result === 'update') {
+			alert('회원정보가 정상적으로 수정되었습니다.');
+		}
+		function confirmSubmit() {
+			var confirmResult = confirm('정말로 회원탈퇴하시겠습니까?');
+			return confirmResult; // '예'를 선택하면 true, '아니요'를 선택하면 false를 반환
+		}
 	</script>
 
 	<%@ include file="/resources/in/footer.jsp"%>
