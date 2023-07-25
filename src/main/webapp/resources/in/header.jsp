@@ -243,14 +243,14 @@
 														</c:otherwise>
 													</c:choose>
 													</li>
-													<li><a href="#"
+													<li><a href="<%= request.getContextPath() %>/member/myReservation?memberID=${ member.memberID }"
 														class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
 															<span
 															class="material-symbols-outlined mat-icon fs-28 flex-shrink-0">
 																event_note </span> <span
-															class="d-block fs-14 fw-medium flex-grow-1"> 내 예약 </span>
-													</a></li>
-													<li><a href="#"
+															class="d-block fs-14 fw-medium flex-grow-1">내 예약</span></a>
+												</li>
+													<li><a href="<%= request.getContextPath() %>/member/wishlist?memberID=${ member.memberID }"	
 														class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
 															<span
 															class="material-symbols-outlined mat-icon fs-28 flex-shrink-0">

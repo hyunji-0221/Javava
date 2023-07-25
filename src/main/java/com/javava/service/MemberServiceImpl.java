@@ -1,10 +1,14 @@
 package com.javava.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javava.mapper.MemberMapper;
 import com.javava.vo.MemberVO;
+import com.javava.vo.ReservationVO;
+import com.javava.vo.WishListVO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -52,5 +56,15 @@ public class MemberServiceImpl implements MemberService{
 		@Override
 		public int update(MemberVO member) {
 			return mapper.update(member);
+		}
+		
+		@Override
+		public List<ReservationVO> getReservationList(int memberID) {
+			return mapper.getReservationList(memberID);
+		}
+		
+		@Override
+		public List<WishListVO> getWishList(int memberID) {
+			return mapper.getWishList(memberID);
 		}
 }

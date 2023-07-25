@@ -1,7 +1,11 @@
 package com.javava.service;
 
 
+import java.util.List;
+
 import com.javava.vo.MemberVO;
+import com.javava.vo.ReservationVO;
+import com.javava.vo.WishListVO;
 
 public interface MemberService {
 
@@ -12,4 +16,6 @@ public interface MemberService {
 		public MemberVO read(String email);
 		public int delete(String email);
 		public int update(MemberVO member);
+		public List<ReservationVO> getReservationList(int memberID);
+		public List<WishListVO> getWishList(int memberID);
 }

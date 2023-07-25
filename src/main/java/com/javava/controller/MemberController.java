@@ -1,6 +1,8 @@
 package com.javava.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.javava.service.MemberService;
 import com.javava.vo.MemberVO;
+import com.javava.vo.ReservationVO;
+import com.javava.vo.WishListVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -65,6 +69,20 @@ public class MemberController {
 		log.info("logout");
 		session.removeAttribute("member");
 		return "redirect:/";
+	}
+	
+	@GetMapping("/myReservation")
+	public void getReservationList(@RequestParam String memberID, Model model) {
+		List<ReservationVO> reservation= service.getReservationList(Integer.parseInt(memberID));
+		model.addAttribute("rList", reservation);
+		log.info("myReservation");
+	}
+	
+	@GetMapping("/wishlist")
+	public void getWishList(@RequestParam String memberID, Model model) {
+		List<WishListVO> wishlist=service.getWishList(Integer.parseInt(memberID));
+		model.addAttribute("wList", wishlist);
+		log.info("wishlist");
 	}
 	
 	@GetMapping({"/read","/modify"})
