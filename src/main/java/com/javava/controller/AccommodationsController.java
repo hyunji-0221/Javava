@@ -28,7 +28,7 @@ public class AccommodationsController {
 		log.info("제품리스트");
 	}
 	
-	@GetMapping("/add_product")
+	@GetMapping("/add_accommodation")
 	public void add_product() {
 		log.info("제품등록");
 	}
