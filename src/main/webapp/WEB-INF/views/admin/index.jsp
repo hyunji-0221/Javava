@@ -781,6 +781,26 @@
         </div>
       </div>
     </div>
+    
+    <script>
+    let result = "${result}";
+    
+    if(result === 'success') {
+    	alert('숙소가 등록되었습니다.');
+    }
+    if(result === 'mainImg') {
+    	alert('메인이미지를 변경하였습니다.')
+    }
+    if(result === 'room1Img') {
+    	alert('객실1이미지를 변경하였습니다.')
+    }
+    if(result === 'room2Img') {
+    	alert('객실2이미지를 변경하였습니다.')
+    }
+    if(result === 'room3Img') {
+    	alert('객실3이미지를 변경하였습니다.')
+    }
+    </script>
     <!-- CoreUI and necessary plugins-->
     <script src="/resources/admin/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="/resources/admin/vendors/simplebar/js/simplebar.min.js"></script>

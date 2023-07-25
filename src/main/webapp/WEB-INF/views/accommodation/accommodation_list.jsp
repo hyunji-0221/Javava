@@ -128,7 +128,7 @@
                       <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
                       <span class="d-inline-block"> 마포구 서교동 </span>
                     </div>
-                    <a href="/product/product_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
+                    <a href="/accommodation/accommodation_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
                     <ul class="list list-row flex-wrap dotted-divider">
                       <li>
                         <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
@@ -151,7 +151,7 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                       <span class="d-block fs-20 fw-medium clr-primary-300"> 30만원 <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> (1박) </span>
                       </span>
-                      <a href="/product/product_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기</a>
+                      <a href="/accommodation/accommodation_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기</a>
                     </div>
                   </div>
                 </div>
@@ -175,7 +175,7 @@
                       <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
                       <span class="d-inline-block"> 마포구 서교동 </span>
                     </div>
-                    <a href="/product/product_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
+                    <a href="/accommodation/accommodation_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
                     <ul class="list list-row flex-wrap dotted-divider">
                       <li>
                         <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
@@ -198,7 +198,7 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                     <span class="d-block fs-20 fw-medium clr-primary-300"> 30만원 <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> (1박) </span>
                       </span>
-                      <a href="/product/product_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
+                      <a href="/accommodation/accommodation_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
                     </div>
                   </div>
                 </div>
@@ -222,7 +222,7 @@
                       <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
                       <span class="d-inline-block"> 마포구 서교동 </span>
                     </div>
-                    <a href="/product/product_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
+                    <a href="/accommodation/accommodation_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
                     <ul class="list list-row flex-wrap dotted-divider">
                       <li>
                         <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
@@ -245,7 +245,7 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                       <span class="d-block fs-20 fw-medium clr-primary-300"> 30만원 <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> (1박) </span>
                       </span>
-                      <a href="/product/product_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
+                      <a href="/accommodation/accommodation_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
                     </div>
                   </div>
                 </div>
@@ -269,7 +269,7 @@
                       <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
                       <span class="d-inline-block"> 마포구 서교동 </span>
                     </div>
-                    <a href="/product/product_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
+                    <a href="/accommodation/accommodation_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
                     <ul class="list list-row flex-wrap dotted-divider">
                       <li>
                         <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
@@ -292,7 +292,7 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                       <span class="d-block fs-20 fw-medium clr-primary-300"> 30만원 <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> (1박) </span>
                       </span>
-                      <a href="/product/product_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
+                      <a href="/accommodation/accommodation_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
                     </div>
                   </div>
                 </div>
@@ -316,7 +316,7 @@
                       <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
                       <span class="d-inline-block"> 마포구 서교동 </span>
                     </div>
-                    <a href="/product/product_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
+                    <a href="/accommodation/accommodation_detail" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> 신라호텔 </a>
                     <ul class="list list-row flex-wrap dotted-divider">
                       <li>
                         <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
@@ -339,7 +339,7 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                       <span class="d-block fs-20 fw-medium clr-primary-300"> 30만원 <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> (1박) </span>
                       </span>
-                      <a href="/product/product_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
+                      <a href="/accommodation/accommodation_detail" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> 상세보기 </a>
                     </div>
                   </div>
                 </div>

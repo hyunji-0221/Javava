@@ -35,7 +35,7 @@
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
             </svg> 상품 정보 수정</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
+            <li class="nav-item"><a class="nav-link" href="/admin/addAccommodation?sellerID=${seller.sellerID }">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
             </svg> 상품 추가</a></li>
@@ -43,6 +43,10 @@
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
             </svg> 상품 삭제</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/selectImage?sellerID=${seller.sellerID }">
+            <svg class="nav-icon">
+              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
+            </svg> 객실등록/이미지변경</a></li>
           </ul>
         </li>
         
