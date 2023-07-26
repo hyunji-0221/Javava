@@ -65,6 +65,7 @@
                       <input type="text" class="form-control form-control-lg fs-16" placeholder="(메인에 띄울 가격입니다.)" name="price">              
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 지역 : </p>
                       <select class="form-select form-select-lg fs-16" name="region" id="region">
+                        <option value="none">=== 지역선택 ===</option>
                         <option value="서울">서울</option>
                         <option value="경기">경기</option>
                         <option value="전라">전라</option>
@@ -97,10 +98,10 @@
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 객실1: </p>
                       이름:<input type="text" class="form-control form-control-lg fs-16" placeholder="이름을 입력해주세요." name="room1_Name" id="room1_Name">
                       가격:<input type="text" class="form-control form-control-lg fs-16" placeholder="가격을 입력해주세요." name="room1_Price" id="room1_Price" value="0">
-                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실2: </p>
+                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실2: (선택사항) </p>
 					  이름:<input type="text" class="form-control form-control-lg fs-16" id="room2_Name" name="room2_Name" placeholder="이름을 입력해주세요.">               
 					  가격:<input type="text" class="form-control form-control-lg fs-16" id="room2_Price" name="room2_Price" placeholder="가격을 입력해주세요." value="0">               
-                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실3: </p>
+                      <p class="mt-6 mb-4 fs-20 fw-medium"> 객실3: (선택사항) </p>
 					  이름:<input type="text" class="form-control form-control-lg fs-16" id="room3_Name" name="room3_Name" placeholder="이름을 입력해주세요.">               
 					  가격:<input type="text" class="form-control form-control-lg fs-16" id="room3_Price" name="room3_Price" placeholder="가격을 입력해주세요." value="0">               
                     </div>

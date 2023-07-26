@@ -3,6 +3,7 @@ package com.javava.service;
 import java.util.List;
 
 import com.javava.vo.AccommodationVO;
+import com.javava.vo.ForJoinVO;
 import com.javava.vo.ImageVO;
 
 public interface AdminService {
@@ -20,8 +21,13 @@ public interface AdminService {
 	
 	public ImageVO read(int accommodationID);
 
-	public AccommodationVO getRoomList(int accommodationID);
+	public List<ForJoinVO> getFullList(int sellerID);
 	
-	public int modifyRoom(AccommodationVO acmd);
+	public int delete(int accommodationID);
 	
+	public AccommodationVO readAcc(int accommodationID);
+	
+	public int modify(AccommodationVO acc);
+	
+	public int deleteImg(int accommodationID);
 }

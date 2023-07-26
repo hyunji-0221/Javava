@@ -24,29 +24,21 @@
         </c:if>
         
         
-        <li class="nav-title">상품 등록</li>
+        <li class="nav-title">숙소 등록</li>
         
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="colors.html">
+            <li class="nav-item"><a class="nav-link" href="/admin/accommodationList?sellerID=${seller.sellerID }">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
-            </svg> 상품 조회</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
-            </svg> 상품 정보 수정</a></li>
+            </svg> 숙소 조회</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/addAccommodation?sellerID=${seller.sellerID }">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
-            </svg> 상품 추가</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
-            </svg> 상품 삭제</a></li>
+            </svg> 숙소 추가</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/selectImage?sellerID=${seller.sellerID }">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-gift"></use>
-            </svg> 객실등록/이미지변경</a></li>
+            </svg> 이미지 변경</a></li>
           </ul>
         </li>
         

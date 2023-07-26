@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.javava.mapper.AccommodationMapper;
 import com.javava.mapper.ImageMapper;
 import com.javava.vo.AccommodationVO;
+import com.javava.vo.ForJoinVO;
 import com.javava.vo.ImageVO;
 
 @Service
@@ -57,12 +58,26 @@ public class AdminServiceImpl implements AdminService{
 	}
 	
 	@Override
-	public AccommodationVO getRoomList(int accommodationID) {
-		return mapper.getRoomList(accommodationID);
+	public List<ForJoinVO> getFullList(int sellerID) {
+		return mapper.getFullList(sellerID);
 	}
 	
 	@Override
-	public int modifyRoom(AccommodationVO acmd) {
-		return mapper.modifyRoom(acmd);
+	public int delete(int accommodationID) {
+		return mapper.delete(accommodationID);
+	}
+		
+	@Override
+	public AccommodationVO readAcc(int accommodationID) {
+		return mapper.readAcc(accommodationID);
+	}
+	
+	@Override
+	public int modify(AccommodationVO acc) {
+		return mapper.modify(acc);
+	}
+	@Override
+	public int deleteImg(int accommodationID) {
+		return mapper2.deleteImg(accommodationID);
 	}
 }

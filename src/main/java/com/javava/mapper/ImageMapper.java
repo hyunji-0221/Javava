@@ -1,5 +1,6 @@
 package com.javava.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -24,5 +25,8 @@ public interface ImageMapper {
 	
 	@Select("select * from image where accommodationID = #{accommodationID}")
 	public ImageVO read(int accommodationID);
+	
+	@Delete("delete from image where accommodationID = #{accommodationID}")
+	public int deleteImg(int accommodationID);
 	
 }
