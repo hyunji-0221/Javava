@@ -47,17 +47,8 @@ a:hover {
 									<img src="/resources/img/jonghwantest.png" alt="image" />
 
 									<div>
-										<ul
-											class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-											<div class="d-flex align-items-center gap-2">
-												<span
-													class="material-symbols-outlined mat-icon clr-secondary-400">
-													distance </span>
-												<p class="mb-0">예약번호 : 062-154772-01-014</p>
-											</div>
-										</ul>
 										<span class="mt-4 mb-8"
-											style="font-size: 30px; font-weight: bold;">로이넷 호텔</span>
+											style="font-size: 30px; font-weight: bold;">내 정보</span>
 										<ul
 											class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
 											<li>
@@ -65,7 +56,7 @@ a:hover {
 													<span
 														class="material-symbols-outlined mat-icon clr-secondary-400">
 														distance </span>
-													<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+													<p class="mb-0">이메일 : ${ member.email }</p>
 												</div>
 											</li>
 										</ul>
@@ -85,7 +76,7 @@ a:hover {
 										<span
 											class="material-symbols-outlined mat-icon clr-secondary-400">
 											distance </span>
-										<p class="mb-0">예약자 : 박종환</p>
+										<p class="mb-0">이름 : ${ member.name }</p>
 									</div>
 								</ul>
 								<ul
@@ -94,7 +85,7 @@ a:hover {
 										<span
 											class="material-symbols-outlined mat-icon clr-secondary-400">
 											distance </span>
-										<p class="mb-0">연락처 : 010-4827-0401</p>
+										<p class="mb-0">비밀번호 : ${ member.password }</p>
 									</div>
 								</ul>
 								<br>
@@ -104,38 +95,14 @@ a:hover {
 										<span
 											class="material-symbols-outlined mat-icon clr-secondary-400">
 											distance </span>
-										<p class="mb-0">체크인 : 2023.08.01 15:00</p>
+										<p class="mb-0">전화번호 : ${ member.phoneNumber }</p>
 									</div>
 								</ul>
-								<ul
-									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-									<div class="d-flex align-items-center gap-2">
-										<span
-											class="material-symbols-outlined mat-icon clr-secondary-400">
-											distance </span>
-										<p class="mb-0">체크아웃 : 2023.08.05 11:00</p>
-									</div>
-								</ul>
-								<br>
-								<ul
-									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-									<div class="d-flex align-items-center gap-2">
-										<span
-											class="material-symbols-outlined mat-icon clr-secondary-400">
-											distance </span>
-										<p class="mb-0">결제 금액 : 284,500원</p>
-									</div>
-								</ul>
-								<div class="hr-dashed my-8"></div>
-								<div class="d-flex align-items-center gap-1">
-									<button type="button" class="btn btn-outline-primary">
-										<a href="/product/product_detail" style="color: black;">숙소
-											상세보기</a>
-									</button>
-									<button type="button" class="btn btn-outline-danger">
-										<a href="/product/product_detail" style="color: black;">예약 취소하기</a>
-									</button>
-								</div>
+								<div class="mx-auto p-2" style="height: 50px;"></div>
+											<button class="btn btn-warning"
+												style="margin: 0 auto; display: block;"
+												onclick="location.href='<%= request.getContextPath() %>/member/modify?email=${member.email }'">내
+												정보수정</button>
 
 
 

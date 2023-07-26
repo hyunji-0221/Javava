@@ -12,8 +12,8 @@ public class ReservationVO {
 	private int accommodationID;
 	private String accommodationName;
 	private String address;
-	private Date checkInDate;
-	private Date checkOutDate;
+	private String checkInDate;
+	private String checkOutDate;
 	private int paymentAmount;
 	private Date reservationDate;
 	private String reserveName;

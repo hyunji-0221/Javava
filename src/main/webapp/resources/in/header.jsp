@@ -233,32 +233,51 @@
 													</a>
 														</c:when>
 														<c:otherwise>
-														<a href="/member/login"
-														class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
 															<span
 															class="material-symbols-outlined mat-icon fs-28 flex-shrink-0">
 																person </span> <span
-															class="d-block fs-14 fw-medium flex-grow-1"> 내 계정 </span>
+															class="d-block fs-14 fw-medium flex-grow-1"> 로그인 후 이용해주세요. </span>
 													</a>
 														</c:otherwise>
 													</c:choose>
 													</li>
-													<li><a href="<%= request.getContextPath() %>/member/myReservation?memberID=${ member.memberID }"
+													
+													<c:choose>
+													<c:when test="${member != null}">
+													<div class="hr-dashed mt-4 mb-2"></div>
+												<ul class="list">
+													<li>
+													<a href="/member/read?email=${member.email }"
 														class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
 															<span
 															class="material-symbols-outlined mat-icon fs-28 flex-shrink-0">
 																event_note </span> <span
-															class="d-block fs-14 fw-medium flex-grow-1">내 예약</span></a>
-												</li>
-													<li><a href="<%= request.getContextPath() %>/member/wishlist?memberID=${ member.memberID }"	
+															class="d-block fs-14 fw-medium flex-grow-1"> 내 예약 </span>
+													</a>
+														</c:when>
+														<c:otherwise>
+														</c:otherwise>
+													</c:choose>
+													</li>
+													<c:choose>
+													<c:when test="${member != null}">
+													<div class="hr-dashed mt-4 mb-2"></div>
+												<ul class="list">
+													<li>
+													
+													<a href="/member/read?email=${member.email }"
 														class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
 															<span
 															class="material-symbols-outlined mat-icon fs-28 flex-shrink-0">
 																favorite </span> <span
-															class="d-block fs-14 fw-medium flex-grow-1">
-																찜 목록 </span>
-													</a></li>
-												</ul>
+															class="d-block fs-14 fw-medium flex-grow-1"> 찜 목록 </span>
+													</a>
+														</c:when>
+														<c:otherwise>
+														</c:otherwise>
+													</c:choose>
+													</li>
+													
 												<c:choose>
        												 <c:when test="${member != null}">
 												<div class="hr-dashed my-2"></div>

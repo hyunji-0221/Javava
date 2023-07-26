@@ -381,6 +381,7 @@ input.input1 {
 
 
 					<!-- 객실 -->
+					
 					<form method="POST" action="/reservation/reserve" role="form">
 					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
 						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
@@ -406,6 +407,8 @@ input.input1 {
 									<img src="/resources/img/img_400_280.jpg" alt="image"
 										class="img-fluid">
 								</div>
+								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+								<input type="hidden" name="AccommodationName" value="숙소이름">
 								<div class="content-wrapper">
 									<div class="property-card__body">
 										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
@@ -429,7 +432,7 @@ input.input1 {
 										<div
 											class="d-flex flex-wrap justify-content-between align-items-center">
 											<span class="d-block fs-20 fw-medium clr-primary-300">
-												&nbsp; </span> <!-- <a href="/reservation/reserve"
+											&nbsp; </span> <!-- <a href="/reservation/reserve"
 												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 												예약하기 </a> -->
 												<input type="submit" value="예약하기">
@@ -442,6 +445,7 @@ input.input1 {
 
 					</div>
 </form>
+
 					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
 						<div
 							class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-5">

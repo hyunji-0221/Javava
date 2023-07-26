@@ -30,72 +30,84 @@ a:hover {
 
 				<!-- 사이드바 영역 (시작) -->
 				<nav class="nav flex-column">
-					<a class="nav-link" href="<%= request.getContextPath() %>/member/read?email=${ member.email }">회원 정보 수정</a>
-					<a class="nav-link" href="<%= request.getContextPath() %>/member/myReservation?memberID=${ member.memberID }">예약 내역</a>
-					<a class="nav-link" href="<%= request.getContextPath() %>/member/wishlist?memberID=${ member.memberID }">찜 내역</a>
-					<a class="nav-link" href="<%= request.getContextPath() %>/member/modify?email=${ member.email }">내가 쓴 리뷰</a>
-					<a class="nav-link" href="<%= request.getContextPath() %>/member/modify?email=${ member.email }">회원탈퇴</a>
+					<a class="nav-link"
+						href="<%= request.getContextPath() %>/member/read?email=${ member.email }">회원
+						정보 수정</a> <a class="nav-link"
+						href="<%= request.getContextPath() %>/member/myReservation?memberID=${ member.memberID }">예약
+						내역</a> <a class="nav-link"
+						href="<%= request.getContextPath() %>/member/wishlist?memberID=${ member.memberID }">찜
+						내역</a> <a class="nav-link"
+						href="<%= request.getContextPath() %>/member/modify?email=${ member.email }">내가
+						쓴 리뷰</a> <a class="nav-link"
+						href="<%= request.getContextPath() %>/member/modify?email=${ member.email }">회원탈퇴</a>
 				</nav>
 				<!-- 사이드바 영역 (끝) -->
 
 
 				<!-- 내부 영역 (시작) -->
-				<c:forEach items="${ wList }" var="item">
-				<div class="p-6 bg-neutral-0 rounded-4 mb-10"
-					style="border: 1px solid black;">
-					<div
-						class="d-flex align-items-center justify-content-between flex-wrap gap-3">
-						<img src="/resources/img/jonghwantest.png" alt="image" />
 
-						<div>
-							<span class="mt-4 mb-8"
-								style="font-size: 30px; font-weight: bold;">${ item.accommodationName }</span>
+				<c:choose>
+					<c:when test="${ wList[0].memberID ==null }">
+						<h3>찜 목록이 비어있습니다.</h3>
+					</c:when>
+				</c:choose>
+
+				<c:forEach items="${ wList }" var="item">
+					<div class="p-6 bg-neutral-0 rounded-4 mb-10"
+						style="border: 1px solid black;">
+						<div
+							class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+							<img src="/resources/img/jonghwantest.png" alt="image" />
+
+							<div>
+								<span class="mt-4 mb-8"
+									style="font-size: 30px; font-weight: bold;">${ item.accommodationName }</span>
+								<ul
+									class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+									<li>
+										<div class="d-flex align-items-center gap-2">
+											<span
+												class="material-symbols-outlined mat-icon clr-secondary-400">
+												distance </span>
+											<p class="mb-0">${ item.address }</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+
 							<ul
 								class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-								<li>
-									<div class="d-flex align-items-center gap-2">
-										<span
-											class="material-symbols-outlined mat-icon clr-secondary-400">
-											distance </span>
-										<p class="mb-0">${ item.address }</p>
-									</div>
-								</li>
+								<div class="d-flex align-items-center gap-2">
+									<span
+										class="material-symbols-outlined mat-icon clr-secondary-400">
+										distance </span>
+									<p class="mb-0">결제 금액 : ${ item.paymentAmount }원</p>
+								</div>
 							</ul>
+							<ul
+								class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+								<div class="d-flex align-items-center gap-2">
+									<span
+										class="material-symbols-outlined mat-icon clr-secondary-400">
+										distance </span>
+									<p class="mb-0">이미지 : ${ item.mainImg }원</p>
+								</div>
+							</ul>
+							<div class="hr-dashed my-8"></div>
+							<div class="d-flex align-items-center gap-1">
+								<button type="button" class="btn btn-outline-primary">
+									<a href="/product/product_detail" style="color: black;">숙소
+										상세보기</a>
+								</button>
+								<button type="button" class="btn btn-outline-danger">
+									<a href="/product/product_detail" style="color: black;">찜
+										목록에서 제거</a>
+								</button>
+							</div>
+
+
 						</div>
-						
-					<ul
-						class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-						<div class="d-flex align-items-center gap-2">
-							<span
-								class="material-symbols-outlined mat-icon clr-secondary-400">
-								distance </span>
-							<p class="mb-0">결제 금액 : ${ item.paymentAmount }원</p>
-						</div>
-					</ul>
-					<ul
-						class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-						<div class="d-flex align-items-center gap-2">
-							<span
-								class="material-symbols-outlined mat-icon clr-secondary-400">
-								distance </span>
-							<p class="mb-0">이미지 : ${ item.mainImg }원</p>
-						</div>
-					</ul>
-					<div class="hr-dashed my-8"></div>
-					<div class="d-flex align-items-center gap-1">
-						<button type="button" class="btn btn-outline-primary">
-							<a href="/product/product_detail" style="color: black;">숙소
-								상세보기</a>
-						</button>
-						<button type="button" class="btn btn-outline-danger">
-							<a href="/product/product_detail" style="color: black;">예약
-								취소하기</a>
-						</button>
 					</div>
-
-
-
-				</div>
 				</c:forEach>
 				<!-- 내부 영역 (끝) -->
 
