@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.javava.vo.AccommodationVO;
 import com.javava.vo.ForJoinVO;
@@ -20,4 +21,10 @@ public interface AccommodationMapper {
 	
 	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID")
 	public List<ForJoinVO> getList();
+	
+	@Select("select * from accommodations where accommodationID = #{accommodationID}")
+	public AccommodationVO getRoomList(int accommodationID);
+	
+	@Update("update accommodations set room1_Name=#{room1_Name}, room1_Price=#{room1_Price}, room2_Name=#{room2_Name}, room2_Price=#{room2_Price}, room3_Name=#{room3_Name}, room3_Price=#{room3_Price} where accommodationID = #{accommodationID}")
+	public int modifyRoom(AccommodationVO acmd);
 }

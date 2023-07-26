@@ -789,16 +789,19 @@
     	alert('숙소가 등록되었습니다.');
     }
     if(result === 'mainImg') {
-    	alert('메인이미지를 변경하였습니다.')
+    	alert('메인이미지가 변경되었습니다.')
     }
     if(result === 'room1Img') {
-    	alert('객실1이미지를 변경하였습니다.')
+    	alert('객실1이미지가 변경되었습니다.')
     }
     if(result === 'room2Img') {
-    	alert('객실2이미지를 변경하였습니다.')
+    	alert('객실2이미지가 변경되었습니다.')
     }
     if(result === 'room3Img') {
-    	alert('객실3이미지를 변경하였습니다.')
+    	alert('객실3이미지가 변경되었습니다.')
+    }
+    if(result === 'room') {
+    	alert('객실 정보가 변경되었습니다.')
     }
     </script>
     <!-- CoreUI and necessary plugins-->
@@ -808,7 +811,6 @@
     <script src="/resources/admin/vendors/chart.js/js/chart.min.js"></script>
     <script src="/resources/admin/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
     <script src="/resources/admin/vendors/@coreui/utils/js/coreui-utils.js"></script>
-    <script src="resources/admin/js/main.js"></script>
     <script>
     </script>
 

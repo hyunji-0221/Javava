@@ -20,4 +20,8 @@ public interface AdminService {
 	
 	public ImageVO read(int accommodationID);
 
+	public AccommodationVO getRoomList(int accommodationID);
+	
+	public int modifyRoom(AccommodationVO acmd);
+	
 }

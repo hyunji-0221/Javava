@@ -55,7 +55,7 @@
 						<tbody align="center">
 							<td>${my.accommodationName }</td>
 							<td>${my.regDate }</td>
-							<td><a href="/admin/addRoom" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실 추가</a>
+							<td><a href="/admin/addRoom?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실 등록/변경</a>
 							<td><a href="/admin/uploadMainImg?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">메인이미지 변경</a></td>
 							<td><a href="/admin/uploadRoom1Img?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실1이미지 변경</a></td>
 							<td><a href="/admin/uploadRoom2Img?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실2이미지 변경</a></td>
@@ -76,7 +76,6 @@
 	<script
 		src="/resources/admin/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
 	<script src="/resources/admin/vendors/@coreui/utils/js/coreui-utils.js"></script>
-	<script src="resources/admin/js/main.js"></script>
 	<script>
 		
 	</script>

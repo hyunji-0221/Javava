@@ -77,6 +77,21 @@ public class AdminController {
 		log.info("객실3이미지등록");
 	}
 	
+	@GetMapping("/addRoom")
+	public void addRoom(int accommodationID, Model model) {
+		log.info("객실추가및변경");
+		model.addAttribute("room", service.getRoomList(accommodationID));
+		
+	}
+	
+	@PostMapping("/addRoom")
+	public String modifyRoom(AccommodationVO acmd, RedirectAttributes ra) {
+		log.info("addRoomPOST");
+		service.modifyRoom(acmd);
+		ra.addFlashAttribute("result", "room");
+		return "redirect:/admin/index";
+	}
+	
 	@PostMapping("/uploadMainImg")
 	public String uploadMain(@RequestParam("main_img") MultipartFile file, int accommodationID, RedirectAttributes ra) {
 		String fileRealName = file.getOriginalFilename(); //파일명을 얻어낼 수 있는 메서드!

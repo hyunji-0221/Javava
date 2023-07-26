@@ -55,4 +55,14 @@ public class AdminServiceImpl implements AdminService{
 	public ImageVO read(int accommodationID) {
 		return mapper2.read(accommodationID);
 	}
+	
+	@Override
+	public AccommodationVO getRoomList(int accommodationID) {
+		return mapper.getRoomList(accommodationID);
+	}
+	
+	@Override
+	public int modifyRoom(AccommodationVO acmd) {
+		return mapper.modifyRoom(acmd);
+	}
 }
