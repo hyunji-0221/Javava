@@ -1,12 +1,13 @@
 package com.javava.controller;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javava.service.ReservationService;
 import com.javava.vo.ReservationVO;
@@ -30,14 +31,14 @@ public class ReservationController {
 	
 	@PostMapping("/reserve")
 	public void test(ReservationVO vo, Model model) {
-		log.info("form test"+vo.getPaymentAmount()+vo.getRoomName()+vo.getCheckInDate());
+		log.info("form test"+vo);
 		model.addAttribute("reserve", vo);
 	}
 	
 	@PostMapping("/insert")
-	public String insert(/* @RequestParam int memberID, */ReservationVO vo ) {
+	public String insert(ReservationVO vo ) {
 		log.info("결제하기 폼");
-		//service.insert(vo);
-		return "redirect:/member/read";
+		service.insert(vo);
+		return "redirect:/";
 	}
 }
