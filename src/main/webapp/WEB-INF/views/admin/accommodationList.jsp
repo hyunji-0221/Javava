@@ -43,21 +43,21 @@
 					<hr class="border border-primary border-1 opacity-75">
 					<table class="table">
 						<thead class="table-dark" align="center">
-							<td width="20%">숙소이름</td>
-							<td width="20%">등록일</td>
-							<td width="15%"></td>
-							<td width="15%"></td>
+							<td width="10%">메인이미지</td>
+							<td width="10%">숙소이름</td>
+							<td width="20%">주소</td>
+							<td width="15%">등록일</td>
 							<td width="15%"></td>
 							<td width="15%"></td>
 						</thead>
-					<c:forEach items="${ myList }" var="my">
+					<c:forEach items="${ myFullList }" var="my">
 						<tbody align="center">
+							<td><img src="/resources/img1/${my.main_img }" alt="image" class="img-fluid w-100"></td>
 							<td>${my.accommodationName }</td>
+							<td>${my.address1 }</td>
 							<td>${my.regDate }</td>
-							<td><a href="/admin/uploadMainImg?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">메인이미지 변경</a></td>
-							<td><a href="/admin/uploadRoom1Img?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실1이미지 변경</a></td>
-							<td><a href="/admin/uploadRoom2Img?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실2이미지 변경</a></td>
-							<td><a href="/admin/uploadRoom3Img?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">객실3이미지 변경</a></td>
+							<td><a href="/admin/modify?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">수정하기</a></td>
+							<td><a href="/admin/delete?accommodationID=${ my.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">삭제하기</a></td>
 						</tbody>
 					</c:forEach>
 					</table>
@@ -65,6 +65,13 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	let result = "${result}";
+	
+	if(result === 'failDelete') {
+    	alert('비밀번호가 일치하지 않습니다!')
+    }
+	</script>
 	<!-- CoreUI and necessary plugins-->
 	<script
 		src="/resources/admin/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>

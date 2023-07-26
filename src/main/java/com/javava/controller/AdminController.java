@@ -14,8 +14,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.javava.service.AdminService;
+import com.javava.service.SellerService;
 import com.javava.vo.AccommodationVO;
 import com.javava.vo.ImageVO;
+import com.javava.vo.SellerVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -27,6 +29,7 @@ import lombok.extern.log4j.Log4j;
 public class AdminController {
 	
 	private AdminService service;
+	private SellerService service1;
 	
 	@GetMapping("/index")
 	public void index() {
@@ -53,11 +56,52 @@ public class AdminController {
 		
 		
 	}
-	@GetMapping("selectImage")
+	@GetMapping("/accommodationList")
+	public void getList(int sellerID, Model model) {
+		model.addAttribute("myFullList", service.getFullList(sellerID));
+		log.info("숙소리스트");
+	}
+	@GetMapping("/modify")
+	public void readAcc(int accommodationID, Model model) {
+		log.info("변경할 숙소정보출력");
+		model.addAttribute("myAcc", service.readAcc(accommodationID));
+	}
+	@PostMapping("/modify")
+	public String modify(AccommodationVO acc, RedirectAttributes ra) {
+		log.info("숙소변경완료");
+		service.modify(acc);
+		System.out.println(acc);
+		ra.addFlashAttribute("result", "modify");
+		return "redirect:/admin/index";
+	}
+	
+	@GetMapping("/selectImage")
 	public void selectImage(int sellerID, Model model) {
 		
 		model.addAttribute("myList", service.getMyList(sellerID));
 		log.info("업로드할 숙소선택");
+	}
+	
+	@GetMapping("/delete")
+	public void delete(int accommodationID) {
+		log.info("숙소삭제");
+	}
+	@GetMapping("/deleteProc")
+	public String deleteProc(int businessNumber, String checkPwd, int accommodationID, RedirectAttributes ra) {
+		SellerVO seller = service1.read(businessNumber);
+		int sellerID = seller.getSellerID();
+		if(checkPwd.equals(seller.getPassword())){
+			log.info("success:delete");
+			ra.addFlashAttribute("result", "successDelete");
+			service.delete(accommodationID);
+			service.deleteImg(accommodationID);
+			return "redirect:/admin/index";
+		} else {
+			log.info("fail:delete");
+			ra.addFlashAttribute("result", "failDelete");
+			return "redirect:/admin/accommodationList?sellerID=" + sellerID;
+		}
+		
 	}
 	
 	@GetMapping("/uploadMainImg")
@@ -77,20 +121,6 @@ public class AdminController {
 		log.info("객실3이미지등록");
 	}
 	
-	@GetMapping("/addRoom")
-	public void addRoom(int accommodationID, Model model) {
-		log.info("객실추가및변경");
-		model.addAttribute("room", service.getRoomList(accommodationID));
-		
-	}
-	
-	@PostMapping("/addRoom")
-	public String modifyRoom(AccommodationVO acmd, RedirectAttributes ra) {
-		log.info("addRoomPOST");
-		service.modifyRoom(acmd);
-		ra.addFlashAttribute("result", "room");
-		return "redirect:/admin/index";
-	}
 	
 	@PostMapping("/uploadMainImg")
 	public String uploadMain(@RequestParam("main_img") MultipartFile file, int accommodationID, RedirectAttributes ra) {

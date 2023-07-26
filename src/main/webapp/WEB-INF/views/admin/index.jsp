@@ -803,6 +803,14 @@
     if(result === 'room') {
     	alert('객실 정보가 변경되었습니다.')
     }
+    if(result === 'successDelete') {
+    	alert('해당 숙소가 삭제되었습니다.')
+    }
+    if(result === 'modify') {
+    	alert('해당 숙소정보가 변경되었습니다.')
+    }
+    
+   
     </script>
     <!-- CoreUI and necessary plugins-->
     <script src="/resources/admin/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>

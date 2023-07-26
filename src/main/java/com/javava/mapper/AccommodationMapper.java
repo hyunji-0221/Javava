@@ -2,6 +2,7 @@ package com.javava.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -22,9 +23,15 @@ public interface AccommodationMapper {
 	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID")
 	public List<ForJoinVO> getList();
 	
-	@Select("select * from accommodations where accommodationID = #{accommodationID}")
-	public AccommodationVO getRoomList(int accommodationID);
+	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID WHERE sellerID = #{sellerID}")
+	public List<ForJoinVO> getFullList(int sellerID);
 	
-	@Update("update accommodations set room1_Name=#{room1_Name}, room1_Price=#{room1_Price}, room2_Name=#{room2_Name}, room2_Price=#{room2_Price}, room3_Name=#{room3_Name}, room3_Price=#{room3_Price} where accommodationID = #{accommodationID}")
-	public int modifyRoom(AccommodationVO acmd);
+	@Delete("delete from accommodations where accommodationID = #{accommodationID}")
+	public int delete(int accommodationID);
+	
+	@Select("select * from accommodations where accommodationID = #{accommodationID}")
+	public AccommodationVO readAcc(int accommodationID);
+	
+	@Update("update accommodations set accommodationName = #{accommodationName}, zipcode = #{zipcode}, address1 = #{address1}, address2 = #{address2}, region = #{region}, price = #{price}, description = #{description}, room1_Name = #{room1_Name}, room1_Price= #{room1_Price}, room2_Name=#{room2_Name}, room2_Price = #{room2_Price}, room3_Name=#{room3_Name}, room3_Price = #{room3_Price} where accommodationID = #{accommodationID}")
+	public int modify(AccommodationVO acc);
 }
