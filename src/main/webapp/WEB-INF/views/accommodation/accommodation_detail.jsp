@@ -7,8 +7,10 @@
 <%@ include file="/resources/in/meta.jsp"%>
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/js/moment.min.js"></script>
-<script type="text/javascript" src="/resources/js/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/resources/css/daterangepicker.css" />
+<script type="text/javascript"
+	src="/resources/js/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/resources/css/daterangepicker.css" />
 
 </head>
 
@@ -73,6 +75,8 @@ input.input1 {
 
 <body>
 	<script>
+	
+	let full=0;
 		$(function() {
 			$('input[name="daterange"]').daterangepicker(
 					{
@@ -98,8 +102,35 @@ input.input1 {
 						//submit button event
 					});
 			
+			const imageElement=document.getElementById('img');
+			
+			
+			
+			imageElement.addEventListener('click', function () {
+				  if (full) {
+				    imageElement.src = '/resources/img/emptyheart.png';
+				    full=1;
+				  } else{
+				    imageElement.src = '/resources/img/fullheart.png';
+				    full=0;
+				  }
+				  
+			});
+			
 			
 		});
+		window.onbeforeunload = function() {
+			$.ajax({
+				type:'post',
+				url:'/wish/full',
+				data:{"address" : "aaa"},
+				dataType:'text',
+				success : function(data){
+					alert("데이터 전송 성공");
+				}
+			});
+			  return false;
+		};
 	</script>
 
 	<%@ include file="/resources/in/header.jsp"%>
@@ -163,25 +194,37 @@ input.input1 {
 							<div class="py-3 px-6 bg-primary-50 rounded-pill">
 								<h5 class="clr-primary-300 d-inline-block mb-0">3성급</h5>
 							</div>
+
+
+
+							<!-- 좋아요 하트 영역 -->
+
+
 							<ul class="list list-row gap-3 align-items-center">
-								<li><a href="#"
-									class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-										<span class="material-symbols-outlined mat-icon fs-20">
-											favorite </span>
-								</a></li>
-								<li><a href="#"
-									class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-										<span class="material-symbols-outlined mat-icon fs-20">
-											compare_arrows </span>
-								</a></li>
-								<li><a href="#"
-									class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-										<span class="material-symbols-outlined mat-icon fs-20">
-											Share </span>
-								</a></li>
+								<li>
+								<c:set var="test" value="${ wishlist.full }" scope="page"/> 
+								<c:if test="${ test==0 }">
+										<button class="like"
+											style="background-color: white; border: 0px;">
+											<img id="img" src="/resources/img/emptyheart.png" />
+										</button>
+								</c:if>
+								<c:if test="${ test==1 }">
+										<button class="like"
+											style="background-color: white; border: 0px;">
+											<img id="img" src="/resources/img/fullheart.png" />
+										</button>
+								</c:if>
+								</li>
 							</ul>
+
+
+							<!-- 좋아요 하트 영역 -->
+
+
+
 						</div>
-						<h2 class="mt-4 mb-8">로이넷 호텔</h2>
+						<h2 class="mt-4 mb-8">${ accommodation.accommodationName }</h2>
 						<ul
 							class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
 							<li>
@@ -189,7 +232,7 @@ input.input1 {
 									<span
 										class="material-symbols-outlined mat-icon clr-secondary-400">
 										distance </span>
-									<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+									<p class="mb-0">${ accommodation.address1 }</p>
 								</div>
 							</li>
 
@@ -381,70 +424,75 @@ input.input1 {
 
 
 					<!-- 객실 -->
-					
-					<form method="POST" action="/reservation/reserve" role="form">
-					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
-						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
-							<h4 class="mb-0">객실</h4>
 
-							<div
-								class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
-								<span
-									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
-									calendar_month </span>
-								<div class="flex-grow-1 CheckInOutDate" >
-									<input type="text" class="form-control input1" name="daterange">
+					<form method="POST" action="/reservation/reserve" role="form">
+						<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+							<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
+								<h4 class="mb-0">객실</h4>
+
+								<div
+									class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+									<span
+										class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
+										calendar_month </span>
+									<div class="flex-grow-1 CheckInOutDate">
+										<input type="text" class="form-control input1"
+											name="daterange">
+									</div>
 								</div>
+
 							</div>
 
-						</div>
-
-
-						<div class="container">
 
 							<div class="container">
-								<div class="image-wrapper">
-									<img src="/resources/img/img_400_280.jpg" alt="image"
-										class="img-fluid">
-								</div>
-								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
-								<input type="hidden" name="AccommodationName" value="숙소이름">
-								<div class="content-wrapper">
-									<div class="property-card__body">
-										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
-										<input name="roomName" value="스위트룸">
-										</span>
+
+								<div class="container">
+									<div class="image-wrapper">
+										<img src="/resources/img/img_400_280.jpg" alt="image"
+											class="img-fluid">
 									</div>
-									<div class="card_body">
-										<div
-											class="d-flex flex-wrap justify-content-between align-items-center">
-											<span class="d-block fs-20 fw-medium clr-primary-300">
-												가격 </span> 
-											<span class="d-block fs-20 fw-medium clr-primary-300">
-											<input type="text" name="paymentAmount" value="1000">
-												 </span>
+									<input type="hidden"
+										value="<%=request.getParameter("accommodationID")%>"
+										name="accommodationID"> <input type="hidden"
+										name="AccommodationName" value="숙소이름">
+									<div class="content-wrapper">
+										<div class="property-card__body">
+											<span
+												class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+												<input name="roomName" value="스위트룸">
+											</span>
 										</div>
-									</div>
-									<div class="property-card__body py-0">
-										<div class="hr-dashed"></div>
-									</div>
-									<div class="property-card__body">
-										<div
-											class="d-flex flex-wrap justify-content-between align-items-center">
-											<span class="d-block fs-20 fw-medium clr-primary-300">
-											&nbsp; </span> <!-- <a href="/reservation/reserve"
+										<div class="card_body">
+											<div
+												class="d-flex flex-wrap justify-content-between align-items-center">
+												<span class="d-block fs-20 fw-medium clr-primary-300">
+													가격 </span> <span class="d-block fs-20 fw-medium clr-primary-300">
+													<input type="text" name="paymentAmount"
+													value="${ accommodation.price }">
+												</span>
+											</div>
+										</div>
+										<div class="property-card__body py-0">
+											<div class="hr-dashed"></div>
+										</div>
+										<div class="property-card__body">
+											<div
+												class="d-flex flex-wrap justify-content-between align-items-center">
+												<span class="d-block fs-20 fw-medium clr-primary-300">
+													&nbsp; </span>
+												<!-- <a href="/reservation/reserve"
 												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
 												예약하기 </a> -->
 												<input type="submit" value="예약하기">
+											</div>
 										</div>
 									</div>
 								</div>
+
 							</div>
 
 						</div>
-
-					</div>
-</form>
+					</form>
 
 					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
 						<div
@@ -720,7 +768,7 @@ input.input1 {
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 
