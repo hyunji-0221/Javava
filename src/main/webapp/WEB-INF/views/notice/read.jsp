@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,33 +43,16 @@
 
 
 
-		
-	
-				<div class="row">
-					<h1>공지사항 조회</h1>
-					<hr class="border border-primary border-1 opacity-75">
-					<table class="table">
 
-						<thead class="table-dark" align="center">
-							<tr>
-								<td width="10%">No.</td>
-								<td width="60%">제목</td>
-								<td width="20%">작성일</td>
-								<td width="10%">조회수</td>
-							</tr>
-						</thead>
-			<c:forEach items="${nList}" var="item">
-						<tbody align="center">
-						<tr>
-							 <td>${item.bno }</td> 
-							<td><a href="/notice/read?bno=${item.bno}">${ item.title }</td>
-							<td>${item.regDate }</td>
-								<td>${item.hit }</td>
-						</tr>
-						</tbody>
-						
-					</c:forEach>
-					</table>
+
+				<div class="row">
+					<h1>${nread.title }</h1>
+					<hr class="border border-primary border-1 opacity-75">
+					
+			
+				<h3>${nread.content }</h3>
+			<class year="margin-left">	<h3><fmt:formatDate value="${nread.regDate }" pattern="yyyy-MM-dd"/></h3></class>
+			<h1></h1>
 				</div>
 				
 				
@@ -87,7 +71,6 @@
 	<script
 		src="/resources/admin/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
 	<script src="/resources/admin/vendors/@coreui/utils/js/coreui-utils.js"></script>
-	<script src="resources/admin/js/main.js"></script>
 	<script>
 			
 		</script>
