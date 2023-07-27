@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javava.service.ReservationService;
 import com.javava.vo.ReservationVO;
@@ -30,9 +31,15 @@ public class ReservationController {
 	}
 	
 	@PostMapping("/reserve")
-	public void test(ReservationVO vo, Model model) {
-		log.info("form test"+vo);
-		model.addAttribute("reserve", vo);
+	public String test(ReservationVO vo, Model model, HttpSession session) {
+		log.info("loginCheck");
+		if(session.getAttribute("member")!=null) {
+			model.addAttribute("reserve", vo);
+			return "reservation/reserve";
+		}
+		else {
+			return "redirect:/member/login";
+		}
 	}
 	
 	@PostMapping("/insert")

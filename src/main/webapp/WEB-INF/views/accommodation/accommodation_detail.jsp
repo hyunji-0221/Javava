@@ -87,7 +87,7 @@ input.input1 {
 						var formObj = $("form[role='form']");
 						
 							let str="";
-							$(".CheckInOutDate").each(function(i, obj){
+							$(".CheckInOutDate1").each(function(i, obj){
 								var jobj = $(obj);
 								console.dir(jobj);
 								str += `<input type = 'hidden' name='checkInDate' value = '\${start.format('YYYY-MM-DD')}'>
@@ -97,7 +97,6 @@ input.input1 {
 							formObj.append(str)//.submit();
 						//submit button event
 					});
-			
 			
 		});
 	</script>
@@ -379,9 +378,78 @@ input.input1 {
 						</div>
 					</div>
 
+<c:if test="${ acc.room1_Name ne null}">
 
-					<!-- 객실 -->
-					
+
+					<!-- 객실1 -->
+			
+					<form method="POST" action="/reservation/reserve" role="form">
+					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
+							<h4 class="mb-0">객실</h4>
+
+							<div
+								class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+								<span
+									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
+									calendar_month </span>
+								<div class="flex-grow-1 CheckInOutDate1" >
+									<input type="text" class="form-control input1" name="daterange">
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="container">
+
+							<div class="container">
+								<div class="image-wrapper">
+									<img src="/resources/img/img_400_280.jpg" alt="image"
+										class="img-fluid">
+								</div>
+								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+								<input type="hidden" name="accommodationName" value="${ acc.accommodationName} }">
+								<div class="content-wrapper">
+									<div class="property-card__body">
+										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+										<input name="roomName" value="${ acc.room1_Name }">
+										</span>
+									</div>
+									<div class="card_body">
+										<div
+											class="d-flex flex-wrap justify-content-between align-items-center">
+											<span class="d-block fs-20 fw-medium clr-primary-300">
+												가격 </span> 
+											<span class="d-block fs-20 fw-medium clr-primary-300">
+											<input type="text" name="paymentAmount" value="${ acc.room1_Price }">
+												 </span>
+										</div>
+									</div>
+									<div class="property-card__body py-0">
+										<div class="hr-dashed"></div>
+									</div>
+									<div class="property-card__body">
+										<div
+											class="d-flex flex-wrap justify-content-between align-items-center">
+											<span class="d-block fs-20 fw-medium clr-primary-300">
+											&nbsp; </span> <!-- <a href="/reservation/reserve"
+												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
+												예약하기 </a> -->
+												<input type="submit" value="예약하기">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+</form>
+</c:if>
+<c:if test="${ acc.room2_Name ne null}">
+<!-- 객실2 -->
+			
 					<form method="POST" action="/reservation/reserve" role="form">
 					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
 						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
@@ -408,11 +476,11 @@ input.input1 {
 										class="img-fluid">
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
-								<input type="hidden" name="AccommodationName" value="숙소이름">
+								<input type="hidden" name="AccommodationName" value="${ acc.accommodationName }">
 								<div class="content-wrapper">
 									<div class="property-card__body">
 										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
-										<input name="roomName" value="스위트룸">
+										<input name="roomName" value="${ acc.room2_Name }">
 										</span>
 									</div>
 									<div class="card_body">
@@ -421,7 +489,7 @@ input.input1 {
 											<span class="d-block fs-20 fw-medium clr-primary-300">
 												가격 </span> 
 											<span class="d-block fs-20 fw-medium clr-primary-300">
-											<input type="text" name="paymentAmount" value="1000">
+											<input type="text" name="paymentAmount" value="${ acc.room2_Price }">
 												 </span>
 										</div>
 									</div>
@@ -445,6 +513,74 @@ input.input1 {
 
 					</div>
 </form>
+</c:if>
+<c:if test="${ acc.room3_Name ne null}">
+<!-- 객실3 -->
+			
+					<form method="POST" action="/reservation/reserve" role="form">
+					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
+							<h4 class="mb-0">객실</h4>
+
+							<div
+								class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+								<span
+									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
+									calendar_month </span>
+								<div class="flex-grow-1 CheckInOutDate" >
+									<input type="text" class="form-control input1" name="daterange">
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="container">
+
+							<div class="container">
+								<div class="image-wrapper">
+									<img src="/resources/img/img_400_280.jpg" alt="image"
+										class="img-fluid">
+								</div>
+								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+								<input type="hidden" name="AccommodationName" value="${ acc.accommodationName }">
+								<div class="content-wrapper">
+									<div class="property-card__body">
+										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+										<input name="roomName" value="${ acc.room3_Name }">
+										</span>
+									</div>
+									<div class="card_body">
+										<div
+											class="d-flex flex-wrap justify-content-between align-items-center">
+											<span class="d-block fs-20 fw-medium clr-primary-300">
+												가격 </span> 
+											<span class="d-block fs-20 fw-medium clr-primary-300">
+											<input type="text" name="paymentAmount" value="${ acc.room3_Price }">
+												 </span>
+										</div>
+									</div>
+									<div class="property-card__body py-0">
+										<div class="hr-dashed"></div>
+									</div>
+									<div class="property-card__body">
+										<div
+											class="d-flex flex-wrap justify-content-between align-items-center">
+											<span class="d-block fs-20 fw-medium clr-primary-300">
+											&nbsp; </span> <!-- <a href="/reservation/reserve"
+												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
+												예약하기 </a> -->
+												<input type="submit" value="예약하기">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+</form>
+</c:if>
 
 					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
 						<div
