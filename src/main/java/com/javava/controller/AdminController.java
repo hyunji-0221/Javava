@@ -1,8 +1,11 @@
 package com.javava.controller;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -123,7 +126,7 @@ public class AdminController {
 	
 	
 	@PostMapping("/uploadMainImg")
-	public String uploadMain(@RequestParam("main_img") MultipartFile file, int accommodationID, RedirectAttributes ra) {
+	public String uploadMain(@RequestParam("main_img") MultipartFile file, int accommodationID, RedirectAttributes ra,HttpServletRequest request) {
 		String fileRealName = file.getOriginalFilename(); //파일명을 얻어낼 수 있는 메서드!
 		long size = file.getSize(); //파일 사이즈
 		
@@ -131,8 +134,8 @@ public class AdminController {
 		System.out.println("용량크기(byte) : " + size);
 		//서버에 저장할 파일이름 fileextension으로 .jsp이런식의  확장자 명을 구함
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
-		
+		String defaultfilepath = request.getSession().getServletContext().getRealPath("");
+		String uploadFolder =  defaultfilepath + "\\resources\\img1";
 		
 		/*
 		  파일 업로드시 파일명이 동일한 파일이 이미 존재할 수도 있고 사용자가 
@@ -174,14 +177,15 @@ public class AdminController {
 	}
 	
 	@PostMapping("/uploadRoom1Img")
-	public String uploadRoom1(@RequestParam("room1_img") MultipartFile file, int accommodationID, RedirectAttributes ra) {
+	public String uploadRoom1(@RequestParam("room1_img") MultipartFile file, int accommodationID, RedirectAttributes ra, HttpServletRequest request) {
 		String fileRealName = file.getOriginalFilename(); //파일명을 얻어낼 수 있는 메서드!
 		long size = file.getSize(); //파일 사이즈
 		log.info("객실1이미지등록POST");
 		System.out.println("파일명 : "  + fileRealName);
 		System.out.println("용량크기(byte) : " + size);
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
+		String defaultfilepath = request.getSession().getServletContext().getRealPath("");
+		String uploadFolder =  defaultfilepath + "\\resources\\img1";
 		
 		UUID uuid = UUID.randomUUID();
 		System.out.println(uuid.toString());
@@ -214,14 +218,15 @@ public class AdminController {
 		return "redirect:/admin/index";
 	}
 	@PostMapping("/uploadRoom2Img")
-	public String uploadRoom2(@RequestParam("room2_img") MultipartFile file, int accommodationID, RedirectAttributes ra) {
+	public String uploadRoom2(@RequestParam("room2_img") MultipartFile file, int accommodationID, RedirectAttributes ra, HttpServletRequest request) {
 		String fileRealName = file.getOriginalFilename(); //파일명을 얻어낼 수 있는 메서드!
 		long size = file.getSize(); //파일 사이즈
 		log.info("객실2이미지등록POST");
 		System.out.println("파일명 : "  + fileRealName);
 		System.out.println("용량크기(byte) : " + size);
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
+		String defaultfilepath = request.getSession().getServletContext().getRealPath("");
+		String uploadFolder =  defaultfilepath + "\\resources\\img1";
 		
 		UUID uuid = UUID.randomUUID();
 		System.out.println(uuid.toString());
@@ -254,14 +259,15 @@ public class AdminController {
 		return "redirect:/admin/index";
 	}
 	@PostMapping("/uploadRoom3Img")
-	public String uploadRoom3(@RequestParam("room3_img") MultipartFile file, int accommodationID, RedirectAttributes ra) {
+	public String uploadRoom3(@RequestParam("room3_img") MultipartFile file, int accommodationID, RedirectAttributes ra, HttpServletRequest request) {
 		String fileRealName = file.getOriginalFilename(); //파일명을 얻어낼 수 있는 메서드!
 		long size = file.getSize(); //파일 사이즈
 		log.info("객실3이미지등록POST");
 		System.out.println("파일명 : "  + fileRealName);
 		System.out.println("용량크기(byte) : " + size);
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\spring\\Javava\\src\\main\\webapp\\resources\\img1";
+		String defaultfilepath = request.getSession().getServletContext().getRealPath("");
+		String uploadFolder =  defaultfilepath + "\\resources\\img1";
 		
 		UUID uuid = UUID.randomUUID();
 		System.out.println(uuid.toString());

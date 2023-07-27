@@ -12,6 +12,7 @@ public class ReservationServiceImpl implements ReservationService {
 	@Autowired
 	ReservationMapper mapper;
 	
+	@Override
 	public int insert(ReservationVO vo) {
 		return mapper.insert(vo);
 	}

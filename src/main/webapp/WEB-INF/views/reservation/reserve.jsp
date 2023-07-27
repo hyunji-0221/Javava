@@ -75,9 +75,9 @@
 							<p>숙소 이름</p>
 							<div class="row g-4">
 								<div class="col-12 reserve_info">
-									<p class="reserve_roomInfo">${ reserve.accommodationName }
+									<p class="reserve_roomInfo">${ reserve.accommodationName }</p>
 									<input type="hidden" name="accommodationName" value="${ reserve.accommodationName }">
-									</p>
+									
 								</div>
 							</div>
 							<p>객실 타입</p>
