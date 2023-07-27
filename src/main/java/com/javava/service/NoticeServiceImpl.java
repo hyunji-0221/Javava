@@ -20,5 +20,11 @@ public class NoticeServiceImpl implements NoticeService {
 		// List<NoticeVO> list = mapper.getList();
 		return mapper.getList();
 	}
+	
+	@Override
+	public NoticeVO read(int bno){
+		
+		return mapper.read(bno);
+	}
 
 }

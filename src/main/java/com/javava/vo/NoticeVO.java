@@ -9,10 +9,9 @@ public class NoticeVO {  //
 
 	private int bno;
 	private String title;
-	private String content;
 	private int hit;
 	private Date regDate;
-
-
+	private String content;
+	
 
 }
