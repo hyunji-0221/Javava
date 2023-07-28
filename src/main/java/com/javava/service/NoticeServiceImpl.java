@@ -26,5 +26,13 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		return mapper.read(bno);
 	}
+	
+	
+	@Override
+	public void insert(NoticeVO vo) {
+		
+		mapper.insert(vo);
+	}
+		
 
 }
