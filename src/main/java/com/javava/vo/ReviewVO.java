@@ -13,5 +13,6 @@ public class ReviewVO {
 	private String content;
 	private String writer;
 	private Date creationDate;
+	private String title;
 
 }
