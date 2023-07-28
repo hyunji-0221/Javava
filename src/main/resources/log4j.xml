@@ -19,6 +19,10 @@
 	<logger name="com.javava.controller">
 		<level value="info" />
 	</logger>
+	
+	<logger name="com.javava.service">
+		<level value="info" />
+	</logger>
 
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">

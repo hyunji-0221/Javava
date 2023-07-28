@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.javava.mapper.MemberMapper;
 import com.javava.vo.MemberVO;
 import com.javava.vo.ReservationVO;
-import com.javava.vo.WishListVO;
+import com.javava.vo.WishVO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -64,7 +64,7 @@ public class MemberServiceImpl implements MemberService{
 		}
 		
 		@Override
-		public List<WishListVO> getWishList(int memberID) {
+		public List<WishVO> getWishList(int memberID) {
 			return mapper.getWishList(memberID);
 		}
 }

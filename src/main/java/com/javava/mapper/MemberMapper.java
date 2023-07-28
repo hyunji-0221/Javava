@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.javava.vo.MemberVO;
 import com.javava.vo.ReservationVO;
-import com.javava.vo.WishListVO;
+import com.javava.vo.WishVO;
 
 @Mapper
 public interface MemberMapper {
@@ -35,5 +35,5 @@ public interface MemberMapper {
 	public List<ReservationVO> getReservationList(int memberID);
 	
 	@Select("select * from wishlist where memberID=#{memberID}")
-	public List<WishListVO> getWishList(int memberID);
+	public List<WishVO> getWishList(int memberID);
 }

@@ -25,4 +25,5 @@ public class AccommodationVO {
 	private int room2_Price;
 	private int room3_Price;
 	
+	
 }
