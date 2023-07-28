@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.javava.vo.MemberVO;
 import com.javava.vo.ReservationVO;
-import com.javava.vo.WishListVO;
+import com.javava.vo.WishVO;
 
 public interface MemberService {
 
@@ -17,5 +17,5 @@ public interface MemberService {
 		public int delete(String email);
 		public int update(MemberVO member);
 		public List<ReservationVO> getReservationList(int memberID);
-		public List<WishListVO> getWishList(int memberID);
+		public List<WishVO> getWishList(int memberID);
 }
