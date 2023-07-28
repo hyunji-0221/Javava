@@ -1,0 +1,10 @@
+diff a/src/main/java/com/javava/controller/MemberController.java b/src/main/java/com/javava/controller/MemberController.java	(rejected hunks)
+@@ -80,7 +80,7 @@
+ 	
+ 	@GetMapping("/wishlist")
+ 	public void getWishList(@RequestParam String memberID, Model model) {
+-		List<WishListVO> wishlist=service.getWishList(Integer.parseInt(memberID));
++		List<WishVO> wishlist=service.getWishList(Integer.parseInt(memberID));
+ 		model.addAttribute("wList", wishlist);
+ 		log.info("wishlist");
+ 	}

@@ -1,5 +1,6 @@
 package com.javava.mapper;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -14,5 +15,4 @@ public interface WishListMapper {
 	
 	@Update("update wishlist set full=#{full} where memberID=#{memberID}")
 	public int fullUpdate(WishVO vo);
-	
 }

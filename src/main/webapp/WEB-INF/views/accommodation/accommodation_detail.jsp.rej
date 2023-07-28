@@ -1,0 +1,454 @@
+diff a/src/main/webapp/WEB-INF/views/accommodation/accommodation_detail.jsp b/src/main/webapp/WEB-INF/views/accommodation/accommodation_detail.jsp	(rejected hunks)
+@@ -7,8 +7,10 @@
+ <%@ include file="/resources/in/meta.jsp"%>
+ <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+ <script type="text/javascript" src="/resources/js/moment.min.js"></script>
+-<script type="text/javascript" src="/resources/js/daterangepicker.min.js"></script>
+-<link rel="stylesheet" type="text/css" href="/resources/css/daterangepicker.css" />
++<script type="text/javascript"
++	src="/resources/js/daterangepicker.min.js"></script>
++<link rel="stylesheet" type="text/css"
++	href="/resources/css/daterangepicker.css" />
+ 
+ </head>
+ 
+@@ -73,6 +75,8 @@
+ 
+ <body>
+ 	<script>
++	
++	let full=0;
+ 		$(function() {
+ 			$('input[name="daterange"]').daterangepicker(
+ 					{
+@@ -87,7 +91,7 @@
+ 						var formObj = $("form[role='form']");
+ 						
+ 							let str="";
+-							$(".CheckInOutDate1").each(function(i, obj){
++							$(".CheckInOutDate").each(function(i, obj){
+ 								var jobj = $(obj);
+ 								console.dir(jobj);
+ 								str += `<input type = 'hidden' name='checkInDate' value = '\${start.format('YYYY-MM-DD')}'>
+@@ -98,20 +102,35 @@
+ 						//submit button event
+ 					});
+ 			
+-			window.onbeforeunload = function() {
+-				$.ajax({
+-					type:'post',
+-					url:'/wish/full',
+-					data:{"address" : "aaa"},
+-					dataType:'text',
+-					success : function(data){
+-						alert("데이터 전송 성공");
+-					}
+-				});
+-				  return false;
+-			};
++			const imageElement=document.getElementById('img');
++			
++			
++			
++			imageElement.addEventListener('click', function () {
++				  if (full) {
++				    imageElement.src = '/resources/img/emptyheart.png';
++				    full=1;
++				  } else{
++				    imageElement.src = '/resources/img/fullheart.png';
++				    full=0;
++				  }
++				  
++			});
++			
+ 			
+ 		});
++		window.onbeforeunload = function() {
++			$.ajax({
++				type:'post',
++				url:'/wish/full',
++				data:{"address" : "aaa"},
++				dataType:'text',
++				success : function(data){
++					alert("데이터 전송 성공");
++				}
++			});
++			  return false;
++		};
+ 	</script>
+ 
+ 	<%@ include file="/resources/in/header.jsp"%>
+@@ -175,9 +194,9 @@
+ 							<div class="py-3 px-6 bg-primary-50 rounded-pill">
+ 								<h5 class="clr-primary-300 d-inline-block mb-0">3성급</h5>
+ 							</div>
+-							
+-							
+-							
++
++
++
+ 							<!-- 좋아요 하트 영역 -->
+ 
+ 
+@@ -201,12 +220,11 @@
+ 
+ 
+ 							<!-- 좋아요 하트 영역 -->
+-							
+-							
+-							
+-							
++
++
++
+ 						</div>
+-						<h2 class="mt-4 mb-8">로이넷 호텔</h2>
++						<h2 class="mt-4 mb-8">${ accommodation.accommodationName }</h2>
+ 						<ul
+ 							class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+ 							<li>
+@@ -214,7 +232,7 @@
+ 									<span
+ 										class="material-symbols-outlined mat-icon clr-secondary-400">
+ 										distance </span>
+-									<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
++									<p class="mb-0">${ accommodation.address1 }</p>
+ 								</div>
+ 							</li>
+ 
+@@ -404,209 +422,77 @@
+ 						</div>
+ 					</div>
+ 
+-<c:if test="${ acc.room1_Name ne null}">
+ 
++					<!-- 객실 -->
+ 
+-					<!-- 객실1 -->
+-			
+ 					<form method="POST" action="/reservation/reserve" role="form">
+-					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+-						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
+-							<h4 class="mb-0">객실</h4>
+-
+-							<div
+-								class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+-								<span
+-									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
+-									calendar_month </span>
+-								<div class="flex-grow-1 CheckInOutDate1" >
+-									<input type="text" class="form-control input1" name="daterange">
+-								</div>
+-							</div>
++						<div class="p-6 bg-neutral-0 rounded-4 mb-10">
++							<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
++								<h4 class="mb-0">객실</h4>
+ 
+-						</div>
+-
+-
+-						<div class="container">
+-
+-							<div class="container">
+-								<div class="image-wrapper">
+-									<img src="/resources/img/img_400_280.jpg" alt="image"
+-										class="img-fluid">
+-								</div>
+-								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+-								<input type="hidden" name="accommodationName" value="${ acc.accommodationName} }">
+-								<div class="content-wrapper">
+-									<div class="property-card__body">
+-										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+-										<input name="roomName" value="${ acc.room1_Name }">
+-										</span>
+-									</div>
+-									<div class="card_body">
+-										<div
+-											class="d-flex flex-wrap justify-content-between align-items-center">
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-												가격 </span> 
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-											<input type="text" name="paymentAmount" value="${ acc.room1_Price }">
+-												 </span>
+-										</div>
+-									</div>
+-									<div class="property-card__body py-0">
+-										<div class="hr-dashed"></div>
+-									</div>
+-									<div class="property-card__body">
+-										<div
+-											class="d-flex flex-wrap justify-content-between align-items-center">
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-											&nbsp; </span> <!-- <a href="/reservation/reserve"
+-												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
+-												예약하기 </a> -->
+-												<input type="submit" value="예약하기">
+-										</div>
++								<div
++									class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
++									<span
++										class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
++										calendar_month </span>
++									<div class="flex-grow-1 CheckInOutDate">
++										<input type="text" class="form-control input1"
++											name="daterange">
+ 									</div>
+ 								</div>
+-							</div>
+ 
+-						</div>
+-
+-					</div>
+-</form>
+-</c:if>
+-<c:if test="${ acc.room2_Name ne null}">
+-<!-- 객실2 -->
+-			
+-					<form method="POST" action="/reservation/reserve" role="form">
+-					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+-						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
+-							<h4 class="mb-0">객실</h4>
+-
+-							<div
+-								class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+-								<span
+-									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
+-									calendar_month </span>
+-								<div class="flex-grow-1 CheckInOutDate" >
+-									<input type="text" class="form-control input1" name="daterange">
+-								</div>
+ 							</div>
+ 
+-						</div>
+-
+-
+-						<div class="container">
+ 
+ 							<div class="container">
+-								<div class="image-wrapper">
+-									<img src="/resources/img/img_400_280.jpg" alt="image"
+-										class="img-fluid">
+-								</div>
+-								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+-								<input type="hidden" name="AccommodationName" value="${ acc.accommodationName }">
+-								<div class="content-wrapper">
+-									<div class="property-card__body">
+-										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+-										<input name="roomName" value="${ acc.room2_Name }">
+-										</span>
++
++								<div class="container">
++									<div class="image-wrapper">
++										<img src="/resources/img/img_400_280.jpg" alt="image"
++											class="img-fluid">
+ 									</div>
+-									<div class="card_body">
+-										<div
+-											class="d-flex flex-wrap justify-content-between align-items-center">
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-												가격 </span> 
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-											<input type="text" name="paymentAmount" value="${ acc.room2_Price }">
+-												 </span>
++									<input type="hidden"
++										value="<%=request.getParameter("accommodationID")%>"
++										name="accommodationID"> <input type="hidden"
++										name="AccommodationName" value="숙소이름">
++									<div class="content-wrapper">
++										<div class="property-card__body">
++											<span
++												class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
++												<input name="roomName" value="스위트룸">
++											</span>
+ 										</div>
+-									</div>
+-									<div class="property-card__body py-0">
+-										<div class="hr-dashed"></div>
+-									</div>
+-									<div class="property-card__body">
+-										<div
+-											class="d-flex flex-wrap justify-content-between align-items-center">
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-											&nbsp; </span> <!-- <a href="/reservation/reserve"
+-												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
+-												예약하기 </a> -->
+-												<input type="submit" value="예약하기">
++										<div class="card_body">
++											<div
++												class="d-flex flex-wrap justify-content-between align-items-center">
++												<span class="d-block fs-20 fw-medium clr-primary-300">
++													가격 </span> <span class="d-block fs-20 fw-medium clr-primary-300">
++													<input type="text" name="paymentAmount"
++													value="${ accommodation.price }">
++												</span>
++											</div>
+ 										</div>
+-									</div>
+-								</div>
+-							</div>
+-
+-						</div>
+-
+-					</div>
+-</form>
+-</c:if>
+-<c:if test="${ acc.room3_Name ne null}">
+-<!-- 객실3 -->
+-			
+-					<form method="POST" action="/reservation/reserve" role="form">
+-					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+-						<div class="d-flex justify-content-between flex-wrap gap-3 mb-5">
+-							<h4 class="mb-0">객실</h4>
+-
+-							<div
+-								class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+-								<span
+-									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
+-									calendar_month </span>
+-								<div class="flex-grow-1 CheckInOutDate" >
+-									<input type="text" class="form-control input1" name="daterange">
+-								</div>
+-							</div>
+-
+-						</div>
+-
+-
+-						<div class="container">
+-
+-							<div class="container">
+-								<div class="image-wrapper">
+-									<img src="/resources/img/img_400_280.jpg" alt="image"
+-										class="img-fluid">
+-								</div>
+-								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+-								<input type="hidden" name="AccommodationName" value="${ acc.accommodationName }">
+-								<div class="content-wrapper">
+-									<div class="property-card__body">
+-										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+-										<input name="roomName" value="${ acc.room3_Name }">
+-										</span>
+-									</div>
+-									<div class="card_body">
+-										<div
+-											class="d-flex flex-wrap justify-content-between align-items-center">
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-												가격 </span> 
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-											<input type="text" name="paymentAmount" value="${ acc.room3_Price }">
+-												 </span>
++										<div class="property-card__body py-0">
++											<div class="hr-dashed"></div>
+ 										</div>
+-									</div>
+-									<div class="property-card__body py-0">
+-										<div class="hr-dashed"></div>
+-									</div>
+-									<div class="property-card__body">
+-										<div
+-											class="d-flex flex-wrap justify-content-between align-items-center">
+-											<span class="d-block fs-20 fw-medium clr-primary-300">
+-											&nbsp; </span> <!-- <a href="/reservation/reserve"
++										<div class="property-card__body">
++											<div
++												class="d-flex flex-wrap justify-content-between align-items-center">
++												<span class="d-block fs-20 fw-medium clr-primary-300">
++													&nbsp; </span>
++												<!-- <a href="/reservation/reserve"
+ 												class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
+ 												예약하기 </a> -->
+ 												<input type="submit" value="예약하기">
++											</div>
+ 										</div>
+ 									</div>
+ 								</div>
++
+ 							</div>
+ 
+ 						</div>
+-
+-					</div>
+-</form>
+-</c:if>
++					</form>
+ 
+ 					<div class="p-6 bg-neutral-0 rounded-4 mb-10">
+ 						<div
+@@ -830,7 +716,7 @@
+ 					<div class="bg-neutral-0 rounded-4 py-8 px-5">
+ 						<h4 class="mb-0">리뷰 쓰기</h4>
+ 						<div class="hr-dashed my-6"></div>
+-						<!-- <p class="fs-20 fw-medium">별점 *</p>
++						<p class="fs-20 fw-medium">별점 *</p>
+ 						<ul class="list list-row mb-6">
+ 							<li><span
+ 								class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300">
+@@ -847,57 +733,42 @@
+ 							<li><span
+ 								class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300">
+ 									star_rate_half </span></li>
+-						</ul> -->
+-						<form action="review/write">
+-							<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+-							<input type="hidden" value="${member.memberID }" name="memberID">
++						</ul>
++						<form action="#">
+ 							<div class="row g-4">
+ 								<div class="col-12">
+ 									<label for="review-name" class="fs-20 fw-medium d-block mb-3">작성자
+-										</label> 
+-										<c:choose>
+-										<c:when test="${member != null }">
+-										<input type="text"
+-										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+-										value="${member.name }" id="review-name" readonly>
+-										</c:when>
+-										<c:otherwise>
+-										<input type="text"
++										*</label> <input type="text"
+ 										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+-										 id="review-name">
+-										</c:otherwise>
+-										</c:choose>
++										placeholder="Enter Name.." id="review-name">
+ 								</div>
+ 								<div class="col-12">
+ 									<label for="review-email" class="fs-20 fw-medium d-block mb-3">제목
+-										</label> 
+-										<input type="text"
+-										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+-										id="review-name" name="title">
+-									<!-- 	<select name="item"
++										*</label> <select name="item"
+ 										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+ 										id="review-email">
+ 										<option selected>제목을 선택 해주세요</option>
+ 										<option value="title1">기대 이상이에요.</option>
+ 										<option value="title2">너무 행복해요.</option>
+ 										<option value="title3">다시 오고싶어요.</option>
+-									</select> -->
++									</select>
+ 								</div>
+ 								<div class="col-12">
+ 									<label for="review-review" class="fs-20 fw-medium d-block mb-3">리뷰
+-										</label>
+-									<textarea id="review-review" rows="5" name="content"
++										*</label>
++									<textarea id="review-review" rows="5"
+ 										class="form-control bg-primary-3p border border-neutral-40 rounded-5 py-3 px-5"></textarea>
+ 								</div>
+ 								<div class="col-12">
+-									<input type="submit" value="리뷰작성" style="border:0px;"
++									<a href="#"
+ 										class="featured-tab link fw-semibold clr-primary-400 d-inline-block py-3 px-6 bg-primary-50 :bg-primary-300 :clr-neutral-0 rounded-pill active">
++										리뷰작성 </a>
+ 								</div>
+ 							</div>
+ 						</form>
+ 					</div>
+ 				</div>
+-				
++
+ 			</div>
+ 		</div>
+ 
