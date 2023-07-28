@@ -2,14 +2,20 @@ package com.javava.controller;
 
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.javava.service.AccommodationService;
+import com.javava.service.ReviewService;
 import com.javava.vo.AccommodationVO;
+import com.javava.vo.ReviewVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -21,7 +27,8 @@ import lombok.extern.log4j.Log4j;
 public class AccommodationsController {
 
 	private AccommodationService service;
-
+	private ReviewService reviewService;
+	
 	@GetMapping("/accommodation_list")
 	public void product_list() {
 		log.info("제품상세보기");
@@ -31,8 +38,18 @@ public class AccommodationsController {
 	@GetMapping("/accommodation_detail") 
 	public void product_detail(@RequestParam int accommodationID, Model model) { 
 		AccommodationVO acc = service.readAcc(accommodationID); 
+		List<ReviewVO> list = reviewService.readByAcc(accommodationID);
 		model.addAttribute("acc", acc);
+		model.addAttribute("reviews", list);
 		log.info("제품리스트"); 
+	}
+	
+	@PostMapping("/review/write")
+	public String insert(ReviewVO review, RedirectAttributes ra) {
+		log.info("리뷰작성");
+		reviewService.insert(review);
+		ra.addFlashAttribute("review", "success");
+		return "redirect:/accommodation/accommodation_detail?accommodationID=" + review.getAccommodationID();
 	}
 
 
@@ -45,4 +62,6 @@ public class AccommodationsController {
 	public void add_product() {
 		log.info("제품등록");
 	}
+	
+	
 }

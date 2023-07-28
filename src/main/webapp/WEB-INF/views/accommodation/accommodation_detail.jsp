@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -98,7 +99,7 @@ input.input1 {
 						//submit button event
 					});
 			
-			window.onbeforeunload = function() {
+			/* window.onbeforeunload = function() {
 				$.ajax({
 					type:'post',
 					url:'/wish/full',
@@ -109,8 +110,7 @@ input.input1 {
 					}
 				});
 				  return false;
-			};
-			
+			}; */
 		});
 	</script>
 
@@ -404,7 +404,7 @@ input.input1 {
 						</div>
 					</div>
 
-<c:if test="${ acc.room1_Name ne null}">
+<c:if test="${ acc.room1_Name != ''}">
 
 
 					<!-- 객실1 -->
@@ -473,7 +473,7 @@ input.input1 {
 					</div>
 </form>
 </c:if>
-<c:if test="${ acc.room2_Name ne null}">
+<c:if test="${ acc.room2_Name != ''}">
 <!-- 객실2 -->
 			
 					<form method="POST" action="/reservation/reserve" role="form">
@@ -540,7 +540,7 @@ input.input1 {
 					</div>
 </form>
 </c:if>
-<c:if test="${ acc.room3_Name ne null}">
+<c:if test="${ acc.room3_Name != ''}">
 <!-- 객실3 -->
 			
 					<form method="POST" action="/reservation/reserve" role="form">
@@ -624,28 +624,30 @@ input.input1 {
 						<div
 							class="d-flex align-items-center gap-4 justify-content-between flex-wrap mb-10">
 							<div class="d-flex align-items-center gap-2">
-								<span
-									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-									star_rate </span>
-								<h3 class="mb-0">4.0 (21 리뷰)</h3>
+								<c:choose>
+								<c:when test="${ reviews.size() != 0 }">
+								<h3 class="mb-0">총 ${ reviews.size() }개 리뷰</h3>
+								</c:when>
+								<c:otherwise>
+								<h3 class="mb-0">해당 숙소에 리뷰가 없습니다.</h3>
+								</c:otherwise>
+								</c:choose>
 							</div>
-
 						</div>
+						<c:forEach var="review" items="${reviews }">
 						<div class="bg-primary-5p rounded-4 p-6 mb-8">
 							<div
 								class="d-flex align-items-center flex-wrap justify-content-between gap-4">
 								<div class="d-flex gap-5 align-items-center">
-									<div
-										class="w-15 h-15 flex-shrink-0 rounded-circle overflow-hidden">
-										<span class="material-symbols-outlined mat-icon"
-											style="font-size: 4em; color: orange;"> mood </span>
-									</div>
+									
 									<div class="flex-grow-1">
-										<p class="mb-0 clr-neutral-500">베스트 리뷰</p>
-										<h5 class="mb-1 fw-semibold">여기만한 곳은 어디에도 없을 거예요.</h5>
+										<h5 class="mb-1 fw-semibold">${ review.title }</h5>
 									</div>
 								</div>
-								<div class="text-sm-end"></div>
+								<div class="text-sm-end"><h6 class="mb-1 fw-semibold">
+								작성자 : ${ review.writer } <br>
+								<fmt:formatDate value="${review.creationDate}" pattern="yyyy-MM-dd"/>
+								</h6></div>
 							</div>
 							<div class="hr-dashed my-6"></div>
 							<ul class="list list-row mb-2">
@@ -665,11 +667,10 @@ input.input1 {
 									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
 										star_rate_half </span></li>
 							</ul>
-							<p class="mb-0 clr-neutral-500">매번 방문해서 그런지 객실 업그레이드까지 해주셔서
-								너무 편히 잘쉬다 왔습니다</p>
+							<p class="mb-0 clr-neutral-500">${review.content }</p>
 						</div>
-
-						<div class="bg-primary-5p rounded-4 p-6 mb-8">
+						</c:forEach>
+						<!-- <div class="bg-primary-5p rounded-4 p-6 mb-8">
 							<div
 								class="d-flex align-items-center flex-wrap justify-content-between gap-4">
 								<div class="d-flex gap-5 align-items-center">
@@ -820,7 +821,7 @@ input.input1 {
 							</ul>
 							<p class="mb-0 clr-neutral-500">이번에 처음 온건데 너무 설레고 좋았어요 분위기도
 								좋았구요 남자친구도 정말 좋아했어요 깔금하고 향도 되게 좋더라구요 강추합니다!!</p>
-						</div>
+						</div> -->
 
 
 						<a href="#"
@@ -848,25 +849,18 @@ input.input1 {
 								class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300">
 									star_rate_half </span></li>
 						</ul> -->
-						<form action="review/write">
+						<c:choose>
+					    <c:when test="${member != null }">
+						<form action="review/write" method="POST">
 							<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
 							<input type="hidden" value="${member.memberID }" name="memberID">
 							<div class="row g-4">
 								<div class="col-12">
 									<label for="review-name" class="fs-20 fw-medium d-block mb-3">작성자
 										</label> 
-										<c:choose>
-										<c:when test="${member != null }">
 										<input type="text"
 										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
-										value="${member.name }" id="review-name" readonly>
-										</c:when>
-										<c:otherwise>
-										<input type="text"
-										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
-										 id="review-name">
-										</c:otherwise>
-										</c:choose>
+										value="${member.name }" id="review-name" name="writer" readonly>
 								</div>
 								<div class="col-12">
 									<label for="review-email" class="fs-20 fw-medium d-block mb-3">제목
@@ -895,6 +889,14 @@ input.input1 {
 								</div>
 							</div>
 						</form>
+						</c:when>
+						<c:otherwise>
+						<b>로그인 후 이용해주시기 바랍니다.</b>
+						<a href="/member/login" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold">
+						로그인하러가기</a>
+						</c:otherwise>
+						</c:choose>
+						
 					</div>
 				</div>
 				
@@ -903,7 +905,14 @@ input.input1 {
 
 	</div>
 	<!-- /Property Details Body -->
-
+	<script>
+	let result = "${review}";
+	
+	if(result === 'success') {
+		alert('리뷰가 등록되었습니다.');
+	}
+	
+	</script>
 	<%@ include file="/resources/in/footer.jsp"%>
 </body>
 
