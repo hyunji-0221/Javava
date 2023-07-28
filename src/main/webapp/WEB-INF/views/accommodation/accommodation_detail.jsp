@@ -98,6 +98,19 @@ input.input1 {
 						//submit button event
 					});
 			
+			window.onbeforeunload = function() {
+				$.ajax({
+					type:'post',
+					url:'/wish/full',
+					data:{"address" : "aaa"},
+					dataType:'text',
+					success : function(data){
+						alert("데이터 전송 성공");
+					}
+				});
+				  return false;
+			};
+			
 		});
 	</script>
 
@@ -162,23 +175,36 @@ input.input1 {
 							<div class="py-3 px-6 bg-primary-50 rounded-pill">
 								<h5 class="clr-primary-300 d-inline-block mb-0">3성급</h5>
 							</div>
+							
+							
+							
+							<!-- 좋아요 하트 영역 -->
+
+
 							<ul class="list list-row gap-3 align-items-center">
-								<li><a href="#"
-									class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-										<span class="material-symbols-outlined mat-icon fs-20">
-											favorite </span>
-								</a></li>
-								<li><a href="#"
-									class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-										<span class="material-symbols-outlined mat-icon fs-20">
-											compare_arrows </span>
-								</a></li>
-								<li><a href="#"
-									class="link w-8 h-8 d-grid place-content-center bg-primary-50 clr-primary-300 rounded-circle :bg-primary-300 :clr-neutral-0">
-										<span class="material-symbols-outlined mat-icon fs-20">
-											Share </span>
-								</a></li>
+								<li>
+								<c:set var="test" value="${ wishlist.full }" scope="page"/> 
+								<c:if test="${ test==0 }">
+										<button class="like"
+											style="background-color: white; border: 0px;">
+											<img id="img" src="/resources/img/emptyheart.png" />
+										</button>
+								</c:if>
+								<c:if test="${ test==1 }">
+										<button class="like"
+											style="background-color: white; border: 0px;">
+											<img id="img" src="/resources/img/fullheart.png" />
+										</button>
+								</c:if>
+								</li>
 							</ul>
+
+
+							<!-- 좋아요 하트 영역 -->
+							
+							
+							
+							
 						</div>
 						<h2 class="mt-4 mb-8">로이넷 호텔</h2>
 						<ul
