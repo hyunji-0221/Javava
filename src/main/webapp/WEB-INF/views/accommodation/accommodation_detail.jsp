@@ -804,7 +804,7 @@ input.input1 {
 					<div class="bg-neutral-0 rounded-4 py-8 px-5">
 						<h4 class="mb-0">리뷰 쓰기</h4>
 						<div class="hr-dashed my-6"></div>
-						<p class="fs-20 fw-medium">별점 *</p>
+						<!-- <p class="fs-20 fw-medium">별점 *</p>
 						<ul class="list list-row mb-6">
 							<li><span
 								class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300">
@@ -821,36 +821,51 @@ input.input1 {
 							<li><span
 								class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300">
 									star_rate_half </span></li>
-						</ul>
-						<form action="#">
+						</ul> -->
+						<form action="review/write">
+							<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
+							<input type="hidden" value="${member.memberID }" name="memberID">
 							<div class="row g-4">
 								<div class="col-12">
 									<label for="review-name" class="fs-20 fw-medium d-block mb-3">작성자
-										*</label> <input type="text"
+										</label> 
+										<c:choose>
+										<c:when test="${member != null }">
+										<input type="text"
 										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
-										placeholder="Enter Name.." id="review-name">
+										value="${member.name }" id="review-name" readonly>
+										</c:when>
+										<c:otherwise>
+										<input type="text"
+										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+										 id="review-name">
+										</c:otherwise>
+										</c:choose>
 								</div>
 								<div class="col-12">
 									<label for="review-email" class="fs-20 fw-medium d-block mb-3">제목
-										*</label> <select name="item"
+										</label> 
+										<input type="text"
+										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+										id="review-name" name="title">
+									<!-- 	<select name="item"
 										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
 										id="review-email">
 										<option selected>제목을 선택 해주세요</option>
 										<option value="title1">기대 이상이에요.</option>
 										<option value="title2">너무 행복해요.</option>
 										<option value="title3">다시 오고싶어요.</option>
-									</select>
+									</select> -->
 								</div>
 								<div class="col-12">
 									<label for="review-review" class="fs-20 fw-medium d-block mb-3">리뷰
-										*</label>
-									<textarea id="review-review" rows="5"
+										</label>
+									<textarea id="review-review" rows="5" name="content"
 										class="form-control bg-primary-3p border border-neutral-40 rounded-5 py-3 px-5"></textarea>
 								</div>
 								<div class="col-12">
-									<a href="#"
+									<input type="submit" value="리뷰작성" style="border:0px;"
 										class="featured-tab link fw-semibold clr-primary-400 d-inline-block py-3 px-6 bg-primary-50 :bg-primary-300 :clr-neutral-0 rounded-pill active">
-										리뷰작성 </a>
 								</div>
 							</div>
 						</form>
