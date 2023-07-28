@@ -21,7 +21,7 @@ public class WishController {
 	
 	@PostMapping("/full")
 	public String fullUpdate(WishVO vo) {
-		System.out.println("vo : "+vo.getAddress());
+		service.fullUpdate(vo);
 		return "Post Mapping DataType String";
 		
 	}
