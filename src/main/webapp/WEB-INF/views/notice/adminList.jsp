@@ -68,7 +68,11 @@
 						</tbody>
 						
 					</c:forEach>
+					
 					</table>
+					
+					
+					<h3><button class="btn btn-info" onclick="location.href='/notice/write'">글쓰기</button></h3>
 				</div>
 				
 				
@@ -78,6 +82,16 @@
 			</div>  <!-- 콘테이너 끝 -->
 		</div>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<!-- CoreUI and necessary plugins-->
 	<script
 		src="/resources/admin/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
@@ -91,8 +105,33 @@
 	<script>
 			
 		</script>
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+	
 	</div>
 
 
+
+
+
+
 </body>
+
+
+
+
+
+
+
+
+
 </html>

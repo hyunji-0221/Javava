@@ -3,10 +3,13 @@ package com.javava.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.javava.service.NoticeService;
+import com.javava.vo.NoticeVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;  
@@ -42,4 +45,21 @@ public class NoticeController {
 	//컨트롤로가 끝나면 view에  ("/read")랑 같은 jsp파일을 보여준다
 	//RequestParam
 	
+	
+	
+	
+	@GetMapping("/write")
+	public void write() {
+	}
+	
+	@PostMapping("/write")
+	public String write(NoticeVO vo, RedirectAttributes rttr) {
+		service.insert(vo);
+	    return "redirect:/notice/adminList";
+	}
+	
+
+	
 }
+
+

@@ -2,6 +2,7 @@ package com.javava.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,6 +17,14 @@ public interface NoticeMapper {
 	
 	@Select("select * from notice where bno=#{bno}")
 	public NoticeVO read(int bno);
+	
+	@Insert("INSERT INTO notice(title, content) VALUES(#{title}, #{content})")
+    public void insert(NoticeVO vo);
+	 
+	
+	
+	
 }
+
 //데이터베이스에서 데이터를 불러와서 크루드 작업을 하는것
 //#{ }이 있으면 메소드 안에 매개변수가 있어야 한다 이런느낌>
