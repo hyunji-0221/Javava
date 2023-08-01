@@ -26,4 +26,12 @@ public class WishController {
 		
 	}
 	
+	@PostMapping("/insert")
+	public String insert(WishVO vo) {
+		log.info("vo : "+vo);
+//		service.insert(vo);
+		return "redirect:/accommodation/accommodation_detail?accommodationID=${ acmd.accommodationID }";
+		
+	}
+	
 }
