@@ -55,4 +55,11 @@ public class AccommodationServiceImpl implements AccommodationService{
 	public List<ForJoinVO> getListBySearch(ForJoinVO acmd) {
 		return mapper.getListBySearch(acmd);
 	}
+	
+	@Override
+	public int insert(WishVO vo) {
+		return wishmapper.insert(vo);
+	}
+	
+
 }

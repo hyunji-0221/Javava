@@ -15,5 +15,6 @@ public interface AccommodationService {
 	public List<ForJoinVO> getListByType(String type);
 	public List<ForJoinVO> getListByRegion(String region);
 	public List<ForJoinVO> getListBySearch(ForJoinVO acmd);
+	public int insert(WishVO vo);
 
 }
