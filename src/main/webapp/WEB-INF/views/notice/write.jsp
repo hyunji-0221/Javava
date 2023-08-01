@@ -50,7 +50,7 @@
 	
 				<div class="row">
 
-    <h1>글 작성 폼</h1>
+    <h1>글 작성 폼</h1> 
     <form action="/notice/write" method="POST">
         <label for="title">제목:</label><br>
         <input type="text" id="title" name="title" required><br><br>

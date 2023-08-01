@@ -36,10 +36,10 @@ public class NoticeController {
 	
 	
 	@GetMapping("/read")
-	public void read(Model model,@RequestParam("bno") int bno) {
+	public void read(@RequestParam int bno,Model model ) {
 		// 특정 bno값을 가진 게시글 보여주기
-		
-		model.addAttribute("nread", service.read(bno));
+		NoticeVO notice = service.read(bno);
+		model.addAttribute("nread", notice);
 			//서비스리드를 실행한값을  nread란 이름으로 저장 
 	}
 	//컨트롤로가 끝나면 view에  ("/read")랑 같은 jsp파일을 보여준다
@@ -59,6 +59,37 @@ public class NoticeController {
 	}
 	
 
+		
+	@GetMapping("/update")
+	public String update(@RequestParam int bno,Model model) {
+		model.addAttribute("nread", service.read(bno));
+		return "notice/update";
+	}
+	
+	@PostMapping("/update")
+	public String update(NoticeVO notice , RedirectAttributes ra) {
+		service.update(notice);
+		ra.addFlashAttribute("result","update");
+		
+		
+		return "redirect:/notice/adminList";
+		
+	}
+	
+	
+	@GetMapping("/delete")
+	public String delete (@RequestParam int bno ) {
+		service.delete(bno);
+		return "redirect:/notice/adminList";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
 
