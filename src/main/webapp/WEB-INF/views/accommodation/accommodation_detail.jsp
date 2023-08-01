@@ -129,7 +129,7 @@ input.input1 {
 						var formObj = $("form[role='form']");
 						
 							let str="";
-							$(".CheckInOutDate").each(function(i, obj){
+							$(".CheckInOutDate1").each(function(i, obj){
 								var jobj = $(obj);
 								console.dir(jobj);
 								str += `<input type = 'hidden' name='checkInDate' value = '\${start.format('YYYY-MM-DD')}'>
@@ -172,7 +172,7 @@ input.input1 {
 			$.ajax({
 				type:'post',
 				url:'/wish/full',
-				data:{"full" : full, "memberID" : ${ wishlist.memberID }},
+				data:{"full" : full, "MemberID" : ${ wishlist.memberID }},
 				dataType:'text',
 				success : function(data){
 				}
