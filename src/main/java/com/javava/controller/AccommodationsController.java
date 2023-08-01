@@ -47,6 +47,13 @@ public class AccommodationsController {
 	      int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
 	      wish.setAccommodationID(accommodationID);
 	      wish.setMemberID(memberID);
+	      wish.setAccommodationName(acc.getAccommodationName());
+	      wish.setAddress(acc.getAddress1());
+	      wish.setPaymentAmount(acc.getPrice());
+	      WishVO vo=service.readWish(wish);
+	      if(vo == null) {
+	    	  service.insert(wish);
+	      }
 	      WishVO wishlist=service.readWish(wish);
 	      model.addAttribute("acc", acc);
 	      model.addAttribute("reviews", list);
