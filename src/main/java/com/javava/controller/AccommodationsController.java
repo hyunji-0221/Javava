@@ -40,26 +40,19 @@ public class AccommodationsController {
 
 
 	@GetMapping("/accommodation_detail") 
-	public void product_detail(@RequestParam int accommodationID, Model model, HttpSession session) { 
-		AccommodationVO acc = service.readAcc(accommodationID); 
-		List<ReviewVO> list = reviewService.readByAcc(accommodationID);
-		WishVO wish=new WishVO();
-		int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
-		wish.setAccommodationID(accommodationID);
-		wish.setMemberID(memberID);
-		wish.setAccommodationName(acc.getAccommodationName());
-		wish.setAddress(acc.getAddress1());
-		wish.setPaymentAmount(acc.getPrice());
-		WishVO vo=service.readWish(wish);
-		if(vo == null) {
-			service.insert(wish);
-		}
-		WishVO wishlist=service.readWish(wish);
-		model.addAttribute("acc", acc);
-		model.addAttribute("reviews", list);
-		model.addAttribute("wishlist", wishlist);
-		log.info("제품리스트"); 
-	}
+	   public void product_detail(@RequestParam int accommodationID, Model model, HttpSession session) { 
+	      AccommodationVO acc = service.readAcc(accommodationID); 
+	      List<ReviewVO> list = reviewService.readByAcc(accommodationID);
+	      WishVO wish=new WishVO();
+	      int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
+	      wish.setAccommodationID(accommodationID);
+	      wish.setMemberID(memberID);
+	      WishVO wishlist=service.readWish(wish);
+	      model.addAttribute("acc", acc);
+	      model.addAttribute("reviews", list);
+	      model.addAttribute("wishlist", wishlist);
+	      log.info("제품리스트"); 
+	   }
 	
 	@PostMapping("/review/write")
 	public String insert(ReviewVO review, RedirectAttributes ra) {
