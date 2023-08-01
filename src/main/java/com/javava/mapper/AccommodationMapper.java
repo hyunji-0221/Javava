@@ -14,7 +14,7 @@ import com.javava.vo.ForJoinVO;
 @Mapper
 public interface AccommodationMapper {
 	
-	@Insert("insert into accommodations (sellerID, accommodationName, zipcode, address1, address2, region, price, description, amenities, room1_Name, room1_Price, room2_Name, room2_Price, room3_Name, room3_Price) values (#{sellerID}, #{accommodationName},#{zipcode}, #{address1}, #{address2}, #{region}, #{price},#{description},null, #{room1_Name}, #{room1_Price},#{room2_Name}, #{room2_Price}, #{room3_Name}, #{room3_Price})")
+	@Insert("insert into accommodations (sellerID, accommodationName, zipcode, address1, address2, region, price, description, amenities, room1_Name, room1_Price, room2_Name, room2_Price, room3_Name, room3_Price, type) values (#{sellerID}, #{accommodationName},#{zipcode}, #{address1}, #{address2}, #{region}, #{price},#{description},null, #{room1_Name}, #{room1_Price},#{room2_Name}, #{room2_Price}, #{room3_Name}, #{room3_Price}, #{type})")
 	public int insert(AccommodationVO acmd);
 	
 	@Select("select * from accommodations where sellerID = #{sellerID}")
@@ -32,6 +32,16 @@ public interface AccommodationMapper {
 	@Select("select * from accommodations where accommodationID = #{accommodationID}")
 	public AccommodationVO readAcc(int accommodationID);
 	
-	@Update("update accommodations set accommodationName = #{accommodationName}, zipcode = #{zipcode}, address1 = #{address1}, address2 = #{address2}, region = #{region}, price = #{price}, description = #{description}, room1_Name = #{room1_Name}, room1_Price= #{room1_Price}, room2_Name=#{room2_Name}, room2_Price = #{room2_Price}, room3_Name=#{room3_Name}, room3_Price = #{room3_Price} where accommodationID = #{accommodationID}")
+	@Update("update accommodations set accommodationName = #{accommodationName}, zipcode = #{zipcode}, address1 = #{address1}, address2 = #{address2}, region = #{region}, price = #{price}, description = #{description}, type= #{type}, room1_Name = #{room1_Name}, room1_Price= #{room1_Price}, room2_Name=#{room2_Name}, room2_Price = #{room2_Price}, room3_Name=#{room3_Name}, room3_Price = #{room3_Price} where accommodationID = #{accommodationID}")
 	public int modify(AccommodationVO acc);
+	
+	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID where type = #{type}")
+	public List<ForJoinVO> getListByType(String type);
+	
+	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID where region = #{region}")
+	public List<ForJoinVO> getListByRegion(String region);
+	
+	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID where type = #{type} and region = #{region} and price between #{min} and #{max}")
+	public List<ForJoinVO> getListBySearch(ForJoinVO acmd);
+	
 }

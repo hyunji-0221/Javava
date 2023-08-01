@@ -24,6 +24,7 @@ public class AccommodationVO {
 	private int room1_Price;
 	private int room2_Price;
 	private int room3_Price;
+	private String type;
 	
 	
 }

@@ -129,7 +129,7 @@ input.input1 {
 						var formObj = $("form[role='form']");
 						
 							let str="";
-							$(".CheckInOutDate").each(function(i, obj){
+							$(".CheckInOutDate1").each(function(i, obj){
 								var jobj = $(obj);
 								console.dir(jobj);
 								str += `<input type = 'hidden' name='checkInDate' value = '\${start.format('YYYY-MM-DD')}'>
@@ -272,7 +272,7 @@ input.input1 {
 							
 							
 						</div>
-						<h2 class="mt-4 mb-8">로이넷 호텔</h2>
+						<h2 class="mt-4 mb-8">${acc.accommodationName }</h2>
 						<ul
 							class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
 							<li>
@@ -280,7 +280,8 @@ input.input1 {
 									<span
 										class="material-symbols-outlined mat-icon clr-secondary-400">
 										distance </span>
-									<p class="mb-0">마포대로 67, 마포, 서울, 대한민국, 04157</p>
+									<p class="mb-0">${acc.address1 }</p>
+									<p class="mb-0">${acc.address2 }</p>
 								</div>
 							</li>
 
@@ -289,7 +290,21 @@ input.input1 {
 									<span
 										class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
 										star_rate </span>
-									<p class="mb-0">4.0(21)</p>
+									<p class="mb-0">
+										<c:set var = "total" value = "0" />
+								<c:choose>
+								<c:when test="${reviews.size() != 0 }">
+								<c:forEach var="review" items="${reviews }">
+								<c:set var= "total" value="${total + review.rating}"/>
+								</c:forEach>
+								<c:set var="average" value="${total / reviews.size()}"/>
+								<fmt:formatNumber value="${average }" pattern=".0"/>
+								</c:when>
+								<c:otherwise>
+								0
+								</c:otherwise>
+								</c:choose>
+									(${ reviews.size() })</p>
 								</div>
 							</li>
 
@@ -501,7 +516,7 @@ input.input1 {
 										class="img-fluid">
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
-								<input type="hidden" name="accommodationName" value="${ acc.accommodationName} }">
+								<input type="hidden" name="accommodationName" value="${ acc.accommodationName }">
 								<div class="content-wrapper">
 									<div class="property-card__body">
 										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
@@ -552,7 +567,7 @@ input.input1 {
 								<span
 									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
 									calendar_month </span>
-								<div class="flex-grow-1 CheckInOutDate" >
+								<div class="flex-grow-1" >
 									<input type="text" class="form-control input1" name="daterange">
 								</div>
 							</div>
@@ -619,7 +634,7 @@ input.input1 {
 								<span
 									class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0">
 									calendar_month </span>
-								<div class="flex-grow-1 CheckInOutDate" >
+								<div class="flex-grow-1" >
 									<input type="text" class="form-control input1" name="daterange">
 								</div>
 							</div>
@@ -692,7 +707,9 @@ input.input1 {
 							<div class="d-flex align-items-center gap-2">
 								<c:choose>
 								<c:when test="${ reviews.size() != 0 }">
-								<h3 class="mb-0">총 ${ reviews.size() }개 리뷰</h3>
+								<h3 class="mb-0">
+								<span style="color:red;"><fmt:formatNumber value="${average }" pattern=".0"/></span>
+								(총 ${ reviews.size() }개 리뷰)</h3>
 								</c:when>
 								<c:otherwise>
 								<h3 class="mb-0">해당 숙소에 리뷰가 없습니다.</h3>
@@ -709,6 +726,7 @@ input.input1 {
 									<div class="flex-grow-1">
 										<h5 class="mb-1 fw-semibold">${ review.title }</h5>
 									</div>
+									
 								</div>
 								<div class="text-sm-end"><h6 class="mb-1 fw-semibold">
 								작성자 : ${ review.writer } <br>
@@ -717,21 +735,11 @@ input.input1 {
 							</div>
 							<div class="hr-dashed my-6"></div>
 							<ul class="list list-row mb-2">
+								<c:forEach var="i" begin="1" end="${ review.rating }">
 								<li><span
 									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
 										star_rate </span></li>
-								<li><span
-									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-										star_rate </span></li>
-								<li><span
-									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-										star_rate </span></li>
-								<li><span
-									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-										star_rate </span></li>
-								<li><span
-									class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300">
-										star_rate_half </span></li>
+								</c:forEach>
 							</ul>
 							<p class="mb-0 clr-neutral-500">${review.content }</p>
 						</div>
@@ -942,6 +950,19 @@ input.input1 {
 										<option value="title2">너무 행복해요.</option>
 										<option value="title3">다시 오고싶어요.</option>
 									</select> -->
+								</div>
+								<div class="col-3">
+									<label for="rating" class="fs-20 fw-medium d-block mb-3">평점 </label>
+										<select name="rating"
+										class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5"
+										id="rating">
+										<option selected>평점을 선택 해주세요</option>
+										<option value="5">5</option>
+										<option value="4">4</option>
+										<option value="3">3</option>
+										<option value="2">2</option>
+										<option value="1">1</option>
+										</select>
 								</div>
 								<div class="col-12">
 									<label for="review-review" class="fs-20 fw-medium d-block mb-3">리뷰

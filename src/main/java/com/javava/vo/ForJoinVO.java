@@ -17,6 +17,7 @@ public class ForJoinVO {
 	private int price;
 	private String description;
 	private Date regDate;
+	private String type;
 	private String amenities;
 	private String room1_Name;
 	private String room2_Name;
@@ -28,6 +29,8 @@ public class ForJoinVO {
 	private String room1_img;
 	private String room2_img;
 	private String room3_img;
+	private int min;
+	private int max;
 	
 	
 }

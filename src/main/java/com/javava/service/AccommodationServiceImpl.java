@@ -43,6 +43,16 @@ public class AccommodationServiceImpl implements AccommodationService{
 	public int fullUpdate(WishVO vo) {
 		return wishmapper.fullUpdate(vo);
 	}
-	
-
+	@Override
+	public List<ForJoinVO> getListByType(String type) {
+		return mapper.getListByType(type);
+	}
+	@Override
+	public List<ForJoinVO> getListByRegion(String region) {
+		return mapper.getListByRegion(region);
+	}
+	@Override
+	public List<ForJoinVO> getListBySearch(ForJoinVO acmd) {
+		return mapper.getListBySearch(acmd);
+	}
 }

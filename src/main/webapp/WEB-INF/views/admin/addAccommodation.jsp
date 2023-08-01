@@ -48,6 +48,21 @@
                 <div id="addProperty" class="accordion-collapse collapse show">
                   <div class="accordion-body">
                     <div class="pt-6">
+                      <p class="mb-4 fs-20 fw-medium"> 숙소 타입 : </p>
+                      <ul class="list list-row gap-6 flex-wrap">
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <input class="custom-radio custom-radio--primary-300" type="radio" name="type" id="hotel" value="hotel" checked>
+                            <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="hotel"> 호텔/리조트 </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <input class="custom-radio custom-radio--primary-300" type="radio" name="type" id="pension" value="pension">
+                            <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="pension"> 펜션 </label>
+                          </div>
+                        </li>
+                      </ul>
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 숙소이름: </p>
                       <input type="text" class="form-control form-control-lg fs-16" placeholder="숙소이름을 입력해주세요." name="accommodationName">
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 우편번호: </p>
@@ -68,14 +83,15 @@
                         <option value="none">=== 지역선택 ===</option>
                         <option value="서울">서울</option>
                         <option value="경기">경기</option>
-                        <option value="전라">전라</option>
-                        <option value="경상">경상</option>
-                        <option value="충청">충청</option>
+                        <option value="전북/전남">전북/전남</option>
+                        <option value="경북/경남">경북/경남</option>
+                        <option value="충북/충남">충북/충남</option>
                         <option value="부산">부산</option>
                         <option value="대구/울산">대구/울산</option>
                         <option value="광주">광주</option>
                         <option value="강원">강원</option>
                         <option value="대전">대전</option>
+                        <option value="제주">제주</option>
                       </select>
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 상세설명 : </p>
                       <textarea rows="5" class="form-control" placeholder="상세설명란" name="description"></textarea>

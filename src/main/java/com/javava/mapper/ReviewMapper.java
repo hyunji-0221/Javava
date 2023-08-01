@@ -12,7 +12,7 @@ import com.javava.vo.ReviewVO;
 @Mapper
 public interface ReviewMapper {
 	
-	@Insert("insert into reviews (memberID, accommodationID, content, writer, title) values (#{memberID}, #{accommodationID}, #{content}, #{writer}, #{title})")
+	@Insert("insert into reviews (memberID, accommodationID, content, writer, title, rating) values (#{memberID}, #{accommodationID}, #{content}, #{writer}, #{title}, #{rating})")
 	public int insert(ReviewVO review);
 	
 	@Select("select * from reviews where accommodationID = #{accommodationID}")

@@ -17,9 +17,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.javava.service.AccommodationService;
 import com.javava.service.ReviewService;
 import com.javava.vo.AccommodationVO;
-import com.javava.vo.MemberVO;
+import com.javava.vo.ForJoinVO;
 import com.javava.vo.ReviewVO;
-import com.javava.vo.WishVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -34,23 +33,28 @@ public class AccommodationsController {
 	private ReviewService reviewService;
 	
 	@GetMapping("/accommodation_list")
-	public void product_list() {
+	public void product_list(String type, Model model, String region) {
+		if(type != null) {
+		model.addAttribute("list", service.getListByType(type));
+		}
+		if(region != null) {
+		model.addAttribute("list", service.getListByRegion(region));
+		}
 		log.info("제품상세보기");
 	}
-
 
 	@GetMapping("/accommodation_detail") 
 	   public void product_detail(@RequestParam int accommodationID, Model model, HttpSession session) { 
 	      AccommodationVO acc = service.readAcc(accommodationID); 
 	      List<ReviewVO> list = reviewService.readByAcc(accommodationID);
-	      WishVO wish=new WishVO();
-	      int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
-	      wish.setAccommodationID(accommodationID);
-	      wish.setMemberID(memberID);
-	      WishVO wishlist=service.readWish(wish);
+//	      WishVO wish=new WishVO();
+//	      int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
+//	      wish.setAccommodationID(accommodationID);
+//	      wish.setMemberID(memberID);
+//	      WishVO wishlist=service.readWish(wish);
 	      model.addAttribute("acc", acc);
 	      model.addAttribute("reviews", list);
-	      model.addAttribute("wishlist", wishlist);
+//	      model.addAttribute("wishlist", wishlist);
 	      log.info("제품리스트"); 
 	   }
 	
@@ -71,6 +75,15 @@ public class AccommodationsController {
 	@GetMapping("/add_accommodation")
 	public void add_product() {
 		log.info("제품등록");
+	}
+	
+	@PostMapping("/accommodation_list")
+	public void search(ForJoinVO acmd, Model model) {
+		acmd.setMax(acmd.getMax() * 10000);
+		acmd.setMin(acmd.getMin() * 10000);
+		model.addAttribute("list", service.getListBySearch(acmd));
+		
+		log.info("숙소검색");
 	}
 	
 	

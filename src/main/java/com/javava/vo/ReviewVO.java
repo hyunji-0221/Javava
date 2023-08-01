@@ -14,5 +14,5 @@ public class ReviewVO {
 	private String writer;
 	private Date creationDate;
 	private String title;
-
+	private int rating;
 }

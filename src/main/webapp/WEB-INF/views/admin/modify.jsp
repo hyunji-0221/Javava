@@ -48,6 +48,21 @@
                 <div id="addProperty" class="accordion-collapse collapse show">
                   <div class="accordion-body">
                     <div class="pt-6">
+                    <p class="mb-4 fs-20 fw-medium"> 숙소 타입 : </p>
+                      <ul class="list list-row gap-6 flex-wrap">
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <input class="custom-radio custom-radio--primary-300" type="radio" name="type" id="hotel" value="hotel">
+                            <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="hotel"> 호텔/리조트 </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <input class="custom-radio custom-radio--primary-300" type="radio" name="type" id="pension" value="pension">
+                            <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="pension"> 펜션 </label>
+                          </div>
+                        </li>
+                      </ul>
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 숙소이름: </p>
                       <input type="text" class="form-control form-control-lg fs-16" value="${ myAcc.accommodationName }" name="accommodationName">
                       <p class="mt-6 mb-4 fs-20 fw-medium"> 우편번호: </p>

@@ -324,19 +324,37 @@
 							<li class="menu-list current-page"><a href="#"
 								class="link menu-link has-sub"> 숙박 </a>
 								<ul class="list menu-sub">
-									<li class="menu-sub-list"><a href="/"
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?type=hotel"
 										class="link menu-sub-link"> 호텔/리조트 </a></li>
-									<li class="menu-sub-list"><a href="home-2.html"
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?type=pension"
 										class="link menu-sub-link"> 펜션 </a></li>
 
 								</ul></li>
 							<li class="menu-list"><a href="#"
 								class="link menu-link has-sub"> 지역 </a>
 								<ul class="list menu-sub">
-									<li class="menu-sub-list"><a href="/"
-										class="link menu-sub-link"> 수도권 </a></li>
-									<li class="menu-sub-list"><a href="home-4.html"
-										class="link menu-sub-link"> 그 외 지역 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=서울"
+										class="link menu-sub-link"> 서울 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=경기"
+										class="link menu-sub-link"> 경기 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=부산"
+										class="link menu-sub-link"> 부산 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=광주"
+										class="link menu-sub-link"> 광주 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=대구/울산"
+										class="link menu-sub-link"> 대구/울산 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=강원"
+										class="link menu-sub-link"> 강원 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=제주"
+										class="link menu-sub-link"> 제주 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=대전"
+										class="link menu-sub-link"> 대전 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=경북/경남"
+										class="link menu-sub-link"> 경북/경남 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=전북/전남"
+										class="link menu-sub-link"> 전북/전남 </a></li>
+									<li class="menu-sub-list"><a href="/accommodation/accommodation_list?region=충북/충남"
+										class="link menu-sub-link"> 충북/충남 </a></li>
 
 								</ul></li>
 							</c:if>

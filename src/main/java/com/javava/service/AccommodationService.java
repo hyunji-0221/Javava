@@ -12,5 +12,8 @@ public interface AccommodationService {
 	public AccommodationVO readAcc(int accommodationID);
 	public WishVO readWish(WishVO vo);
 	public int fullUpdate(WishVO vo);
+	public List<ForJoinVO> getListByType(String type);
+	public List<ForJoinVO> getListByRegion(String region);
+	public List<ForJoinVO> getListBySearch(ForJoinVO acmd);
 
 }
