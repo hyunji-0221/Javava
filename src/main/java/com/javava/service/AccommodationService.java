@@ -12,5 +12,6 @@ public interface AccommodationService {
 	public AccommodationVO readAcc(int accommodationID);
 	public WishVO readWish(WishVO vo);
 	public int fullUpdate(WishVO vo);
+	public int insert(WishVO vo);
 
 }

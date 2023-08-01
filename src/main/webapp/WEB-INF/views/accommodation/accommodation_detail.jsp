@@ -74,7 +74,7 @@ input.input1 {
 
 <body>
 	<script>
-		$(function() {
+		/* $(function() {
 			$('input[name="daterange"]').daterangepicker(
 					{
 						opens : 'left'
@@ -111,6 +111,72 @@ input.input1 {
 				});
 				  return false;
 			}; */
+		//}); */
+		
+		
+		let full=${ wishlist.full };
+		$(function() {
+			$('input[name="daterange"]').daterangepicker(
+					{
+						opens : 'left'
+					},
+					
+					function(start, end, label) {
+						console.log("새로운 날짜가 선택되었습니다.: "
+								+ start.format('YYYY-MM-DD') + ' ~ '
+								+ end.format('YYYY-MM-DD'));
+						//날짜 인풋 히든으로 추가하기
+						var formObj = $("form[role='form']");
+						
+							let str="";
+							$(".CheckInOutDate").each(function(i, obj){
+								var jobj = $(obj);
+								console.dir(jobj);
+								str += `<input type = 'hidden' name='checkInDate' value = '\${start.format('YYYY-MM-DD')}'>
+								<input type = 'hidden' name='checkOutDate' value = '\${end.format('YYYY-MM-DD')}'>`;
+								console.log("날짜 히든 추가 됐니?");
+							});
+							formObj.append(str)//.submit();
+						//submit button event
+					});
+			
+			const imageElement=document.getElementById('img');
+			
+			imageElement.addEventListener('click', function () {
+				  if (full==0) {
+				    imageElement.src = '/resources/img/fullheart.png';
+				    full=1;
+				    
+				  }else {
+				    imageElement.src = '/resources/img/emptyheart.png';
+				    full=0;
+				  }
+				  
+			});
+			
+			
+		});
+		/* window.onbeforeunload = function() {
+			$.ajax({
+				type:'post',
+				url:'/wish/full',
+				data:{"full" : full, "memberID" : ${ wishlist.memberID }},
+				dataType:'text',
+				success : function(data){
+				}
+			});
+			  return false;
+		}; */
+		
+		window.addEventListener('unload', function() {
+			$.ajax({
+				type:'post',
+				url:'/wish/full',
+				data:{"full" : full, "memberID" : ${ wishlist.memberID }},
+				dataType:'text',
+				success : function(data){
+				}
+			});
 		});
 	</script>
 

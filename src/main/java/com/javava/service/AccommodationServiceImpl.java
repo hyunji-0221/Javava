@@ -44,5 +44,10 @@ public class AccommodationServiceImpl implements AccommodationService{
 		return wishmapper.fullUpdate(vo);
 	}
 	
+	@Override
+	public int insert(WishVO vo) {
+		return wishmapper.insert(vo);
+	}
+	
 
 }

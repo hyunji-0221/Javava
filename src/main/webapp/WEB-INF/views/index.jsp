@@ -1,33 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
 <head>
 
 <!-- meta -->
-<%@ include file="/resources/in/meta.jsp" %>
+<%@ include file="/resources/in/meta.jsp"%>
 
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/js/moment.min.js"></script>
-<script type="text/javascript" src="/resources/js/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/resources/css/daterangepicker.css" />
+<script type="text/javascript"
+	src="/resources/js/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/resources/css/daterangepicker.css" />
 
 <style>
-
 input.input1 {
-    padding: 13px 0px !important; 
-    border: 0px solid #f9f9fe !important;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background-color: #f9f9fe !important;
-    color: #3538ed !important;
-    font-size: 15px !important;
-    letter-spacing: 1px;
+	padding: 13px 0px !important;
+	border: 0px solid #f9f9fe !important;
+	border-radius: 10px;
+	box-sizing: border-box;
+	background-color: #f9f9fe !important;
+	color: #3538ed !important;
+	font-size: 15px !important;
+	letter-spacing: 1px;
 }
-
-
 </style>
 
 
@@ -35,17 +34,18 @@ input.input1 {
 </head>
 
 <body>
-	<div class="alert alert-success" role="alert" id="showAlertLogin" align="center">
-  	<h5></h5>
-		</div>
+	<div class="alert alert-success" role="alert" id="showAlertLogin"
+		align="center">
+		<h5></h5>
+	</div>
 	<!-- Header -->
-	<%@ include file="/resources/in/header.jsp" %>
+	<%@ include file="/resources/in/header.jsp"%>
 	<!-- Hotel Booking Hero -->
 
-	
-	
-	
-	
+
+
+
+
 	<div class="hotel-hero bg-primary-3p">
 		<img src="/resources/img/hotel-hero-el-1.png" alt="image"
 			class="img-fluid hotel-hero__el hotel-hero__el-1"> <img
@@ -70,7 +70,8 @@ input.input1 {
 						class="w-9 h-9 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-0">
 							<span class="material-symbols-outlined mat-icon fw-200">
 								arrow_right_alt </span>
-					</span> <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> 크나큰 즐거움보단  소소한 행복을 </span>
+					</span> <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> 크나큰
+							즐거움보단 소소한 행복을 </span>
 					</span>
 					<h1 class="d2 mt-4 mb-6">광안리를 잡아봐!</h1>
 					<p class="mb-10 fs-20">무더운 여름 더위속에 잠들지 못한 너 저렴한 가격으로 모시겠습니다 .</p>
@@ -85,9 +86,11 @@ input.input1 {
 
 
 
-								<div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
-									<span class="material-symbols-outlined mat-icon"> distance </span> 
-									<select class="form-select" aria-label="Default select example">
+								<div
+									class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
+									<span class="material-symbols-outlined mat-icon">
+										distance </span> <select class="form-select"
+										aria-label="Default select example">
 										<option selected>지역</option>
 										<option value="1">수도권</option>
 										<option value="2">강원</option>
@@ -105,12 +108,14 @@ input.input1 {
 
 
 
-								<div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
-									
+								<div
+									class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
+
 									<div class="d-flex gap-2 align-items-center">
-									<input type="text" class="form-control input1" name="daterange" value=""2023/01/01 - 2123/12/31" />
+										<input type="text" class="form-control input1"
+											name="daterange" value="" 2023/01/01 - 2123/12/31" />
 									</div>
-									
+
 								</div>
 
 
@@ -138,13 +143,13 @@ input.input1 {
 											oninput="rangevalue.value=value">
 									</div>
 									<div class="property-search__range-price">
-										<span class="d-inline-block fs-10 clr-primary-300">최대 
-										<output class="property-search__range-value" id="rangevalue">10</output>
-										<span class="d-inline-block fs-10 clr-primary-300"> 만원
+										<span class="d-inline-block fs-10 clr-primary-300">최대 <output
+												class="property-search__range-value" id="rangevalue">10</output>
+											<span class="d-inline-block fs-10 clr-primary-300"> 만원
 										</span>
 									</div>
 								</div>
-								
+
 								<button
 									class="btn rounded-pill property-search__btn property-search__col">
 									<span class="material-symbols-rounded mat-icon"> search
@@ -172,7 +177,8 @@ input.input1 {
 									<img src="/resources/img/main_hotel_img.jpg" alt="image"
 										class="h-100 w-100 discount-card__img"> <span
 										class="d4 fw-semibold d-block clr-neutral-0"> 25% OFF </span>
-									<p class="mb-10 clr-neutral-0 fs-24 max-text-20">서울 마리나 호텔 할인 찬스</p>
+									<p class="mb-10 clr-neutral-0 fs-24 max-text-20">서울 마리나 호텔
+										할인 찬스</p>
 									<a href="hotel-listing.html"
 										class="link d-inline-block py-3 px-6 fw-semibold clr-primary-300 bg-neutral-0 rounded">
 										예약하기 </a>
@@ -209,8 +215,8 @@ input.input1 {
 							class="w-9 h-9 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-0">
 								<span class="material-symbols-outlined mat-icon fw-200">
 									arrow_right_alt </span>
-						</span> <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold">
-								이달의 추천 </span>
+						</span> <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> 이달의
+								추천 </span>
 						</span>
 						<h2 class="mb-0">국내 인기 휴양지</h2>
 					</div>
@@ -227,109 +233,112 @@ input.input1 {
 		<div class="container">
 			<div class="row g-4">
 				<c:forEach var="acmd" items="${acList}">
-				<div class="col-md-6 col-xl-4">
-					<div class="property-card">
-						<div class="property-card__head">
-							<div class="property-card__img">
-								<img src="/resources/img1/${acmd.main_img }" alt="image"
-									class="img-fluid w-100">
-							</div>
-							<button
-								class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-								<span
-									class="material-symbols-outlined mat-icon fw-200 property-card__heart">
-									favorite </span>
-							</button>
-						</div>
-						<div class="property-card__body">
-							<div class="d-flex justify-content-between mb-2">
-								<a href="/accommodation/accommodation_detail"
-									class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
-									${acmd.accommodationName } </a>
-								<div class="d-flex align-items-center flex-shrink-0">
-									<span
-										class="material-symbols-outlined mat-icon solid clr-tertiary-300">
-										star_rate </span> <span class="d-block clr-neutral-700"> 4.5 </span>
+					<div class="col-md-6 col-xl-4 test">
+						<div class="property-card">
+							<div class="property-card__head">
+								<div class="property-card__img">
+									<img src="/resources/img1/${acmd.main_img }" alt="image"
+										class="img-fluid w-100">
+										<span class="d-inline-block" data-acId="${acmd.accommodationID }"> ${acmd.accommodationID }
+										</span> 
+										<!-- !!!!!히든 처리 할 것!!!!!  -->
 								</div>
-							</div>
-							<div class="d-flex justify-content-between mb-6">
-								<div class="d-flex align-items-center gap-1">
+								<button
+									class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
 									<span
-										class="material-symbols-outlined mat-icon clr-tertiary-400">
-										distance </span> <span class="d-inline-block"> ${acmd.region } </span>
-								</div>
-								<span class="d-inline-block fw-medium clr-secondary-400">
-									20% 할인 </span>
+										class="material-symbols-outlined mat-icon fw-200 property-card__heart">
+										favorite </span>
+								</button>
 							</div>
-							<ul class="list list-row align-items-center flex-wrap gap-3">
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-car-parking.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
+							<div class="property-card__body">
+								<div class="d-flex justify-content-between mb-2">
+									<a href="/accommodation/accommodation_detail"
+										class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
+										${acmd.accommodationName } </a>
+									<div class="d-flex align-items-center flex-shrink-0">
+										<span
+											class="material-symbols-outlined mat-icon solid clr-tertiary-300">
+											star_rate </span> <span class="d-block clr-neutral-700"> 4.5
+										</span>
 									</div>
-								</li>
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-breakfast.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
+								</div>
+								<div class="d-flex justify-content-between mb-6">
+									<div class="d-flex align-items-center gap-1">
+										<span
+											class="material-symbols-outlined mat-icon clr-tertiary-400">
+											distance </span> <span class="d-inline-block"> ${acmd.region }
+										</span>
 									</div>
-								</li>
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-room-service.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
-									</div>
-								</li>
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-fitness.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
-									</div>
-								</li>
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-swimming-pool.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
-									</div>
-								</li>
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-laundry.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
-									</div>
-								</li>
-								<li>
-									<div
-										class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-										<img src="/resources/img/icon-glob.png" alt="image"
-											class="img-fluid w-7 h-7 object-fit-contain">
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="property-card__body py-0">
-							<div class="hr-dashed"></div>
-						</div>
-						<div class="property-card__body">
-							<div
-								class="d-flex flex-wrap justify-content-between align-items-center">
-								<span class="d-block fs-20 fw-medium clr-primary-300">
-									 ${acmd.price }원 <span
-									class="d-inline-block clr-neutral-500 fs-16 fw-normal">
-										/ 남은 객실 수 : 2 </span>
-								</span> <a href="/accommodation/accommodation_detail?accommodationID=${acmd.accommodationID }"
-									class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
-									예약하기 </a>
+									<span class="d-inline-block fw-medium clr-secondary-400">
+										20% 할인 </span>
+								</div>
+								<ul class="list list-row align-items-center flex-wrap gap-3">
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-car-parking.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-breakfast.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-room-service.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-fitness.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-swimming-pool.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-laundry.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+									<li>
+										<div
+											class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
+											<img src="/resources/img/icon-glob.png" alt="image"
+												class="img-fluid w-7 h-7 object-fit-contain">
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="property-card__body py-0">
+								<div class="hr-dashed"></div>
+							</div>
+							<div class="property-card__body">
+								<div
+									class="d-flex flex-wrap justify-content-between align-items-center">
+									<span class="d-block fs-20 fw-medium clr-primary-300">
+										${acmd.price }원 <span
+										class="d-inline-block clr-neutral-500 fs-16 fw-normal">
+											/ 남은 객실 수 : 2 </span>
+									</span> <a href="/accommodation/accommodation_detail?accommodationID=${acmd.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">예약하기</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				</c:forEach>
 				<!-- <div class="col-md-6 col-xl-4">
 					<div class="property-card">
@@ -907,13 +916,34 @@ input.input1 {
 		if(result_del === "delete") {
 			alert('회원탈퇴가 정상적으로 완료되었습니다.');
 		}
-	</script>
 		
-	
+		
+/* 		//document.getElementById(".test").addEventListener('click', insert);
+		$(".test").click(function(){
+			var acId=$(this).data("acId");
+			alert("어얼럿"+acId);
+		})
+		
+		function insert() {
+			alert(${ acmd.accommodationID }); */
+/* 			$.ajax({
+				type:'post',
+				url:'/wish/insert',
+				data:{"AccommodationID" : ${ acmd.accommodationID },
+					"AccommodationName" : ${ acmd.accommodationName},
+					"address" : ${ acmd.address1 },
+					"paymentAmount" : ${ acmd.price }},
+				dataType:'text',
+				success : function(data){
+				}
+			}); */
+		}
+	</script>
+
 
 	<!-- Footer -->
 
-	<%@ include file="/resources/in/footer.jsp" %>
+	<%@ include file="/resources/in/footer.jsp"%>
 
 
 </body>
