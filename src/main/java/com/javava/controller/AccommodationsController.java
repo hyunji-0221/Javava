@@ -18,7 +18,9 @@ import com.javava.service.AccommodationService;
 import com.javava.service.ReviewService;
 import com.javava.vo.AccommodationVO;
 import com.javava.vo.ForJoinVO;
+import com.javava.vo.MemberVO;
 import com.javava.vo.ReviewVO;
+import com.javava.vo.WishVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
