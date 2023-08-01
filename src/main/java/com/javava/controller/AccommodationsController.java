@@ -4,6 +4,8 @@ package com.javava.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.javava.service.AccommodationService;
 import com.javava.service.ReviewService;
 import com.javava.vo.AccommodationVO;
+import com.javava.vo.MemberVO;
 import com.javava.vo.ReviewVO;
+import com.javava.vo.WishVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -36,13 +40,19 @@ public class AccommodationsController {
 
 
 	@GetMapping("/accommodation_detail") 
-	public void product_detail(@RequestParam int accommodationID, Model model) { 
-		AccommodationVO acc = service.readAcc(accommodationID); 
-		List<ReviewVO> list = reviewService.readByAcc(accommodationID);
-		model.addAttribute("acc", acc);
-		model.addAttribute("reviews", list);
-		log.info("제품리스트"); 
-	}
+	   public void product_detail(@RequestParam int accommodationID, Model model, HttpSession session) { 
+	      AccommodationVO acc = service.readAcc(accommodationID); 
+	      List<ReviewVO> list = reviewService.readByAcc(accommodationID);
+	      WishVO wish=new WishVO();
+	      int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
+	      wish.setAccommodationID(accommodationID);
+	      wish.setMemberID(memberID);
+	      WishVO wishlist=service.readWish(wish);
+	      model.addAttribute("acc", acc);
+	      model.addAttribute("reviews", list);
+	      model.addAttribute("wishlist", wishlist);
+	      log.info("제품리스트"); 
+	   }
 	
 	@PostMapping("/review/write")
 	public String insert(ReviewVO review, RedirectAttributes ra) {
