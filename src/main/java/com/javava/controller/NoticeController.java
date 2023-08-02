@@ -83,9 +83,16 @@ public class NoticeController {
 		return "redirect:/notice/adminList";
 	}
 	
+	@GetMapping("/noticeList")
+	public void noticeList(Model model) {
+		model.addAttribute("nList",service.getList());
+		
+	}
 	
-	
-	
+	@GetMapping("/noticeRead")
+	public void noticeRead(Model model,@RequestParam int bno ) {
+		model.addAttribute("nread",service.read( bno));
+	}
 	
 	
 	

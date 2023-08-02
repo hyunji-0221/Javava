@@ -361,7 +361,7 @@
 							<li class="menu-list"><a href="#"
 								class="link menu-link has-sub"> 고객센터 </a>
 								<ul class="list menu-sub">
-									<li class="menu-sub-list"><a href="/"
+									<li class="menu-sub-list"><a href="/notice/noticeList"
 										class="link menu-sub-link"> 공지사항 </a></li>
 									<li class="menu-sub-list"><a href="#"
 										class="link menu-sub-link"> 자주 묻는 질문 </a></li>
