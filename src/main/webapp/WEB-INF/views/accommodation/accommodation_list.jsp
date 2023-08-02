@@ -16,7 +16,7 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="py-6 px-8 bg-neutral-0 rounded-4 box-shadow">
-          <form action="/accommodation/accommodation_list" method="POST">
+          <form action="/accommodation/accommodation_search" method="POST">
             <h4 class="mb-0"> 제목검색 </h4>
             <div class="hr-dashed my-6 opacity-50"></div>
              <div class="d-flex align-items-center justify-content-between rounded-pill border border-neutral-40 bg-primary-3p px-5 py-3">

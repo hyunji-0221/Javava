@@ -61,5 +61,9 @@ public class AccommodationServiceImpl implements AccommodationService{
 		return wishmapper.insert(vo);
 	}
 	
+	@Override
+	public List<ForJoinVO> getListByKeyword(String keyword) {
+		return mapper.getListByKeyword(keyword);
+	}
 
 }
