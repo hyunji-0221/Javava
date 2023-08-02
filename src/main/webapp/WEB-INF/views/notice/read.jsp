@@ -4,6 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+  .btn-info {
+    /* 원하는 스타일을 추가하세요 */
+    /* 예를 들어, 마진(margin) 값을 조정하여 오른쪽으로 이동시킬 수 있습니다. */
+    margin-right: 150px; /* 원하는 크기로 조정 */
+  }
+</style>
+
+
+
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -57,9 +69,13 @@
 				
 				
 				
-				
-				
 			</div>  <!-- 콘테이너 끝 -->
+			<div style="text-align: right;">
+  <h3>
+    <button class="btn btn-info" onclick="location.href='<%= request.getContextPath() %>/notice/update?bno=${ nread.bno }'">수정</button>
+    <button class="btn btn-info" onclick="location.href='/notice/delete?bno=${nread.bno }'">삭제</button>
+  </h3>
+</div>
 		</div>
 	</div>
 	<!-- CoreUI and necessary plugins-->

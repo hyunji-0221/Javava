@@ -34,5 +34,14 @@ public class NoticeServiceImpl implements NoticeService {
 		mapper.insert(vo);
 	}
 		
-
+	@Override
+	public int update(NoticeVO vo){
+		 return mapper.update(vo);
+	}
+	
+	@Override
+	public int delete(int bno) {
+		return mapper.delete(bno);
+	}
+		
 }

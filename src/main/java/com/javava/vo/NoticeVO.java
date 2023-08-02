@@ -14,4 +14,5 @@ public class NoticeVO {  //
 	private String content;
 	
 
+
 }

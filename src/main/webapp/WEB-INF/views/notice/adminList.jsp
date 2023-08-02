@@ -61,7 +61,7 @@
 						<tbody align="center">
 						<tr>
 							 <td>${item.bno }</td> 
-							<td><a href="/notice/read?bno=${item.bno}">${ item.title }</td>
+							<td><a href="/notice/read?bno=${item.bno}">${ item.title }</a></td>
 							<td>${item.regDate }</td>
 								<td>${item.hit }</td>
 						</tr>
@@ -73,6 +73,7 @@
 					
 					
 					<h3><button class="btn btn-info" onclick="location.href='/notice/write'">글쓰기</button></h3>
+					
 				</div>
 				
 				
@@ -101,7 +102,6 @@
 	<script
 		src="/resources/admin/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
 	<script src="/resources/admin/vendors/@coreui/utils/js/coreui-utils.js"></script>
-	<script src="resources/admin/js/main.js"></script>
 	<script>
 			
 		</script>
