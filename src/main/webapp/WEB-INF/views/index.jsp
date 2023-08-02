@@ -15,7 +15,6 @@
 	src="/resources/js/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/daterangepicker.css" />
-
 <style>
 input.input1 {
 	padding: 13px 0px !important;
@@ -34,7 +33,11 @@ input.input1 {
 </head>
 
 <body>
-	<div class="alert alert-success" role="alert" id="showAlertLogin"
+	<div class="alert alert-success" role="alert" id="showAlertMember"
+		align="center">
+		<h5></h5>
+	</div>
+		<div class="alert alert-success" role="alert" id="showAlertCompany"
 		align="center">
 		<h5></h5>
 	</div>
@@ -331,7 +334,7 @@ input.input1 {
 								<div
 									class="d-flex flex-wrap justify-content-between align-items-center">
 									<span class="d-block fs-20 fw-medium clr-primary-300">
-										${acmd.price }원 <span
+										${acmd.price }원부터 <span
 										class="d-inline-block clr-neutral-500 fs-16 fw-normal">
 											/ 남은 객실 수 : 2 </span>
 									</span> <a href="/accommodation/accommodation_detail?accommodationID=${acmd.accommodationID }" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">예약하기</a>
@@ -871,37 +874,37 @@ input.input1 {
 			
 		    function showAlertMember(member) {
 		        if (member === '') {
-		          $("#showAlertLogin").hide();
+		          $("#showAlertMember").hide();
 		          return;
 		        } else {
-		        $('#showAlertLogin>h5').text(member +'님 환영합니다.');
+		        $("#showAlertMember>h5").text(member +'님 환영합니다.');
 
-		        $("#showAlertLogin").show();
+		        $("#showAlertMember").show();
 		          // 일정 시간이 지난 후에 알림 메시지 숨김
 		          setTimeout(function() {
-		            $("#showAlertLogin").hide();
-		          }, 5000); // 5초 후 숨김
+		            $("#showAlertMember").hide();
+		          }, 3000); // 3초 후 숨김
 		        
 		        }
 		      }
 		    
 		    function showAlertCompany(company) {
 		        if (company === '') {
-		          $("#showAlertLogin").hide();
+		          $("#showAlertCompany").hide();
 		          return;
 		        } else {
-		        $('#showAlertLogin>h5').text(company +'사에 로그인하였습니다.');
+		        $("#showAlertCompany>h5").text(company +'사에 로그인하였습니다.');
 
-		        $("#showAlertLogin").show();
+		        $("#showAlertCompany").show();
 		          // 일정 시간이 지난 후에 알림 메시지 숨김
 		          setTimeout(function() {
-		            $("#showAlertLogin").hide();
-		          }, 5000); // 5초 후 숨김
+		            $("#showAlertCompany").hide();
+		          }, 3000); // 3초 후 숨김
 		        
 		        }
-		      }
+		      } 
 			
-		})
+		});
 	$(function() {
 	  $('input[name="daterange"]').daterangepicker({
 	    opens: 'left'
@@ -916,17 +919,17 @@ input.input1 {
 		if(result_del === "delete") {
 			alert('회원탈퇴가 정상적으로 완료되었습니다.');
 		}
+</script>		
 		
-		
-/* 		//document.getElementById(".test").addEventListener('click', insert);
+<!-- 		document.getElementById(".test").addEventListener('click', insert);
 		$(".test").click(function(){
 			var acId=$(this).data("acId");
 			alert("어얼럿"+acId);
-		})
-		
+		}) --> 
+	<script>	
 		function insert() {
-			alert(${ acmd.accommodationID }); */
-/* 			$.ajax({
+			alert(${ acmd.accommodationID }); 
+			$.ajax({
 				type:'post',
 				url:'/wish/insert',
 				data:{"AccommodationID" : ${ acmd.accommodationID },
@@ -936,7 +939,7 @@ input.input1 {
 				dataType:'text',
 				success : function(data){
 				}
-			}); */
+			}); 
 		}
 	</script>
 

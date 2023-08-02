@@ -94,6 +94,13 @@ public class AccommodationsController {
 		
 		log.info("숙소검색");
 	}
-	
+	@PostMapping("/accommodation_search")
+	public String search1(String keyword, Model model) {
+		
+		List<ForJoinVO> list = service.getListByKeyword(keyword);
+		model.addAttribute("list", list);
+		
+		return "/accommodation/accommodation_list";
+	}
 	
 }
