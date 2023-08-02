@@ -225,8 +225,25 @@
 		    <version>2.4</version>
 		</dependency>
 		
+		
+		<!-- 카카오페이 아이엠포트 dependency -->
+		<dependency>
+			<groupId>com.github.iamport</groupId>
+			<artifactId>iamport-rest-client-java</artifactId>
+			<version>0.2.14</version>
+		</dependency>
+		
 
 	</dependencies>
+	
+	<!-- 카카오페이 관련 repository -->
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	
 	<build>
 		<plugins>
 			<plugin>
