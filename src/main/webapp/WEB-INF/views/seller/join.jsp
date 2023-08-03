@@ -43,9 +43,6 @@
                                 <div class="col-12">
                                     <div class="id_wrap">
                                         <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5 id_input" name="businessNumber" id="businessNumber" placeholder="사업자등록번호">
-                                        <span class="id_input_re_1">사용 가능한 번호입니다.</span>
-                                        <span class="id_input_re_2">입력한 번호가 이미 존재합니다.</span>
-                                        <!-- <span class="final_id_ck">사업자등록번호를 입력해주세요.</span> -->
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -90,106 +87,7 @@
     
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
-        $(document).ready(function() {
-            // 유효성 검사 통과유무 변수
-            var idCheck = false;        // id
-            var idckCheck = false;      // id 중복검사
-            var pwCheck = false;        // pw
-            var pwckCheck = false;      // pw check
-            var pwckcorCheck = false;   // pw check 일치 확인
-            var nameCheck = false;      // 이름
-            var addressCheck = false;   // address
-
-            // id 중복검사
-            $('.id_input').on("propertychange change keyup paste input", function () {
-                var businessNumber = $('.id_input').val();
-                var data = { businessNumber: businessNumber };
-
-                $.ajax({
-                    type: "post",
-                    url: "/seller/sellerNumberChkPOST",
-                    data: data,
-                    success: function (result) {
-                        if (result === 'success') { // 중복되지 않는 경우
-                            $('.id_input_re_1').css("display", "inline-block");
-                            $('.id_input_re_2').css("display", "none");
-                            idckCheck = true;
-                        } else if (result === 'fail') { // 중복되는 경우
-                            $('.id_input_re_2').css("display", "inline-block");
-                            $('.id_input_re_1').css("display", "none");
-                            idckCheck = false;
-                        } else { // 이메일을 입력하지 않은 경우
-                            $('.id_input_re_1').css("display", "none");
-                            $('.id_input_re_2').css("display", "none");
-                            idckCheck = false;
-                        }
-                    }
-                });
-            });
-
-            // 회원가입 버튼
-            $(".join_button").click(function() {
-                /* 입력값 변수 */
-                var email = $('.id_input').val();    // email 입력란
-                var pw = $('.pw_input').val();       // 비밀번호 입력란
-                var pwck = $('.pwck_input').val();   // 비밀번호 확인 입력란
-                var name = $('.user_input').val();   // 이름 입력란
-                var addr = $('.address_input_1').val();  // 주소 입력란
-
-                /* 아이디 유효성 검사 */
-                if (email === "") {
-                    $('.final_id_ck').css('display', 'block');
-                    idCheck = false;
-                } else {
-                    $('.final_id_ck').css('display', 'none');
-                    idCheck = true;
-                }
-                
-                /* 비밀번호 유효성 검사 */
-                if(pw === "") {
-                    $('.final_pw_ck').css('display', 'block');
-                    pwCheck = false;
-                } else {
-                    $('.final_pw_ck').css('display', 'none');
-                    pwCheck = true;
-                }
-                
-                /* 비밀번호 확인 유효성 검사 */
-                if (pwck === "") {
-                    $('.final_pwck_ck').css('display','block');
-                    pwckCheck = false;
-                } else {
-                    $('.final_pwck_ck').css('display','none');
-                    pwckCheck = true;
-                }
-                
-                /* 이름 유효성 검사 */
-                if (name === "") {
-                    $('.final_name_ck').css('display', 'block');
-                    nameCheck = false;
-                } else {
-                    $('.final_name_ck').css('display', 'none');
-                    nameCheck = true;
-                }
-                
-                /* 주소 유효성 검사 */
-                if (addr === "") {
-                    $('.final_addr_ck').css('display', 'block');
-                    addressCheck = false;
-                } else {
-                    $('.final_addr_ck').css('display', 'none');
-                    addressCheck = true;
-                }
-                
-                /* 최종 유효성 검사 */
-                if (idCheck && idckCheck && pwCheck && pwckCheck && nameCheck && addressCheck) {
-                    $("#join_form").attr("action", "/member/join");
-                    $("#join_form").submit();
-                }
-
-                return false;
-            });
-        });
+        
 
         function execDaumPostcode() {
             new daum.Postcode({

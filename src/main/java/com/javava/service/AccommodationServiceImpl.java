@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javava.mapper.AccommodationMapper;
+import com.javava.mapper.ImageMapper;
 import com.javava.mapper.WishListMapper;
 import com.javava.vo.AccommodationVO;
 import com.javava.vo.ForJoinVO;
+import com.javava.vo.ImageVO;
 import com.javava.vo.WishVO;
 
-import lombok.extern.log4j.Log4j;
-
-@Log4j
 @Service
 public class AccommodationServiceImpl implements AccommodationService{
 	
@@ -22,6 +21,9 @@ public class AccommodationServiceImpl implements AccommodationService{
 	
 	@Autowired
 	WishListMapper wishmapper;
+	
+	@Autowired
+	ImageMapper imagemapper;
 	
 	@Override
 	public List<ForJoinVO> getList() {
@@ -65,5 +67,10 @@ public class AccommodationServiceImpl implements AccommodationService{
 	public List<ForJoinVO> getListByKeyword(String keyword) {
 		return mapper.getListByKeyword(keyword);
 	}
-
+	
+	@Override
+	public ImageVO readImage(int accommodationID) {
+		return imagemapper.read(accommodationID);
+	}
+	
 }

@@ -10,7 +10,7 @@
 <script type="text/javascript" src="/resources/js/moment.min.js"></script>
 <script type="text/javascript" src="/resources/js/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/daterangepicker.css" />
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d0d019c20221069ff239a33863233e2c&libraries=services"></script>
 </head>
 
 
@@ -191,28 +191,28 @@ input.input1 {
 				<div class="swiper property-gallery-slider">
 					<div class="swiper-wrapper property-gallery-slider">
 						<div class="swiper-slide">
-							<a href="/resources/img/property-gallery-slider-1.jpg"
+							<a href="/resources/img1/${image.main_img }"
 								class="link property-gallery"> <img
 								src="/resources/img/product_img1.jpg" alt="image"
 								class="img-fluid">
 							</a>
 						</div>
 						<div class="swiper-slide">
-							<a href="/resources/img/property-gallery-slider-2.jpg"
+							<a href="/resources/img1/${image.room1_img }"
 								class="link property-gallery"> <img
 								src="/resources/img/product_img2.jpg" alt="image"
 								class="img-fluid">
 							</a>
 						</div>
 						<div class="swiper-slide">
-							<a href="/resources/img/property-gallery-slider-3.jpg"
+							<a href="/resources/img1/${image.room2_img }"
 								class="link property-gallery"> <img
 								src="/resources/img/product_img3.jpg" alt="image"
 								class="img-fluid">
 							</a>
 						</div>
 						<div class="swiper-slide">
-							<a href="/resources/img/property-gallery-slider-4.jpg"
+							<a href="/resources/img1/${image.room3_img }"
 								class="link property-gallery"> <img
 								src="/resources/img/product_img4.jpg" alt="image"
 								class="img-fluid">
@@ -512,7 +512,7 @@ input.input1 {
 
 							<div class="container">
 								<div class="image-wrapper">
-									<img src="/resources/img/img_400_280.jpg" alt="image"
+									<img src="/resources/img1/${image.room1_img }" alt="image"
 										class="img-fluid">
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
@@ -579,7 +579,7 @@ input.input1 {
 
 							<div class="container">
 								<div class="image-wrapper">
-									<img src="/resources/img/img_400_280.jpg" alt="image"
+									<img src="/resources/img1/${image.room2_img }" alt="image"
 										class="img-fluid">
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
@@ -646,7 +646,7 @@ input.input1 {
 
 							<div class="container">
 								<div class="image-wrapper">
-									<img src="/resources/img/img_400_280.jpg" alt="image"
+									<img src="/resources/img1/${image.room3_img }" alt="image"
 										class="img-fluid">
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
@@ -696,8 +696,7 @@ input.input1 {
 
 						</div>
 						<div class="w-100">
-							<iframe class="w-100 h-400 rounded-4"
-								src="https://maps.google.com/maps?q=서울특별시+마포구+마포대로+67+로이넷+호텔+서울+마포&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+							<div id="map" style="width:100%;height:350px;"></div>
 						</div>
 					</div>
 
@@ -992,13 +991,50 @@ input.input1 {
 
 	</div>
 	<!-- /Property Details Body -->
-	<script>
+<script>
 	let result = "${review}";
 	
 	if(result === 'success') {
 		alert('리뷰가 등록되었습니다.');
 	}
-	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+
+let address = "${acc.address1}";
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch(address, function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+		
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">호텔위치</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
 	</script>
 	<%@ include file="/resources/in/footer.jsp"%>
 </body>

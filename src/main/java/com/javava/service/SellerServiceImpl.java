@@ -37,9 +37,4 @@ public class SellerServiceImpl implements SellerService{
 	public SellerVO read(int businessNumber) {
 		return mapper.read(businessNumber);
 	}
-	@Override
-	public int sellerNumberChkPOST(String businessNumber) {
-
-		return mapper.idCheck(businessNumber);
-	}
 }

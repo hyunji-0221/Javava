@@ -15,6 +15,6 @@ public interface SellerMapper {
 	@Select("select * from seller where businessNumber=#{businessNumber}")
 	public SellerVO read(int businessNumber);
 	
-	@Select("select count(*) from members where businessNumber = #{businessNumber}")
-	public int idCheck(String businessNumber);
+//	@Select("select count(*) from members where businessNumber = #{businessNumber}")
+//	public int idCheck(String businessNumber);
 }

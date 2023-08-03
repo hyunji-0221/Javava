@@ -66,18 +66,18 @@ public class SellerController { //-----김호주 담당
 	}
 	
 	// 아이디 중복 검사
-		@ResponseBody
-		@PostMapping("/sellerNumberChkPOST")
-		public String sellerNumberChkPOST(String businessNumber) throws Exception {
-
-
-			int result = service.sellerNumberChkPOST(businessNumber);
-			log.info("결과값 : " + result);
-			if (result != 0) {
-				return "fail"; // 중복아이디가 존재하면 fail
-			} else {
-				return "success"; // 중복아이디가 존재하지 않는다면 success
-			}
-		}
+//		@ResponseBody
+//		@PostMapping("/sellerNumberChkPOST")
+//		public String sellerNumberChkPOST(String businessNumber) throws Exception {
+//
+//
+//			int result = service.sellerNumberChkPOST(businessNumber);
+//			log.info("결과값 : " + result);
+//			if (result != 0) {
+//				return "fail"; // 중복아이디가 존재하면 fail
+//			} else {
+//				return "success"; // 중복아이디가 존재하지 않는다면 success
+//			}
+//		}
 	
 }

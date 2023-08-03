@@ -14,7 +14,7 @@ public class SellerVO {
 	private int zipcode;
 	private String address1;
 	private String address2;
-	private int phoneNumber;
+	private String phoneNumber;
 	private int businessNumber;
 	private String password;
 	private Date regDate;

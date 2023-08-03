@@ -64,6 +64,7 @@ public class AccommodationsController {
 	      model.addAttribute("acc", acc);
 	      model.addAttribute("reviews", list);
 	      model.addAttribute("wishlist", wishlist);
+	      model.addAttribute("image", service.readImage(accommodationID));
 	      log.info("제품리스트"); 
 	   }
 	
