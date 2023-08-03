@@ -33,41 +33,46 @@ public class AccommodationsController {
 
 	private AccommodationService service;
 	private ReviewService reviewService;
-	
+
 	@GetMapping("/accommodation_list")
 	public void product_list(String type, Model model, String region) {
 		if(type != null) {
-		model.addAttribute("list", service.getListByType(type));
+			model.addAttribute("list", service.getListByType(type));
 		}
 		if(region != null) {
-		model.addAttribute("list", service.getListByRegion(region));
+			model.addAttribute("list", service.getListByRegion(region));
 		}
 		log.info("제품상세보기");
 	}
 
 	@GetMapping("/accommodation_detail") 
-	   public void product_detail(@RequestParam int accommodationID, Model model, HttpSession session) { 
-	      AccommodationVO acc = service.readAcc(accommodationID); 
-	      List<ReviewVO> list = reviewService.readByAcc(accommodationID);
-	      WishVO wish=new WishVO();
-	      int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
-	      wish.setAccommodationID(accommodationID);
-	      wish.setMemberID(memberID);
-	      wish.setAccommodationName(acc.getAccommodationName());
-	      wish.setAddress(acc.getAddress1());
-	      wish.setPaymentAmount(acc.getPrice());
-	      WishVO vo=service.readWish(wish);
-	      if(vo == null) {
-	    	  service.insert(wish);
-	      }
-	      WishVO wishlist=service.readWish(wish);
-	      model.addAttribute("acc", acc);
-	      model.addAttribute("reviews", list);
-	      model.addAttribute("wishlist", wishlist);
-	      model.addAttribute("image", service.readImage(accommodationID));
-	      log.info("제품리스트"); 
-	   }
-	
+	public String product_detail(@RequestParam int accommodationID, Model model, HttpSession session) { 
+		AccommodationVO acc = service.readAcc(accommodationID); 
+		List<ReviewVO> list = reviewService.readByAcc(accommodationID);
+		WishVO wish=new WishVO();
+		if(session.getAttribute("member")!=null) {
+			int memberID=((MemberVO)(session.getAttribute("member"))).getMemberID();
+			wish.setAccommodationID(accommodationID);
+			wish.setMemberID(memberID);
+			wish.setAccommodationName(acc.getAccommodationName());
+			wish.setAddress(acc.getAddress1());
+			wish.setPaymentAmount(acc.getPrice());
+			WishVO vo=service.readWish(wish);
+			if(vo == null) {
+				service.insert(wish);
+			}
+			WishVO wishlist=service.readWish(wish);
+			model.addAttribute("acc", acc);
+			model.addAttribute("reviews", list);
+			model.addAttribute("wishlist", wishlist);
+			model.addAttribute("image", service.readImage(accommodationID));
+			return "accommodation/accommodation_detail";
+		}
+		else {
+			return "redirect:/member/login";
+		}
+	}
+
 	@PostMapping("/review/write")
 	public String insert(ReviewVO review, RedirectAttributes ra) {
 		log.info("리뷰작성");
@@ -86,22 +91,22 @@ public class AccommodationsController {
 	public void add_product() {
 		log.info("제품등록");
 	}
-	
+
 	@PostMapping("/accommodation_list")
 	public void search(ForJoinVO acmd, Model model) {
 		acmd.setMax(acmd.getMax() * 10000);
 		acmd.setMin(acmd.getMin() * 10000);
 		model.addAttribute("list", service.getListBySearch(acmd));
-		
+
 		log.info("숙소검색");
 	}
 	@PostMapping("/accommodation_search")
 	public String search1(String keyword, Model model) {
-		
+
 		List<ForJoinVO> list = service.getListByKeyword(keyword);
 		model.addAttribute("list", list);
-		
+
 		return "/accommodation/accommodation_list";
 	}
-	
+
 }
