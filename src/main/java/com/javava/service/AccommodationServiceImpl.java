@@ -65,5 +65,10 @@ public class AccommodationServiceImpl implements AccommodationService{
 	public List<ForJoinVO> getListByKeyword(String keyword) {
 		return mapper.getListByKeyword(keyword);
 	}
+	
+	@Override
+	public int fullDelete(WishVO vo) {
+		return wishmapper.fullUpdate(vo);
+	}
 
 }

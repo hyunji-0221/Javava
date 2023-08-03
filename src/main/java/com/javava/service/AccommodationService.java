@@ -17,5 +17,5 @@ public interface AccommodationService {
 	public List<ForJoinVO> getListBySearch(ForJoinVO acmd);
 	public int insert(WishVO vo);
 	public List<ForJoinVO> getListByKeyword(String keyword);
-
+	public int fullDelete(WishVO vo);
 }

@@ -919,25 +919,8 @@ input.input1 {
 		if(result_del === "delete") {
 			alert('회원탈퇴가 정상적으로 완료되었습니다.');
 		}
-</script>		
-		
-<<<<<<< HEAD
-		
 
-=======
-<!-- 		document.getElementById(".test").addEventListener('click', insert);
->>>>>>> origin/main
-		$(".test").click(function(){
-			var acId=$(this).data("acId");
-			alert("어얼럿"+acId);
-		}) --> 
-	<script>	
 		function insert() {
-<<<<<<< HEAD
-			alert(${ acmd.accommodationID });
-=======
-			alert(${ acmd.accommodationID }); 
->>>>>>> origin/main
 			$.ajax({
 				type:'post',
 				url:'/wish/insert',
@@ -948,11 +931,7 @@ input.input1 {
 				dataType:'text',
 				success : function(data){
 				}
-<<<<<<< HEAD
 			});
-=======
-			}); 
->>>>>>> origin/main
 		}
 	</script>
 
