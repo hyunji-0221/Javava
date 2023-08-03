@@ -44,4 +44,8 @@ public interface AccommodationMapper {
 	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID where type = #{type} and region = #{region} and price between #{min} and #{max}")
 	public List<ForJoinVO> getListBySearch(ForJoinVO acmd);
 	
+	@Select("SELECT * FROM accommodations a left JOIN image i ON a.AccommodationID = i.AccommodationID where accommodationName LIKE CONCAT('%', #{keyword}, '%')")
+	public List<ForJoinVO> getListByKeyword(String keyword);
+	
+	
 }
