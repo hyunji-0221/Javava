@@ -20,4 +20,5 @@ public interface AccommodationService {
 	public List<ForJoinVO> getListByKeyword(String keyword);
 	public ImageVO readImage(int accommodationID);
 
+	public int fullDelete(WishVO vo);
 }

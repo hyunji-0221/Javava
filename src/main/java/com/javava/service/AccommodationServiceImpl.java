@@ -73,4 +73,8 @@ public class AccommodationServiceImpl implements AccommodationService{
 		return imagemapper.read(accommodationID);
 	}
 	
+	public int fullDelete(WishVO vo) {
+		return wishmapper.fullUpdate(vo);
+	}
+
 }
