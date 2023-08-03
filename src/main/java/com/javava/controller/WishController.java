@@ -3,6 +3,7 @@ package com.javava.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javava.service.AccommodationService;
@@ -22,6 +23,7 @@ public class WishController {
 	@PostMapping("/full")
 	public String fullUpdate(WishVO vo) {
 		service.fullUpdate(vo);
+		log.info("vo : "+vo);
 		return "Post Mapping DataType String";
 		
 	}

@@ -172,7 +172,9 @@ input.input1 {
 			$.ajax({
 				type:'post',
 				url:'/wish/full',
-				data:{"full" : full, "memberID" : ${ wishlist.memberID }},
+				data:{"full" : full,
+					"memberID" : ${ wishlist.memberID },
+					"accommodationID" : ${ acc.accommodationID }},
 				dataType:'text',
 				success : function(data){
 				}
@@ -640,7 +642,6 @@ input.input1 {
 							</div>
 
 						</div>
-
 
 						<div class="container">
 

@@ -918,15 +918,15 @@ input.input1 {
 		}
 		
 		
-/* 		//document.getElementById(".test").addEventListener('click', insert);
+
 		$(".test").click(function(){
 			var acId=$(this).data("acId");
 			alert("어얼럿"+acId);
 		})
 		
 		function insert() {
-			alert(${ acmd.accommodationID }); */
-/* 			$.ajax({
+			alert(${ acmd.accommodationID });
+			$.ajax({
 				type:'post',
 				url:'/wish/insert',
 				data:{"AccommodationID" : ${ acmd.accommodationID },
@@ -936,7 +936,7 @@ input.input1 {
 				dataType:'text',
 				success : function(data){
 				}
-			}); */
+			});
 		}
 	</script>
 
