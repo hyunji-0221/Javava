@@ -79,14 +79,11 @@ input.input1 {
 					<h1 class="d2 mt-4 mb-6">광안리를 잡아봐!</h1>
 					<p class="mb-10 fs-20">무더운 여름 더위속에 잠들지 못한 너 저렴한 가격으로 모시겠습니다 .</p>
 				</div>
-				<div class="col-xxl-10">
+				 <div class="col-xxl-10">
 					<form action="#">
 						<div class="property-search p-6 rounded-3 bg-neutral-0">
 							<div
 								class="property-search__content d-flex flex-wrap justify-content-center align-items-center gap-4">
-
-
-
 
 
 								<div
@@ -104,13 +101,6 @@ input.input1 {
 									</select>
 								</div>
 
-
-
-
-
-
-
-
 								<div
 									class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
 
@@ -120,19 +110,6 @@ input.input1 {
 									</div>
 
 								</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 								<div
 									class="property-search__price property-search__col rounded-pill d-flex align-items-center gap-2 px-6 py-3">
@@ -160,8 +137,8 @@ input.input1 {
 								</button>
 							</div>
 						</div>
-					</form>
-				</div>
+					</form> 
+				</div>  
 			</div>
 		</div>
 	</div>
@@ -919,16 +896,8 @@ input.input1 {
 		if(result_del === "delete") {
 			alert('회원탈퇴가 정상적으로 완료되었습니다.');
 		}
-</script>		
-		
-<!-- 		document.getElementById(".test").addEventListener('click', insert);
-		$(".test").click(function(){
-			var acId=$(this).data("acId");
-			alert("어얼럿"+acId);
-		}) --> 
-	<script>	
-		function insert() {
-			alert(${ acmd.accommodationID }); 
+// -------- 오류 발생으로 주석처리함
+/* 		function insert() {
 			$.ajax({
 				type:'post',
 				url:'/wish/insert',
@@ -939,8 +908,8 @@ input.input1 {
 				dataType:'text',
 				success : function(data){
 				}
-			}); 
-		}
+			});
+		} */
 	</script>
 
 
