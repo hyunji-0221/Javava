@@ -45,7 +45,7 @@
         <li class="nav-title">주문 관리</li>
         
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="colors.html">
+            <li class="nav-item"><a class="nav-link" href="/admin/reserveList?sellerID=${seller.sellerID }">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-alarm"></use>
             </svg> 주문 조회</a></li>
@@ -60,7 +60,7 @@
         <li class="nav-title">리뷰 관리</li>
         
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="colors.html">
+            <li class="nav-item"><a class="nav-link" href="/admin/reviewList?sellerID=${seller.sellerID }">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
             </svg> 리뷰 조회</a></li>
@@ -72,28 +72,12 @@
         <li class="nav-title">공지사항</li>
         
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="board">
+            <li class="nav-item"><a class="nav-link" href="/notice/adminList">
             <svg class="nav-icon">
               <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-bullhorn"></use>
             </svg> 공지사항 조회</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-bullhorn"></use>
-            </svg> 공지사항 작성</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-bullhorn"></use>
-            </svg> 공지사항 수정</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-bullhorn"></use>
-            </svg> 공지사항 삭제</a></li>
-            <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use xlink:href="/resources/admin/vendors/@coreui/icons/svg/free.svg#cil-bullhorn"></use>
-            </svg> FAQ</a></li>
+           
           </ul>
-        </li>
         </c:if>
         
         <!-- <li class="nav-title">Theme</li>

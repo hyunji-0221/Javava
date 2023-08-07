@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.javava.service.AdminService;
+import com.javava.service.ReservationService;
+import com.javava.service.ReviewService;
 import com.javava.service.SellerService;
 import com.javava.vo.AccommodationVO;
 import com.javava.vo.ImageVO;
@@ -33,6 +35,8 @@ public class AdminController {
 	
 	private AdminService service;
 	private SellerService service1;
+	private ReservationService reserveService;
+	private ReviewService reviewService;
 	
 	@GetMapping("/index")
 	public void index() {
@@ -105,6 +109,20 @@ public class AdminController {
 			return "redirect:/admin/accommodationList?sellerID=" + sellerID;
 		}
 		
+	}
+	
+	@GetMapping("/reserveList")
+	public void readReserve(int sellerID, Model model) {
+		
+		log.info("나의숙소 예약상황");
+		model.addAttribute("reserve", reserveService.getReserveList(sellerID));
+		
+	}
+	
+	@GetMapping("/reviewList")
+	public void getReviewList(int sellerID, Model model) {
+		log.info("나의 숙소리뷰목록");
+		model.addAttribute("reviews", reviewService.getReserveList(sellerID));
 	}
 	
 	@GetMapping("/uploadMainImg")

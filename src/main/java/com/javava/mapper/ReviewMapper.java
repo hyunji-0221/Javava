@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import com.javava.vo.ForJoinVO;
 import com.javava.vo.ReviewVO;
 
 @Mapper
@@ -17,5 +18,8 @@ public interface ReviewMapper {
 	
 	@Select("select * from reviews where accommodationID = #{accommodationID}")
 	public List<ReviewVO> readByAcc(int accommodationID);
+	
+	@Select("SELECT * FROM reviews r left JOIN accommodations a ON r.AccommodationID = a.AccommodationID where sellerID= #{sellerID}")
+	public List<ForJoinVO> getReviewList(int sellerID);
 
 }

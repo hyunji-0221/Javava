@@ -1,8 +1,12 @@
 package com.javava.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
+import com.javava.vo.ForJoinVO;
 import com.javava.vo.ReservationVO;
 
 @Mapper
@@ -21,5 +25,7 @@ public interface ReservationMapper {
 			+ "values "
 			+ "(#{accommodationID}, #{memberID}, #{reserveName}, #{reservePhone}, #{accommodationName}, #{roomName}, #{checkInDate}, #{checkOutDate}, #{paymentAmount})")
 	public int insert(ReservationVO vo);
-
+	
+	@Select("SELECT * FROM reservations r left JOIN accommodations a ON r.AccommodationID = a.AccommodationID where sellerID= #{sellerID}")
+	public List<ForJoinVO> getReserveList(int sellerID);
 }

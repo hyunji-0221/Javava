@@ -19,6 +19,5 @@ public class ReservationVO {
 	private String reserveName;
 	private String reservePhone;
 	private String roomName;
-	private String roomImg;
 
 }
