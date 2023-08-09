@@ -43,7 +43,7 @@ public class ForJoinVO {
 	private int max;
 	
 	//ReservationVO
-	private int reservationID;
+	private String reservationID;
 	private int memberID;
 	private String address;
 	private String checkInDate;

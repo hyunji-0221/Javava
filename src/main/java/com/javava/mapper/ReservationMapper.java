@@ -21,9 +21,9 @@ public interface ReservationMapper {
 	 * "#{reservationDate}, #{reserveName}, #{reservePhone}, #{roomName})")
 	 */
 	
-	@Insert("INSERT INTO RESERVATIONS (accommodationID, memberID, reserveName, reservePhone, accommodationName, roomName, checkInDate, checkOutDate, paymentAmount) "
+	@Insert("INSERT INTO RESERVATIONS (reservationID, accommodationID, memberID, reserveName, reservePhone, accommodationName, roomName, checkInDate, checkOutDate, paymentAmount, address) "
 			+ "values "
-			+ "(#{accommodationID}, #{memberID}, #{reserveName}, #{reservePhone}, #{accommodationName}, #{roomName}, #{checkInDate}, #{checkOutDate}, #{paymentAmount})")
+			+ "(#{reservationID}, #{accommodationID}, #{memberID}, #{reserveName}, #{reservePhone}, #{accommodationName}, #{roomName}, #{checkInDate}, #{checkOutDate}, #{paymentAmount}, #{address})")
 	public int insert(ReservationVO vo);
 	
 	@Select("SELECT * FROM reservations r left JOIN accommodations a ON r.AccommodationID = a.AccommodationID where sellerID= #{sellerID}")

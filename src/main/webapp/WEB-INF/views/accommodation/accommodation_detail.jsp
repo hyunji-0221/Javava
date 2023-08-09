@@ -519,6 +519,7 @@ input.input1 {
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
 								<input type="hidden" name="accommodationName" value="${ acc.accommodationName }">
+								<input type="hidden" name="address" value="${ acc.address1 } ${ acc.address2 }">
 								<div class="content-wrapper">
 									<div class="property-card__body">
 										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
@@ -586,6 +587,7 @@ input.input1 {
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
 								<input type="hidden" name="AccommodationName" value="${ acc.accommodationName }">
+								<input type="hidden" name="address" value="${ acc.address1 } ${ acc.address2 }">
 								<div class="content-wrapper">
 									<div class="property-card__body">
 										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">
@@ -653,6 +655,7 @@ input.input1 {
 								</div>
 								<input type="hidden" value="<%= request.getParameter("accommodationID") %>" name="accommodationID">
 								<input type="hidden" name="AccommodationName" value="${ acc.accommodationName }">
+								<input type="hidden" name="address" value="${ acc.address1 } ${ acc.address2 }">
 								<div class="content-wrapper">
 									<div class="property-card__body">
 										<span class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium">

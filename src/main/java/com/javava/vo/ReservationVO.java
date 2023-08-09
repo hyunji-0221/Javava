@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ReservationVO {
 
-	private int reservationID;
+	private String reservationID;
 	private int memberID;
 	private int accommodationID;
 	private String accommodationName;
@@ -19,5 +19,6 @@ public class ReservationVO {
 	private String reserveName;
 	private String reservePhone;
 	private String roomName;
+	private String imp_uid;
 
 }
